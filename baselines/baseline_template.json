@@ -1,0 +1,33 @@
+{
+  "url": "https://your-website.com/",
+  "generated_at": "YYYY-MM-DD",
+  "notes": "Describe how this baseline was created and anything to watch out for.",
+
+  "customer": {
+    "role": "customer",
+    "journey_count_range": {
+      "min": 3,
+      "max": 15
+    },
+    "must_have_journeys": [
+      "Add your must-have journey names here",
+      "Example: Browse products",
+      "Example: Add to cart",
+      "Example: Checkout"
+    ],
+    "baseline_journeys": [
+      {
+        "name": "Example Journey Name",
+        "goal": "One sentence describing what the user accomplishes.",
+        "entry_surface": "homepage",
+        "key_steps": [
+          "Step 1",
+          "Step 2",
+          "Step 3"
+        ],
+        "success_signal": "What indicates this journey completed successfully"
+      }
+    ],
+    "latency_threshold_ms": 480000
+  }
+}
