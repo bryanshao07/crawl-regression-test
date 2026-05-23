@@ -11,10 +11,17 @@
 baselines/*
 !baselines/baseline_template.json
 
+# Allow crawls and reports folders but keep them empty
+!crawls/
+crawls/*
+!crawls/.gitkeep
+
+!reports/
+reports/*
+!reports/.gitkeep
+
 # Explicitly ignore sensitive and generated files
 .env
-crawls/
-reports/
 __pycache__/
 *.pyc
 .venv/
