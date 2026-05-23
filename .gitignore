@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+
+# Allow these specific files only
+!.gitignore
+!README.md
+!run_test_matrix.py
+
+# Allow baselines folder but only the template inside it
+!baselines/
+baselines/*
+!baselines/baseline_template.json
+
+# Explicitly ignore sensitive and generated files
+.env
+crawls/
+reports/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.vscode/
+.idea/
