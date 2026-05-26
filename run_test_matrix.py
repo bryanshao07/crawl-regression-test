@@ -1,22 +1,7 @@
 #!/usr/bin/env python3
 """
-Crawl Regression Test Matrix
-Uses OpenAI GPT API to evaluate crawl output against a baseline.
-Pass/fail is calculated by Python from numeric scores, not by GPT.
-
-Setup:
-  1. Get an API key at https://platform.openai.com
-  2. pip install openai python-dotenv
-  3. Create a .env file with: OPENAI_API_KEY=your_key_here
-
-Usage:
-  python run_test_matrix.py --crawl <crawl.json> --baseline <baseline.json> [--run <run.json>] [--output <report.json>] [--role customer|admin]
-
-Examples:
-  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json
-  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --run crawls/<site>_run.json
+Crawl Regression Test Matrix — see README for setup and usage.
 """
-
 import json
 import time
 import os
