@@ -44,6 +44,15 @@ def get_baseline_role(baseline: dict, role: str = "customer") -> dict:
     return baseline
 
 
+def score_label(score: float, threshold: float) -> str:
+    if score >= threshold:
+        return "passed"
+    elif score >= threshold * 0.6:
+        return "warning"
+    else:
+        return "failed"
+
+
 def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None, role: str = "customer") -> dict:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
@@ -54,36 +63,42 @@ def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None,
 
     client = OpenAI(api_key=api_key)
 
-    # Extract crawl data from navigation-laptop.json
+    # Extract crawl data
     metadata         = crawl_output.get("metadata", {})
     navigation_flows = crawl_output.get("navigation_flows", [])
     site_structure   = crawl_output.get("site_structure", {})
     coverage_summary = crawl_output.get("coverage_summary", {})
 
-    # Extract latency from run output if provided
-    crawl_run        = run_output.get("crawl_run", run_output) if run_output else {}
-    created_at       = crawl_run.get("created_at")
-    updated_at       = crawl_run.get("updated_at")
+    # Extract timestamps from run output for latency
+    crawl_run  = run_output.get("crawl_run", run_output) if run_output else {}
+    created_at = crawl_run.get("created_at")
+    updated_at = crawl_run.get("updated_at")
 
-    role_baseline         = get_baseline_role(baseline, role)
-    url                   = baseline.get("url", "unknown")
-    must_have_flows       = role_baseline.get("must_have_flows", [])
-    must_have_pages       = role_baseline.get("must_have_pages", [])
-    expected_hierarchy    = role_baseline.get("expected_hierarchy", {})
-    expected_depth        = role_baseline.get("expected_depth", 2)
-    latency_threshold     = role_baseline.get("latency_threshold_ms", 480000)
+    # Extract baseline config
+    role_baseline              = get_baseline_role(baseline, role)
+    url                        = baseline.get("url", "unknown")
+    pass_threshold             = baseline.get("pass_threshold", 0.8)
+    must_have_pages            = role_baseline.get("must_have_pages", [])
+    expected_page_count        = role_baseline.get("expected_page_count", len(must_have_pages))
+    expected_hierarchy         = role_baseline.get("expected_hierarchy", {})
+    expected_hierarchy_nodes   = role_baseline.get("expected_hierarchy_node_count", 0)
+    expected_depth             = role_baseline.get("expected_depth", 2)
+    must_have_flows            = role_baseline.get("must_have_flows", [])
+    expected_flow_count        = role_baseline.get("expected_flow_count", len(must_have_flows))
+    latency_threshold          = role_baseline.get("latency_threshold_ms", 480000)
 
     prompt = f"""
 You are a regression test evaluator for a website crawl system.
 
-Compare the crawl output against the baseline and determine if the website
-is still behaving as expected.
+Compare the crawl output against the baseline and return numeric scores
+alongside pass/fail results.
 
 Return ONLY a valid JSON object — no markdown, no preamble, no explanation.
 
 ---
 
 TARGET WEBSITE: {url}
+PASS THRESHOLD: {pass_threshold} (80%)
 
 BASELINE CONFIG:
 {json.dumps(role_baseline, indent=2)}
@@ -114,11 +129,17 @@ Return this exact JSON structure:
   "role": "{role}",
   "status": "passed|failed|warning",
   "summary": {{
-    "browser_session_success":   "passed|failed",
+    "browser_session_success":    "passed|failed",
     "main_structure_coverage":   "passed|failed|warning",
     "site_hierarchy_correctness": "passed|failed|warning",
     "navigation_flow_coverage":  "passed|failed|warning",
     "latency":                   "passed|failed|skipped"
+  }},
+  "scores": {{
+    "main_structure_coverage":   {{ "actual": 0, "expected": {expected_page_count}, "score": 0.0, "result": "X/Y" }},
+    "site_hierarchy_correctness": {{ "actual": 0, "expected": {expected_hierarchy_nodes}, "score": 0.0, "result": "X/Y" }},
+    "navigation_flow_coverage":  {{ "actual": 0, "expected": {expected_flow_count}, "score": 0.0, "result": "X/Y" }},
+    "latency":                   {{ "actual_ms": null, "threshold_ms": {latency_threshold}, "result": "Xms / Yms" }}
   }},
   "details": {{
     "missing_pages":     [],
@@ -134,37 +155,37 @@ Evaluation rules:
 
 1. browser_session_success:
    - PASS if metadata shows crawl completed (authenticated=true, page_count > 0, or completion summary)
-   - FAIL if there are error indicators or crawl clearly did not complete
+   - FAIL if there are error indicators
 
-2. main_structure_coverage:
-   - Must-have pages/sections to check: {must_have_pages}
-   - PASS if all main pages and sections are discovered in the site_structure
-   - WARN if some are present but incomplete
-   - FAIL if key pages are clearly missing
-   - List missing ones in missing_pages
+2. main_structure_coverage (NUMERIC):
+   - Must-have pages: {must_have_pages}
+   - Count how many of these pages are found in the site_structure (use semantic matching)
+   - actual = number found, expected = {expected_page_count}
+   - score = actual / expected
+   - PASS if score >= {pass_threshold}, WARNING if >= {pass_threshold * 0.6:.2f}, FAIL otherwise
+   - List missing pages in missing_pages
 
-3. site_hierarchy_correctness:
-   - Expected hierarchy: {json.dumps(expected_hierarchy, indent=2)}
-   - Check whether pages are nested under the correct parent nodes
-   - PASS if hierarchy matches expected structure
-   - WARN if minor misplacements found
-   - FAIL if pages are clearly under wrong parent nodes
-   - List specific issues in hierarchy_issue
-   - Set actual_depth based on the deepest level found in site_structure
+3. site_hierarchy_correctness (NUMERIC):
+   - Expected hierarchy: {json.dumps(expected_hierarchy)}
+   - Count how many expected hierarchy nodes are correctly placed
+   - actual = correctly placed nodes, expected = {expected_hierarchy_nodes}
+   - score = actual / expected
+   - PASS if score >= {pass_threshold}, WARNING if >= {pass_threshold * 0.6:.2f}, FAIL otherwise
+   - List issues in hierarchy_issue
 
-4. navigation_flow_coverage:
-   - Must-have business flows: {must_have_flows}
-   - Use SEMANTIC matching — "Add item to cart" matches "Add Popcorn Chicken to cart"
-   - Check that steps within each flow are correct and in logical order
-   - PASS if all must-have flows are present with correct steps
-   - WARN if flows are present but steps are incomplete or slightly off
-   - FAIL if any must-have flow is clearly absent or steps are wrong
+4. navigation_flow_coverage (NUMERIC):
+   - Must-have flows: {must_have_flows}
+   - Count how many are found using semantic matching
+   - actual = flows found, expected = {expected_flow_count}
+   - score = actual / expected
+   - PASS if score >= {pass_threshold}, WARNING if >= {pass_threshold * 0.6:.2f}, FAIL otherwise
    - List missing flows in missing_flow
 
 5. latency:
    - Threshold: {latency_threshold}ms
-   - Calculate latency from created_at and updated_at timestamps if available
+   - Calculate from created_at and updated_at timestamps if available
    - PASS if within threshold, FAIL if over, SKIP if timestamps not available
+   - Set actual_depth from the deepest level found in site_structure
 
 Overall status:
 - "failed"  if ANY item is "failed"
@@ -236,6 +257,7 @@ Examples:
 
     save_json(report, output_path)
 
+    # Print summary
     status_icon = {"passed": "✅", "warning": "⚠️ ", "failed": "❌"}.get(report["status"], "?")
     icons       = {"passed": "✅", "warning": "⚠️ ", "failed": "❌", "skipped": "⏭️ "}
 
@@ -243,20 +265,25 @@ Examples:
     print(f"TEST REPORT — {report['url']} ({args.role})")
     print(f"{'='*55}")
     print(f"Overall Status: {status_icon} {report['status'].upper()}")
+
     print(f"\nMatrix Results:")
+    scores = report.get("scores", {})
     for check, result in report["summary"].items():
-        print(f"  {icons.get(result, '?')} {check}: {result}")
+        icon = icons.get(result, "?")
+        score_info = scores.get(check, {})
+        score_str  = f"  [{score_info.get('result', '')}]" if score_info.get('result') else ""
+        print(f"  {icon} {check}: {result}{score_str}")
 
     details = report["details"]
     if details.get("missing_pages"):
-        print(f"\nMissing pages:   {details['missing_pages']}")
+        print(f"\nMissing pages:    {details['missing_pages']}")
     if details.get("missing_flow"):
-        print(f"Missing flows:   {details['missing_flow']}")
+        print(f"Missing flows:    {details['missing_flow']}")
     if details.get("hierarchy_issue"):
         print(f"Hierarchy issues: {details['hierarchy_issue']}")
-    print(f"Depth:           expected={details['expected_depth']}, actual={details['actual_depth']}")
+    print(f"Depth:            expected={details['expected_depth']}, actual={details['actual_depth']}")
     if details.get("latency_ms"):
-        print(f"Latency:         {details['latency_ms']}ms")
+        print(f"Latency:          {details['latency_ms']}ms")
 
     print(f"\nEvaluation time: {elapsed}ms")
     print(f"Report saved to: {output_path}")
