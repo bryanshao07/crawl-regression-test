@@ -57,24 +57,21 @@ def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None,
     # Extract crawl data from navigation-laptop.json
     metadata         = crawl_output.get("metadata", {})
     navigation_flows = crawl_output.get("navigation_flows", [])
+    site_structure   = crawl_output.get("site_structure", {})
     coverage_summary = crawl_output.get("coverage_summary", {})
 
-    # Extract screenshots from crawl run API response if provided
-    # Falls back to navigation-laptop.json if not provided
-    if run_output:
-        crawl_run        = run_output.get("crawl_run", run_output)
-        screenshots      = crawl_run.get("site_structure_llm_screenshot_urls", [])
-    else:
-        screenshots      = crawl_output.get("site_structure_llm_screenshot_urls", [])
+    # Extract latency from run output if provided
+    crawl_run        = run_output.get("crawl_run", run_output) if run_output else {}
+    created_at       = crawl_run.get("created_at")
+    updated_at       = crawl_run.get("updated_at")
 
-    role_baseline      = get_baseline_role(baseline, role)
-    url                = baseline.get("url", "unknown")
-    min_journeys       = role_baseline.get("journey_count_range", {}).get("min", 3)
-    max_journeys       = role_baseline.get("journey_count_range", {}).get("max", 10)
-    must_haves         = role_baseline.get("must_have_journeys", [])
-    latency_threshold  = role_baseline.get("latency_threshold_ms", 480000)
-    screenshot_enabled = role_baseline.get("screenshot_check", {}).get("enabled", True)
-    screenshot_min     = role_baseline.get("screenshot_check", {}).get("min_count", 1)
+    role_baseline         = get_baseline_role(baseline, role)
+    url                   = baseline.get("url", "unknown")
+    must_have_flows       = role_baseline.get("must_have_flows", [])
+    must_have_pages       = role_baseline.get("must_have_pages", [])
+    expected_hierarchy    = role_baseline.get("expected_hierarchy", {})
+    expected_depth        = role_baseline.get("expected_depth", 2)
+    latency_threshold     = role_baseline.get("latency_threshold_ms", 480000)
 
     prompt = f"""
 You are a regression test evaluator for a website crawl system.
@@ -94,40 +91,42 @@ BASELINE CONFIG:
 CRAWL METADATA:
 {json.dumps(metadata, indent=2)}
 
+SITE STRUCTURE:
+{json.dumps(site_structure, indent=2)}
+
 NAVIGATION FLOWS FOUND ({len(navigation_flows)} total):
 {json.dumps(navigation_flows, indent=2)}
 
 COVERAGE SUMMARY:
 {json.dumps(coverage_summary, indent=2)}
 
-SCREENSHOTS FOUND ({len(screenshots)} total):
-{json.dumps(screenshots, indent=2)}
+CRAWL TIMESTAMPS:
+created_at: {created_at}
+updated_at: {updated_at}
 
 ---
 
 Return this exact JSON structure:
 
 {{
-  "test_id": "<url_slug>_regression",
+  "test_id": "<url_slug>_site_structure_regression",
   "url": "{url}",
   "role": "{role}",
   "status": "passed|failed|warning",
   "summary": {{
-    "browser_session_success":    "passed|failed",
-    "journey_count_range":        "passed|failed",
-    "must_have_journey_coverage": "passed|failed|warning",
-    "navigation_flows":           "passed|failed|warning",
-    "latency":                    "passed|failed|skipped",
-    "screenshots":                "passed|failed|skipped"
+    "browser_session_success":   "passed|failed",
+    "main_structure_coverage":   "passed|failed|warning",
+    "site_hierarchy_correctness": "passed|failed|warning",
+    "navigation_flow_coverage":  "passed|failed|warning",
+    "latency":                   "passed|failed|skipped"
   }},
   "details": {{
-    "missing_journeys":  [],
-    "extra_journeys":    [],
-    "new_journey_count": 0,
-    "latency_ms":        null,
-    "screenshot_count":  0,
-    "flow_issues":       [],
-    "notes":             ""
+    "missing_pages":     [],
+    "missing_flow":      [],
+    "hierarchy_issue":   [],
+    "expected_depth":    {expected_depth},
+    "actual_depth":      0,
+    "latency_ms":        null
   }}
 }}
 
@@ -137,39 +136,35 @@ Evaluation rules:
    - PASS if metadata shows crawl completed (authenticated=true, page_count > 0, or completion summary)
    - FAIL if there are error indicators or crawl clearly did not complete
 
-2. journey_count_range:
-   - Count total navigation_flows in the crawl output
-   - PASS if count is between {min_journeys} and {max_journeys}
-   - FAIL if below {min_journeys} (too few journeys — possible crawl failure)
-   - FAIL if above {max_journeys} (too many — possible scope explosion)
-   - Set new_journey_count to the actual count
+2. main_structure_coverage:
+   - Must-have pages/sections to check: {must_have_pages}
+   - PASS if all main pages and sections are discovered in the site_structure
+   - WARN if some are present but incomplete
+   - FAIL if key pages are clearly missing
+   - List missing ones in missing_pages
 
-3. must_have_journey_coverage:
-   - Must-have journeys to check: {must_haves}
+3. site_hierarchy_correctness:
+   - Expected hierarchy: {json.dumps(expected_hierarchy, indent=2)}
+   - Check whether pages are nested under the correct parent nodes
+   - PASS if hierarchy matches expected structure
+   - WARN if minor misplacements found
+   - FAIL if pages are clearly under wrong parent nodes
+   - List specific issues in hierarchy_issue
+   - Set actual_depth based on the deepest level found in site_structure
+
+4. navigation_flow_coverage:
+   - Must-have business flows: {must_have_flows}
    - Use SEMANTIC matching — "Add item to cart" matches "Add Popcorn Chicken to cart"
-   - PASS if all must-haves are clearly represented in the navigation flows
-   - WARN if some are similar but not clearly matching
-   - FAIL if any must-have is clearly absent
-   - List missing ones in missing_journeys
-
-4. navigation_flows:
-   - Check that each flow's steps are in a logical order for that website
-   - PASS if all flows have sensible step sequences
-   - WARN if minor ordering issues but core flows intact
-   - FAIL if steps from different flows are clearly mixed up
-   - List specific issues in flow_issues
+   - Check that steps within each flow are correct and in logical order
+   - PASS if all must-have flows are present with correct steps
+   - WARN if flows are present but steps are incomplete or slightly off
+   - FAIL if any must-have flow is clearly absent or steps are wrong
+   - List missing flows in missing_flow
 
 5. latency:
    - Threshold: {latency_threshold}ms
-   - Check metadata for any timing information
-   - PASS if within threshold, FAIL if over, SKIP if no timing data available
-
-6. screenshots:
-   - screenshot_check enabled: {screenshot_enabled}
-   - SKIP if screenshot_check.enabled is false
-   - PASS if screenshots array has {screenshot_min} or more entries
-   - FAIL if the array is empty or missing
-   - Set screenshot_count to the actual number of screenshots found
+   - Calculate latency from created_at and updated_at timestamps if available
+   - PASS if within threshold, FAIL if over, SKIP if timestamps not available
 
 Overall status:
 - "failed"  if ANY item is "failed"
@@ -200,7 +195,7 @@ Examples:
     )
     parser.add_argument("--crawl",    required=True,      help="Path to navigation-laptop.json from Supabase")
     parser.add_argument("--baseline", required=True,      help="Path to baseline JSON")
-    parser.add_argument("--run",      default=None,       help="Path to crawl run API response JSON (for screenshots)")
+    parser.add_argument("--run",      default=None,       help="Path to crawl run API response JSON (for latency timestamps)")
     parser.add_argument("--output",   default=None,       help="Path to save report (default: auto-named)")
     parser.add_argument("--role",     default="customer", help="Role to evaluate: customer or admin (default: customer)")
     args = parser.parse_args()
@@ -219,7 +214,7 @@ Examples:
     if args.run:
         print(f"Loading run:      {args.run}")
     else:
-        print(f"Loading run:      not provided (screenshots will be skipped or read from crawl)")
+        print(f"Loading run:      not provided (latency will be skipped)")
     print(f"Role:             {args.role}")
 
     crawl_output = load_json(args.crawl)
@@ -253,14 +248,15 @@ Examples:
         print(f"  {icons.get(result, '?')} {check}: {result}")
 
     details = report["details"]
-    print(f"\nJourneys found:    {details['new_journey_count']}")
-    print(f"Screenshots found: {details.get('screenshot_count', 0)}")
-    if details.get("missing_journeys"):
-        print(f"Missing:           {details['missing_journeys']}")
-    if details.get("flow_issues"):
-        print(f"Flow issues:       {details['flow_issues']}")
-    if details.get("notes"):
-        print(f"Notes:             {details['notes']}")
+    if details.get("missing_pages"):
+        print(f"\nMissing pages:   {details['missing_pages']}")
+    if details.get("missing_flow"):
+        print(f"Missing flows:   {details['missing_flow']}")
+    if details.get("hierarchy_issue"):
+        print(f"Hierarchy issues: {details['hierarchy_issue']}")
+    print(f"Depth:           expected={details['expected_depth']}, actual={details['actual_depth']}")
+    if details.get("latency_ms"):
+        print(f"Latency:         {details['latency_ms']}ms")
 
     print(f"\nEvaluation time: {elapsed}ms")
     print(f"Report saved to: {output_path}")
