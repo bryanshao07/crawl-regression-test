@@ -2,6 +2,7 @@
 """
 Crawl Regression Test Matrix — see README for setup and usage.
 """
+
 import json
 import time
 import os
@@ -29,16 +30,6 @@ def get_baseline_role(baseline: dict, role: str = "customer") -> dict:
     return baseline
 
 
-def score_to_label(score: float, threshold: float) -> str:
-    """Convert a numeric score to pass/warning/failed using Python logic."""
-    if score >= threshold:
-        return "passed"
-    elif score >= threshold * 0.6:
-        return "warning"
-    else:
-        return "failed"
-
-
 def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None, role: str = "customer") -> dict:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
@@ -63,7 +54,6 @@ def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None,
     # Extract baseline config
     role_baseline            = get_baseline_role(baseline, role)
     url                      = baseline.get("url", "unknown")
-    pass_threshold           = baseline.get("pass_threshold", 0.8)
     must_have_pages          = role_baseline.get("must_have_pages", [])
     expected_page_count      = role_baseline.get("expected_page_count", len(must_have_pages))
     expected_hierarchy       = role_baseline.get("expected_hierarchy", {})
@@ -73,7 +63,6 @@ def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None,
     expected_flow_count      = role_baseline.get("expected_flow_count", len(must_have_flows))
     latency_threshold        = role_baseline.get("latency_threshold_ms", 480000)
 
-    # GPT is only asked to COUNT and IDENTIFY — not to decide pass/fail
     prompt = f"""
 You are a regression test evaluator for a website crawl system.
 
@@ -165,41 +154,28 @@ Instructions:
     data = json.loads(raw)
 
     # Extract counts from GPT response
-    counts = data.get("counts", {})
+    counts            = data.get("counts", {})
     pages_found       = counts.get("pages_found", 0)
     hierarchy_correct = counts.get("hierarchy_nodes_correct", 0)
     flows_found       = counts.get("flows_found", 0)
     latency_ms        = counts.get("latency_ms")
     actual_depth      = counts.get("actual_depth", 0)
 
-    # Calculate scores in Python — deterministic, not up to GPT
-    page_score      = pages_found / expected_page_count      if expected_page_count      > 0 else 1.0
-    hierarchy_score = hierarchy_correct / expected_hierarchy_nodes if expected_hierarchy_nodes > 0 else 1.0
-    flow_score      = flows_found / expected_flow_count      if expected_flow_count      > 0 else 1.0
+    # Calculate scores in Python
+    page_score      = round(pages_found / expected_page_count,           2) if expected_page_count      > 0 else 1.0
+    hierarchy_score = round(hierarchy_correct / expected_hierarchy_nodes, 2) if expected_hierarchy_nodes > 0 else 1.0
+    flow_score      = round(flows_found / expected_flow_count,            2) if expected_flow_count      > 0 else 1.0
 
-    # Apply threshold logic in Python
-    page_label      = score_to_label(page_score,      pass_threshold)
-    hierarchy_label = score_to_label(hierarchy_score, pass_threshold)
-    flow_label      = score_to_label(flow_score,      pass_threshold)
-
-    # Latency check
+    # Binary pass/fail for browser session and latency only
+    browser_result = data.get("browser_session_success", "failed")
     if latency_ms is not None:
-        latency_label = "passed" if latency_ms <= latency_threshold else "failed"
+        latency_result = "passed" if latency_ms <= latency_threshold else "failed"
     else:
-        latency_label = "skipped"
+        latency_result = "skipped"
 
-    # Overall status
-    all_results = [
-        data.get("browser_session_success", "failed"),
-        page_label,
-        hierarchy_label,
-        flow_label,
-        latency_label
-    ]
-    if "failed" in all_results:
+    # Overall status based on browser session and latency only
+    if browser_result == "failed" or latency_result == "failed":
         overall = "failed"
-    elif "warning" in all_results:
-        overall = "warning"
     else:
         overall = "passed"
 
@@ -210,29 +186,26 @@ Instructions:
         "role":    role,
         "status":  overall,
         "summary": {
-            "browser_session_success":    data.get("browser_session_success", "failed"),
-            "main_structure_coverage":    page_label,
-            "site_hierarchy_correctness": hierarchy_label,
-            "navigation_flow_coverage":   flow_label,
-            "latency":                    latency_label
+            "browser_session_success": browser_result,
+            "latency":                 latency_result
         },
         "scores": {
             "main_structure_coverage": {
                 "actual":   pages_found,
                 "expected": expected_page_count,
-                "score":    round(page_score, 2),
+                "score":    page_score,
                 "result":   f"{pages_found}/{expected_page_count}"
             },
             "site_hierarchy_correctness": {
                 "actual":   hierarchy_correct,
                 "expected": expected_hierarchy_nodes,
-                "score":    round(hierarchy_score, 2),
+                "score":    hierarchy_score,
                 "result":   f"{hierarchy_correct}/{expected_hierarchy_nodes}"
             },
             "navigation_flow_coverage": {
                 "actual":   flows_found,
                 "expected": expected_flow_count,
-                "score":    round(flow_score, 2),
+                "score":    flow_score,
                 "result":   f"{flows_found}/{expected_flow_count}"
             },
             "latency": {
@@ -309,21 +282,24 @@ Examples:
     save_json(report, output_path)
 
     # Print summary
-    status_icon = {"passed": "✅", "warning": "⚠️ ", "failed": "❌"}.get(report["status"], "?")
-    icons       = {"passed": "✅", "warning": "⚠️ ", "failed": "❌", "skipped": "⏭️ "}
+    status_icon = {"passed": "✅", "failed": "❌"}.get(report["status"], "?")
+    icons       = {"passed": "✅", "failed": "❌", "skipped": "⏭️ "}
 
     print(f"\n{'='*55}")
     print(f"TEST REPORT — {report['url']} ({args.role})")
     print(f"{'='*55}")
     print(f"Overall Status: {status_icon} {report['status'].upper()}")
 
-    print(f"\nMatrix Results:")
-    scores = report.get("scores", {})
+    print(f"\nPass/Fail Checks:")
     for check, result in report["summary"].items():
-        icon       = icons.get(result, "?")
-        score_info = scores.get(check, {})
-        score_str  = f"  [{score_info.get('result', '')}]" if score_info.get("result") else ""
-        print(f"  {icon} {check}: {result}{score_str}")
+        print(f"  {icons.get(result, '?')} {check}: {result}")
+
+    print(f"\nNumeric Scores:")
+    for check, info in report["scores"].items():
+        if check == "latency":
+            print(f"  {check}: {info['result']}")
+        else:
+            print(f"  {check}: {info['result']}  (score: {info['score']})")
 
     details = report["details"]
     if details.get("missing_pages"):
@@ -333,8 +309,6 @@ Examples:
     if details.get("hierarchy_issue"):
         print(f"Hierarchy issues: {details['hierarchy_issue']}")
     print(f"Depth:            expected={details['expected_depth']}, actual={details['actual_depth']}")
-    if details.get("latency_ms"):
-        print(f"Latency:          {details['latency_ms']}ms")
 
     print(f"\nEvaluation time: {elapsed}ms")
     print(f"Report saved to: {output_path}")
