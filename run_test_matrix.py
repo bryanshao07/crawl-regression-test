@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Crawl Regression Test Matrix
-Uses OpenAI GPT API to evaluate crawl output against a baseline.
+Uses OpenAI GPT API to evaluate crawl output against a generated baseline.
 
 Setup:
   1. Get an API key at https://platform.openai.com
