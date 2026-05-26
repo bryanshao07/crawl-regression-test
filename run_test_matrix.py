@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Crawl Regression Test Matrix
-Uses OpenAI GPT API to evaluate crawl output against a generated baseline.
+Uses OpenAI GPT API to evaluate crawl output against a baseline.
 
 Setup:
   1. Get an API key at https://platform.openai.com
@@ -9,11 +9,12 @@ Setup:
   3. Create a .env file with: OPENAI_API_KEY=your_key_here
 
 Usage:
-  python run_test_matrix.py --crawl <crawl.json> --baseline <baseline.json> [--output <report.json>] [--role customer|admin]
+  python run_test_matrix.py --crawl <crawl.json> --baseline <baseline.json> [--run <run.json>] [--output <report.json>] [--role customer|admin]
 
 Examples:
   python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json
-  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --role admin
+  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --run crawls/<site>_run.json
+  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --run crawls/<site>_run.json --role admin
 """
 
 import json
@@ -38,29 +39,12 @@ def save_json(data: dict, path: str):
 
 
 def get_baseline_role(baseline: dict, role: str = "customer") -> dict:
-    """
-    Supports both flat and role-split baselines.
-
-    Flat (simple sites with no roles):
-    {
-      "url": "...",
-      "must_have_journeys": [...],
-      "journey_count_range": {...}
-    }
-
-    Role-split (sites with admin dashboard):
-    {
-      "url": "...",
-      "customer": { "must_have_journeys": [...] },
-      "admin":    { "must_have_journeys": [...] }
-    }
-    """
     if role in baseline:
         return baseline[role]
     return baseline
 
 
-def run_test_matrix(crawl_output: dict, baseline: dict, role: str = "customer") -> dict:
+def run_test_matrix(crawl_output: dict, baseline: dict, run_output: dict = None, role: str = "customer") -> dict:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise ValueError(
@@ -70,16 +54,27 @@ def run_test_matrix(crawl_output: dict, baseline: dict, role: str = "customer") 
 
     client = OpenAI(api_key=api_key)
 
+    # Extract crawl data from navigation-laptop.json
     metadata         = crawl_output.get("metadata", {})
     navigation_flows = crawl_output.get("navigation_flows", [])
     coverage_summary = crawl_output.get("coverage_summary", {})
 
-    role_baseline     = get_baseline_role(baseline, role)
-    url               = baseline.get("url", "unknown")
-    min_journeys      = role_baseline.get("journey_count_range", {}).get("min", 3)
-    max_journeys      = role_baseline.get("journey_count_range", {}).get("max", 10)
-    must_haves        = role_baseline.get("must_have_journeys", [])
-    latency_threshold = role_baseline.get("latency_threshold_ms", 480000)
+    # Extract screenshots from crawl run API response if provided
+    # Falls back to navigation-laptop.json if not provided
+    if run_output:
+        crawl_run        = run_output.get("crawl_run", run_output)
+        screenshots      = crawl_run.get("site_structure_llm_screenshot_urls", [])
+    else:
+        screenshots      = crawl_output.get("site_structure_llm_screenshot_urls", [])
+
+    role_baseline      = get_baseline_role(baseline, role)
+    url                = baseline.get("url", "unknown")
+    min_journeys       = role_baseline.get("journey_count_range", {}).get("min", 3)
+    max_journeys       = role_baseline.get("journey_count_range", {}).get("max", 10)
+    must_haves         = role_baseline.get("must_have_journeys", [])
+    latency_threshold  = role_baseline.get("latency_threshold_ms", 480000)
+    screenshot_enabled = role_baseline.get("screenshot_check", {}).get("enabled", True)
+    screenshot_min     = role_baseline.get("screenshot_check", {}).get("min_count", 1)
 
     prompt = f"""
 You are a regression test evaluator for a website crawl system.
@@ -105,6 +100,9 @@ NAVIGATION FLOWS FOUND ({len(navigation_flows)} total):
 COVERAGE SUMMARY:
 {json.dumps(coverage_summary, indent=2)}
 
+SCREENSHOTS FOUND ({len(screenshots)} total):
+{json.dumps(screenshots, indent=2)}
+
 ---
 
 Return this exact JSON structure:
@@ -115,17 +113,19 @@ Return this exact JSON structure:
   "role": "{role}",
   "status": "passed|failed|warning",
   "summary": {{
-    "browser_session_success": "passed|failed",
-    "journey_count_range":     "passed|failed",
+    "browser_session_success":    "passed|failed",
+    "journey_count_range":        "passed|failed",
     "must_have_journey_coverage": "passed|failed|warning",
-    "navigation_flows":        "passed|failed|warning",
-    "latency":                 "passed|failed|skipped"
+    "navigation_flows":           "passed|failed|warning",
+    "latency":                    "passed|failed|skipped",
+    "screenshots":                "passed|failed|skipped"
   }},
   "details": {{
     "missing_journeys":  [],
     "extra_journeys":    [],
     "new_journey_count": 0,
     "latency_ms":        null,
+    "screenshot_count":  0,
     "flow_issues":       [],
     "notes":             ""
   }}
@@ -164,6 +164,13 @@ Evaluation rules:
    - Check metadata for any timing information
    - PASS if within threshold, FAIL if over, SKIP if no timing data available
 
+6. screenshots:
+   - screenshot_check enabled: {screenshot_enabled}
+   - SKIP if screenshot_check.enabled is false
+   - PASS if screenshots array has {screenshot_min} or more entries
+   - FAIL if the array is empty or missing
+   - Set screenshot_count to the actual number of screenshots found
+
 Overall status:
 - "failed"  if ANY item is "failed"
 - "warning" if ANY item is "warning" and none are failed
@@ -187,11 +194,13 @@ def main():
         epilog="""
 Examples:
   python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json
-  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --role admin
+  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --run crawls/<site>_run.json
+  python run_test_matrix.py --crawl crawls/<site>.json --baseline baselines/baseline_<site>.json --run crawls/<site>_run.json --role admin
         """
     )
-    parser.add_argument("--crawl",    required=True,      help="Path to crawl output JSON")
+    parser.add_argument("--crawl",    required=True,      help="Path to navigation-laptop.json from Supabase")
     parser.add_argument("--baseline", required=True,      help="Path to baseline JSON")
+    parser.add_argument("--run",      default=None,       help="Path to crawl run API response JSON (for screenshots)")
     parser.add_argument("--output",   default=None,       help="Path to save report (default: auto-named)")
     parser.add_argument("--role",     default="customer", help="Role to evaluate: customer or admin (default: customer)")
     args = parser.parse_args()
@@ -201,16 +210,25 @@ Examples:
             print(f"Error: {label} file not found: {path}")
             exit(1)
 
+    if args.run and not Path(args.run).exists():
+        print(f"Error: Run file not found: {args.run}")
+        exit(1)
+
     print(f"Loading crawl:    {args.crawl}")
     print(f"Loading baseline: {args.baseline}")
+    if args.run:
+        print(f"Loading run:      {args.run}")
+    else:
+        print(f"Loading run:      not provided (screenshots will be skipped or read from crawl)")
     print(f"Role:             {args.role}")
 
     crawl_output = load_json(args.crawl)
     baseline     = load_json(args.baseline)
+    run_output   = load_json(args.run) if args.run else None
 
     print("\nRunning test matrix evaluation...")
     start   = time.time()
-    report  = run_test_matrix(crawl_output, baseline, role=args.role)
+    report  = run_test_matrix(crawl_output, baseline, run_output=run_output, role=args.role)
     elapsed = round((time.time() - start) * 1000)
     report["details"]["evaluation_time_ms"] = elapsed
 
@@ -235,13 +253,14 @@ Examples:
         print(f"  {icons.get(result, '?')} {check}: {result}")
 
     details = report["details"]
-    print(f"\nJourneys found:  {details['new_journey_count']}")
+    print(f"\nJourneys found:    {details['new_journey_count']}")
+    print(f"Screenshots found: {details.get('screenshot_count', 0)}")
     if details.get("missing_journeys"):
-        print(f"Missing:         {details['missing_journeys']}")
+        print(f"Missing:           {details['missing_journeys']}")
     if details.get("flow_issues"):
-        print(f"Flow issues:     {details['flow_issues']}")
+        print(f"Flow issues:       {details['flow_issues']}")
     if details.get("notes"):
-        print(f"Notes:           {details['notes']}")
+        print(f"Notes:             {details['notes']}")
 
     print(f"\nEvaluation time: {elapsed}ms")
     print(f"Report saved to: {output_path}")
