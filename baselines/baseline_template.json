@@ -2,45 +2,44 @@
   "url": "https://your-website.com/",
   "generated_at": "YYYY-MM-DD",
   "notes": "Describe how this baseline was created and anything to watch out for.",
+  "pass_threshold": 0.8,
 
   "customer": {
     "role": "customer",
     "expected_depth": 2,
     "must_have_pages": [
-      "List main pages/sections that must be discovered",
+      "List main pages that must be discovered",
       "Example: Home",
       "Example: Menu",
-      "Example: Cart",
-      "Example: Checkout"
+      "Example: Cart"
     ],
+    "expected_page_count": 3,
     "expected_hierarchy": {
-      "Home": ["Menu", "Cart"],
-      "Menu": ["Dish Detail", "Filters"]
+      "Example Parent Page": ["Child 1", "Child 2"],
+      "Example Parent 2": ["Child A", "Child B"]
     },
+    "expected_hierarchy_node_count": 4,
     "must_have_flows": [
       "List must-have business flows here",
-      "Example: Browse menu and filter by cuisine",
-      "Example: Add item to cart",
-      "Example: Complete checkout"
+      "Example: Browse products",
+      "Example: Filter by category",
+      "Example: View cart"
     ],
+    "expected_flow_count": 3,
     "latency_threshold_ms": 480000
   },
 
   "admin": {
     "role": "admin",
     "expected_depth": 2,
-    "must_have_pages": [
-      "Example: Admin Dashboard",
-      "Example: Menu Management",
-      "Example: Order Management"
-    ],
+    "must_have_pages": ["Example: Admin Dashboard", "Example: Item Management"],
+    "expected_page_count": 2,
     "expected_hierarchy": {
-      "Admin Dashboard": ["Menu Management", "Order Management"]
+      "Admin Dashboard": ["Item Management"]
     },
-    "must_have_flows": [
-      "Example: Edit menu item",
-      "Example: View orders"
-    ],
+    "expected_hierarchy_node_count": 1,
+    "must_have_flows": ["Example: View items", "Example: Edit item"],
+    "expected_flow_count": 2,
     "latency_threshold_ms": 480000
   }
 }
