@@ -5,28 +5,41 @@
 
   "customer": {
     "role": "customer",
-    "journey_count_range": {
-      "min": 3,
-      "max": 15
-    },
-    "must_have_journeys": [
-      "Add your must-have journey names here",
-      "Example: Browse products",
-      "Example: Add to cart",
+    "expected_depth": 2,
+    "must_have_pages": [
+      "List main pages/sections that must be discovered",
+      "Example: Home",
+      "Example: Menu",
+      "Example: Cart",
       "Example: Checkout"
     ],
-    "baseline_journeys": [
-      {
-        "name": "Example Journey Name",
-        "goal": "One sentence describing what the user accomplishes.",
-        "entry_surface": "homepage",
-        "key_steps": [
-          "Step 1",
-          "Step 2",
-          "Step 3"
-        ],
-        "success_signal": "What indicates this journey completed successfully"
-      }
+    "expected_hierarchy": {
+      "Home": ["Menu", "Cart"],
+      "Menu": ["Dish Detail", "Filters"]
+    },
+    "must_have_flows": [
+      "List must-have business flows here",
+      "Example: Browse menu and filter by cuisine",
+      "Example: Add item to cart",
+      "Example: Complete checkout"
+    ],
+    "latency_threshold_ms": 480000
+  },
+
+  "admin": {
+    "role": "admin",
+    "expected_depth": 2,
+    "must_have_pages": [
+      "Example: Admin Dashboard",
+      "Example: Menu Management",
+      "Example: Order Management"
+    ],
+    "expected_hierarchy": {
+      "Admin Dashboard": ["Menu Management", "Order Management"]
+    },
+    "must_have_flows": [
+      "Example: Edit menu item",
+      "Example: View orders"
     ],
     "latency_threshold_ms": 480000
   }
