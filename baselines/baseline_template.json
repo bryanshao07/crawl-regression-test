@@ -2,7 +2,6 @@
   "url": "https://your-website.com/",
   "generated_at": "YYYY-MM-DD",
   "notes": "Describe how this baseline was created and anything to watch out for.",
-  "pass_threshold": 0.8,
 
   "customer": {
     "role": "customer",
