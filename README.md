@@ -14,14 +14,17 @@ Create a `.env` file with:
 OPENAI_API_KEY=your_key_here
 ```
 
+## Input Files
+
+| File                             | What it is             | How to get it                                                         |
+| -------------------------------- | ---------------------- | --------------------------------------------------------------------- |
+| `crawls/<site>.json`             | Site structure JSON    | Download `navigation-laptop.json` from Supabase after crawl completes |
+| `crawls/<site>_run.json`         | Crawl run API response | Save the GET crawl poll response with `> crawls/<site>_run.json`      |
+| `baselines/baseline_<site>.json` | Known-good baseline    | Copy `baseline_template.json` and fill in manually                    |
+
 ## Usage
 
 ```bash
-python run_test_matrix.py \
-  --crawl crawls/<site>.json \
-  --baseline baselines/baseline_<site>.json
-
-# With crawl run response (enables latency check):
 python run_test_matrix.py \
   --crawl crawls/<site>.json \
   --baseline baselines/baseline_<site>.json \
@@ -31,8 +34,9 @@ python run_test_matrix.py \
 ## Adding a New Website
 
 1. Run a Doable crawl and download the JSON to `crawls/`
-2. Copy `baselines/baseline_template.json`, rename it `baseline_<site>.json`, and fill in must-have pages, hierarchy, and flows
-3. Run the script
+2. Save the crawl run API response to `crawls/<site>_run.json`
+3. Copy `baselines/baseline_template.json`, rename it `baseline_<site>.json`, and fill in must-have pages, hierarchy, and flows
+4. Run the script
 
 Note: site-specific baselines are gitignored — only `baseline_template.json` is committed.
 
