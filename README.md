@@ -27,13 +27,13 @@ Exits 0 on pass, 1 on fail.
 
 ## Test Matrix
 
-| Check                       | Type       | Pass condition                                              |
-| --------------------------- | ---------- | ----------------------------------------------------------- |
-| browser_session_success     | pass/fail  | Site opened and (if required) login worked                  |
-| main_structure_coverage     | pass/fail  | All `must_have_journeys` present in the crawl               |
-| site_hierarchy_correctness  | score      | `found / total baseline_journeys` ≥ `hierarchy_threshold`   |
-| navigation_flow_coverage    | pass/fail  | All `must_have_journeys` present in `navigation_flows`      |
-| latency                     | pass/fail  | Crawl time ≤ `latency_threshold_ms`                         |
+| Check                       | Type       | Pass condition                                                                                |
+| --------------------------- | ---------- | --------------------------------------------------------------------------------------------- |
+| browser_session_success     | pass/fail  | Site opened and (if required) login worked                                                    |
+| main_structure_coverage     | score      | `found / total must_have_journeys` ≥ `main_structure_threshold`                               |
+| site_hierarchy_correctness  | score      | `found / total baseline_journeys` ≥ `hierarchy_threshold`                                     |
+| navigation_flow_coverage    | score      | `found / total must_have_journeys` in `navigation_flows` ≥ `navigation_flow_threshold`        |
+| latency                     | pass/fail  | Crawl time ≤ `latency_threshold_ms`                                                           |
 
 Overall status is `failed` if any single check fails. Every check except `browser_session_success` reports a numeric `score` in the JSON output.
 
@@ -52,7 +52,7 @@ Overall status is `failed` if any single check fails. Every check except `browse
 }
 ```
 
-`hierarchy_threshold` and `latency_threshold_ms` are optional (defaults: `0.6` and `60000`).
+All threshold fields are optional. Defaults: `main_structure_threshold`, `hierarchy_threshold`, and `navigation_flow_threshold` all default to `0.8`; `latency_threshold_ms` defaults to `60000`.
 
 ## Adding a New Website
 

@@ -25,8 +25,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# Defaults used when the baseline omits the field.
-DEFAULT_HIERARCHY_THRESHOLD = 0.6
+# Defaults used when the baseline omits the field. Coverage thresholds are
+# applied as score >= threshold on the three score-based coverage checks.
+DEFAULT_MAIN_STRUCTURE_THRESHOLD = 0.8
+DEFAULT_HIERARCHY_THRESHOLD = 0.8
+DEFAULT_NAV_FLOW_THRESHOLD = 0.8
 DEFAULT_LATENCY_THRESHOLD_MS = 60_000
 
 
@@ -116,8 +119,9 @@ def check_browser_session(crawl: dict, run: dict) -> dict:
     }
 
 
-def check_main_structure_coverage(must_have_journeys: list, crawl_names_union: set) -> dict:
-    """Pass if every must-have journey appears anywhere in the crawl output."""
+def check_main_structure_coverage(must_have_journeys: list, crawl_names_union: set,
+                                  threshold: float) -> dict:
+    """Pass if score (found / total must-have journeys) >= threshold."""
     found, missing = [], []
     for j in must_have_journeys:
         (found if name_in_set(j, crawl_names_union) else missing).append(j)
@@ -125,8 +129,9 @@ def check_main_structure_coverage(must_have_journeys: list, crawl_names_union: s
     total = len(must_have_journeys)
     score = round(len(found) / total, 4) if total > 0 else 1.0
     return {
-        "status": "passed" if not missing else "failed",
+        "status": "passed" if score >= threshold else "failed",
         "score": score,
+        "threshold": threshold,
         "found_count": len(found),
         "total": total,
         "found": found,
@@ -172,8 +177,9 @@ def check_site_hierarchy_correctness(baseline_journeys: list, crawl_names_union:
     }
 
 
-def check_navigation_flow_coverage(must_have_journeys: list, flow_names: set) -> dict:
-    """Pass if every required journey appears as a name in crawl navigation_flows."""
+def check_navigation_flow_coverage(must_have_journeys: list, flow_names: set,
+                                   threshold: float) -> dict:
+    """Pass if score (found / total) of required journeys in navigation_flows >= threshold."""
     found, missing = [], []
     for j in must_have_journeys:
         (found if name_in_set(j, flow_names) else missing).append(j)
@@ -181,8 +187,9 @@ def check_navigation_flow_coverage(must_have_journeys: list, flow_names: set) ->
     total = len(must_have_journeys)
     score = round(len(found) / total, 4) if total > 0 else 1.0
     return {
-        "status": "passed" if not missing else "failed",
+        "status": "passed" if score >= threshold else "failed",
         "score": score,
+        "threshold": threshold,
         "found_count": len(found),
         "total": total,
         "found": found,
@@ -252,7 +259,9 @@ def run_test_matrix(crawl: dict, baseline: dict, run: dict) -> dict:
     url = baseline.get("url", "unknown")
     must_have_journeys = baseline.get("must_have_journeys", []) or []
     baseline_journeys = baseline.get("baseline_journeys", []) or []
+    main_structure_threshold = float(baseline.get("main_structure_threshold", DEFAULT_MAIN_STRUCTURE_THRESHOLD))
     hierarchy_threshold = float(baseline.get("hierarchy_threshold", DEFAULT_HIERARCHY_THRESHOLD))
+    nav_flow_threshold = float(baseline.get("navigation_flow_threshold", DEFAULT_NAV_FLOW_THRESHOLD))
     latency_threshold_ms = int(baseline.get("latency_threshold_ms", DEFAULT_LATENCY_THRESHOLD_MS))
 
     # Crawl-output name sets used by multiple checks.
@@ -262,9 +271,9 @@ def run_test_matrix(crawl: dict, baseline: dict, run: dict) -> dict:
 
     checks = {
         "browser_session_success":    check_browser_session(crawl, run),
-        "main_structure_coverage":    check_main_structure_coverage(must_have_journeys, crawl_names_union),
+        "main_structure_coverage":    check_main_structure_coverage(must_have_journeys, crawl_names_union, main_structure_threshold),
         "site_hierarchy_correctness": check_site_hierarchy_correctness(baseline_journeys, crawl_names_union, hierarchy_threshold),
-        "navigation_flow_coverage":   check_navigation_flow_coverage(must_have_journeys, flow_names),
+        "navigation_flow_coverage":   check_navigation_flow_coverage(must_have_journeys, flow_names, nav_flow_threshold),
         "latency":                    check_latency(compute_latency_ms(run), latency_threshold_ms),
     }
 
@@ -290,11 +299,10 @@ def _detail_str(name: str, check: dict) -> str:
             return "  [latency unknown]"
         return (f"  [{check['latency_ms']}/{check['threshold_ms']}ms "
                 f"score={check['score']}]")
-    if name == "site_hierarchy_correctness":
-        return (f"  [{check['found_count']}/{check['total']} "
-                f"score={check['score']} threshold={check['threshold']}]")
-    # main_structure_coverage and navigation_flow_coverage
-    return f"  [{check['found_count']}/{check['total']} score={check['score']}]"
+    # main_structure_coverage, site_hierarchy_correctness, navigation_flow_coverage
+    # all share the same score/threshold detail shape.
+    return (f"  [{check['found_count']}/{check['total']} "
+            f"score={check['score']} threshold={check['threshold']}]")
 
 
 def print_report(report: dict) -> None:

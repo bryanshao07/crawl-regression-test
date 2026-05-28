@@ -16,6 +16,6 @@
 
   "journey_count_range": { "min": 2, "max": 20 },
 
-  "hierarchy_threshold": 0.6,
+  "hierarchy_threshold": 0.8,
   "latency_threshold_ms": 60000
 }
