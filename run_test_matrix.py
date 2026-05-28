@@ -281,6 +281,22 @@ def run_test_matrix(crawl: dict, baseline: dict, run: dict) -> dict:
 
 # ---------- Reporting ----------
 
+def _detail_str(name: str, check: dict) -> str:
+    """One-line score detail to print next to a matrix row."""
+    if name == "browser_session_success":
+        return ""
+    if name == "latency":
+        if check.get("latency_ms") is None:
+            return "  [latency unknown]"
+        return (f"  [{check['latency_ms']}/{check['threshold_ms']}ms "
+                f"score={check['score']}]")
+    if name == "site_hierarchy_correctness":
+        return (f"  [{check['found_count']}/{check['total']} "
+                f"score={check['score']} threshold={check['threshold']}]")
+    # main_structure_coverage and navigation_flow_coverage
+    return f"  [{check['found_count']}/{check['total']} score={check['score']}]"
+
+
 def print_report(report: dict) -> None:
     label = {"passed": "PASS", "failed": "FAIL"}
     bar = "=" * 60
@@ -291,24 +307,12 @@ def print_report(report: dict) -> None:
     print(f"Overall: [{label.get(report['status'], '????')}] {report['status'].upper()}")
     print()
 
+    checks = report["checks"]
     print("Matrix Results:")
     for name, status in report["summary"].items():
-        print(f"  [{label.get(status, '????')}] {name}: {status}")
+        detail = _detail_str(name, checks[name])
+        print(f"  [{label.get(status, '????')}] {name}: {status}{detail}")
     print()
-
-    checks = report["checks"]
-
-    # Hierarchy detail (always shown — it's the only score-based check).
-    h = checks["site_hierarchy_correctness"]
-    print(f"  Hierarchy score: {h['score_pct']}% (threshold {h['threshold_pct']}%)"
-          f"  [{h['found_count']}/{h['total']}]")
-
-    # Latency detail.
-    lat = checks["latency"]
-    if lat["latency_ms"] is not None:
-        print(f"  Latency: {lat['latency_ms']} ms (threshold {lat['threshold_ms']} ms)")
-    else:
-        print(f"  Latency: unknown  ({lat.get('reason', '')})")
 
     # Browser session detail when something is off.
     bs = checks["browser_session_success"]
