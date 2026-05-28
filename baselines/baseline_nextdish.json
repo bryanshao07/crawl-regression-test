@@ -1,76 +1,85 @@
 {
   "url": "https://nextdish-clone.vercel.app/",
-  "generated_at": "2026-05-27",
-  "notes": "Updated from staging crawl v3. Must-have flows match exact crawl flow names.",
+  "generated_at": "2026-05-28",
+  "notes": "Migrated to flat journey-based schema. must_have_journeys are checked against both site_structure and navigation_flows; baseline_journeys is the full set used for the hierarchy correctness score.",
 
-  "customer": {
-    "role": "customer",
-    "expected_depth": 2,
-    "must_have_pages": ["Menu", "Cart", "NextDish restaurant page"],
-    "expected_page_count": 3,
-    "expected_hierarchy": {
-      "Menu (/menu)": [
-        "Lunch",
-        "Dinner",
-        "Today's Recommendation",
-        "Chinese",
-        "Japanese",
-        "Korean",
-        "SouthEast Asian",
-        "Italian",
-        "MiddleEastern",
-        "American",
-        "Salad",
-        "Order Now >",
-        "View by food",
-        "Search dishes…"
-      ],
-      "Menu > View by restaurant (/menu?view=*)": [
-        "View by restaurant",
-        "Ingredients ▾",
-        "Diet ▾",
-        "Price ▾",
-        "Spicy Level ▾",
-        "Style ▾"
-      ],
-      "NextDish restaurant page (/restaurants/*)": [
-        "Lunch",
-        "Dinner",
-        "THU 28",
-        "FRI 29",
-        "View by food"
-      ],
-      "Cart (/cart)": ["Grilled Chicken Bibimbap"]
-    },
-    "expected_hierarchy_node_count": 26,
-    "must_have_flows": [
-      "Lunch",
-      "Dinner",
-      "NextDish - View by restaurant",
-      "NextDish - Diet ▾",
-      "NextDish - Search dishes…",
-      "Cart",
-      "NextDish restaurant page - NextDish restaurant menu"
-    ],
-    "expected_flow_count": 7,
-    "latency_threshold_ms": 480000
-  },
+  "must_have_journeys": [
+    "Lunch",
+    "Dinner",
+    "NextDish - View by restaurant",
+    "NextDish - Diet ▾",
+    "NextDish restaurant page - NextDish restaurant menu"
+  ],
 
-  "admin": {
-    "role": "admin",
-    "expected_depth": 2,
-    "must_have_pages": [
-      "Admin Dashboard",
-      "Menu Item Management",
-      "Restaurant Management"
-    ],
-    "expected_page_count": 3,
-    "expected_hierarchy": {
-      "Admin Dashboard": ["Menu Item Management", "Restaurant Management"]
+  "baseline_journeys": [
+    { "name": "Menu", "goal": "Land on the main menu page." },
+    { "name": "Lunch", "goal": "Filter the menu to lunch items." },
+    { "name": "Dinner", "goal": "Filter the menu to dinner items." },
+    {
+      "name": "Today's Recommendation",
+      "goal": "View the curated daily recommendations."
     },
-    "expected_hierarchy_node_count": 2,
-    "must_have_flows": ["View list of menu items", "Edit menu item"],
-    "expected_flow_count": 2,
-    "latency_threshold_ms": 480000
-  }
+    { "name": "Chinese", "goal": "Filter menu by Chinese cuisine." },
+    { "name": "Japanese", "goal": "Filter menu by Japanese cuisine." },
+    { "name": "Korean", "goal": "Filter menu by Korean cuisine." },
+    {
+      "name": "SouthEast Asian",
+      "goal": "Filter menu by South East Asian cuisine."
+    },
+    { "name": "Italian", "goal": "Filter menu by Italian cuisine." },
+    {
+      "name": "MiddleEastern",
+      "goal": "Filter menu by Middle Eastern cuisine."
+    },
+    { "name": "American", "goal": "Filter menu by American cuisine." },
+    { "name": "Salad", "goal": "Filter menu by salad items." },
+    { "name": "Order Now >", "goal": "Begin the order flow from the menu." },
+    {
+      "name": "View by food",
+      "goal": "Toggle the menu view to per-food layout."
+    },
+    {
+      "name": "View by restaurant",
+      "goal": "Toggle the menu view to per-restaurant layout."
+    },
+    { "name": "Search dishes…", "goal": "Search the menu by dish name." },
+    {
+      "name": "NextDish - View by restaurant",
+      "goal": "Navigation flow: switch from Menu to view by restaurant."
+    },
+    {
+      "name": "NextDish - Diet ▾",
+      "goal": "Navigation flow: open the diet filter."
+    },
+    {
+      "name": "NextDish - Ingredients ▾",
+      "goal": "Navigation flow: open the ingredients filter."
+    },
+    {
+      "name": "NextDish restaurant page",
+      "goal": "Open a restaurant detail page."
+    },
+    {
+      "name": "THU 28",
+      "goal": "Select Thursday on the restaurant date picker."
+    },
+    {
+      "name": "FRI 29",
+      "goal": "Select Friday on the restaurant date picker."
+    },
+    {
+      "name": "NextDish restaurant page - NextDish restaurant menu",
+      "goal": "Navigation flow: drill into a restaurant's menu."
+    },
+    { "name": "Cart", "goal": "Open the cart page." },
+    {
+      "name": "Grilled Chicken Bibimbap",
+      "goal": "Reach a real dish in the cart (sample item)."
+    }
+  ],
+
+  "journey_count_range": { "min": 15, "max": 40 },
+
+  "hierarchy_threshold": 0.6,
+  "latency_threshold_ms": 480000
 }

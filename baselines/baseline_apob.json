@@ -1,48 +1,65 @@
 {
   "url": "https://app.apob.ai/",
-  "generated_at": "2026-05-27",
-  "notes": "Generated from Manus crawl (78% coverage). Hierarchy score will be low as Doable crawler does not explore sub-pages of History/Publish/Profile/Create Portrait Model. This is a known crawl depth limitation. Must-have flows match exact crawl flow names.",
+  "generated_at": "2026-05-28",
+  "notes": "Migrated to flat journey-based schema. must_have_journeys are checked against both site_structure and navigation_flows; baseline_journeys is the full set used for the hierarchy correctness score.",
 
-  "customer": {
-    "role": "customer",
-    "expected_depth": 2,
-    "must_have_pages": [
-      "Home",
-      "History",
-      "Publish",
-      "Profile",
-      "Create Portrait Model"
-    ],
-    "expected_page_count": 5,
-    "expected_hierarchy": {
-      "Home (/)": [
-        "Create Portrait Model",
-        "Home",
-        "History",
-        "Publish",
-        "Profile",
-        "Community models",
-        "Community content"
-      ],
-      "History (/history)": ["My", "Liked", "Models", "Elements", "Contents"],
-      "Publish (/publish)": ["Channels", "New post", "Queue", "Drafts", "Sent"],
-      "Profile (/profile)": [
-        "Your Nano plan",
-        "Usage details",
-        "Buy more credits",
-        "External accounts"
-      ],
-      "Create Portrait Model (/model/create)": [
-        "Click to upload image",
-        "AI influencer generator",
-        "Model name",
-        "Description",
-        "Public"
-      ]
+  "must_have_journeys": ["Home", "History", "Publish", "Profile"],
+
+  "baseline_journeys": [
+    { "name": "Home", "goal": "Land on the authenticated home workspace." },
+    { "name": "History", "goal": "View past creations and saved items." },
+    {
+      "name": "Publish",
+      "goal": "Open the Publish channel for posting content."
     },
-    "expected_hierarchy_node_count": 26,
-    "must_have_flows": ["Home", "History", "Publish", "Profile"],
-    "expected_flow_count": 4,
-    "latency_threshold_ms": 480000
-  }
+    { "name": "Profile", "goal": "Open the user profile and plan settings." },
+    {
+      "name": "Create Portrait Model",
+      "goal": "Start the portrait-model creation flow."
+    },
+    { "name": "Pricing", "goal": "Browse subscription plans." },
+    { "name": "Nano", "goal": "View the Nano plan tier on the Pricing page." },
+    {
+      "name": "Micro",
+      "goal": "View the Micro plan tier on the Pricing page."
+    },
+    {
+      "name": "Macro",
+      "goal": "View the Macro plan tier on the Pricing page."
+    },
+    { "name": "Mega", "goal": "View the Mega plan tier on the Pricing page." },
+    {
+      "name": "Current plan",
+      "goal": "See which plan the user is currently on."
+    },
+    { "name": "Upgrade plan", "goal": "Open the upgrade-plan dialog." },
+    {
+      "name": "Community models",
+      "goal": "Browse community-shared models from the Home tab."
+    },
+    {
+      "name": "Community content",
+      "goal": "Browse community-shared content from the Home tab."
+    },
+    { "name": "My", "goal": "Filter History to only the user's own items." },
+    { "name": "Liked", "goal": "Filter History to liked items." },
+    { "name": "Models", "goal": "Filter History to models." },
+    { "name": "Elements", "goal": "Filter History to elements." },
+    { "name": "Contents", "goal": "Filter History to contents." },
+    { "name": "Channels", "goal": "Open the Channels tab inside Publish." },
+    { "name": "New post", "goal": "Start a new post from Publish." },
+    { "name": "Queue", "goal": "Open the Queue tab inside Publish." },
+    { "name": "Drafts", "goal": "Open the Drafts tab inside Publish." },
+    { "name": "Sent", "goal": "Open the Sent tab inside Publish." },
+    {
+      "name": "Your Nano plan",
+      "goal": "Inspect the user's Nano plan from Profile."
+    },
+    { "name": "Usage details", "goal": "Inspect detailed usage on Profile." }
+  ],
+
+  "journey_count_range": { "min": 15, "max": 40 },
+
+  "hierarchy_threshold": 0.6,
+  "latency_threshold_ms": 480000
 }

@@ -3,42 +3,19 @@
   "generated_at": "YYYY-MM-DD",
   "notes": "Describe how this baseline was created and anything to watch out for.",
 
-  "customer": {
-    "role": "customer",
-    "expected_depth": 2,
-    "must_have_pages": [
-      "List main pages that must be discovered",
-      "Example: Home",
-      "Example: Menu",
-      "Example: Cart"
-    ],
-    "expected_page_count": 3,
-    "expected_hierarchy": {
-      "Example Parent Page": ["Child 1", "Child 2"],
-      "Example Parent 2": ["Child A", "Child B"]
-    },
-    "expected_hierarchy_node_count": 4,
-    "must_have_flows": [
-      "List must-have business flows here",
-      "Example: Browse products",
-      "Example: Filter by category",
-      "Example: View cart"
-    ],
-    "expected_flow_count": 3,
-    "latency_threshold_ms": 480000
-  },
+  "must_have_journeys": [
+    "Journey name #1",
+    "Journey name #2"
+  ],
 
-  "admin": {
-    "role": "admin",
-    "expected_depth": 2,
-    "must_have_pages": ["Example: Admin Dashboard", "Example: Item Management"],
-    "expected_page_count": 2,
-    "expected_hierarchy": {
-      "Admin Dashboard": ["Item Management"]
-    },
-    "expected_hierarchy_node_count": 1,
-    "must_have_flows": ["Example: View items", "Example: Edit item"],
-    "expected_flow_count": 2,
-    "latency_threshold_ms": 480000
-  }
+  "baseline_journeys": [
+    { "name": "Journey name #1", "goal": "What the user is trying to accomplish in this journey." },
+    { "name": "Journey name #2", "goal": "What the user is trying to accomplish in this journey." },
+    { "name": "Optional journey #3", "goal": "Boosts hierarchy coverage but not required for must-haves." }
+  ],
+
+  "journey_count_range": { "min": 2, "max": 20 },
+
+  "hierarchy_threshold": 0.6,
+  "latency_threshold_ms": 60000
 }
