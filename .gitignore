@@ -10,6 +10,8 @@
 !baselines/
 baselines/*
 !baselines/baseline_template.json
+!baselines/baseline_apob.json
+!baselines/baseline_nextdish.json
 
 # Allow crawls and reports folders but keep them empty
 !crawls/

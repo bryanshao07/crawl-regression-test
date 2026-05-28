@@ -1,0 +1,76 @@
+{
+  "url": "https://nextdish-clone.vercel.app/",
+  "generated_at": "2026-05-27",
+  "notes": "Updated from staging crawl v3. Must-have flows match exact crawl flow names.",
+
+  "customer": {
+    "role": "customer",
+    "expected_depth": 2,
+    "must_have_pages": ["Menu", "Cart", "NextDish restaurant page"],
+    "expected_page_count": 3,
+    "expected_hierarchy": {
+      "Menu (/menu)": [
+        "Lunch",
+        "Dinner",
+        "Today's Recommendation",
+        "Chinese",
+        "Japanese",
+        "Korean",
+        "SouthEast Asian",
+        "Italian",
+        "MiddleEastern",
+        "American",
+        "Salad",
+        "Order Now >",
+        "View by food",
+        "Search dishes…"
+      ],
+      "Menu > View by restaurant (/menu?view=*)": [
+        "View by restaurant",
+        "Ingredients ▾",
+        "Diet ▾",
+        "Price ▾",
+        "Spicy Level ▾",
+        "Style ▾"
+      ],
+      "NextDish restaurant page (/restaurants/*)": [
+        "Lunch",
+        "Dinner",
+        "THU 28",
+        "FRI 29",
+        "View by food"
+      ],
+      "Cart (/cart)": ["Grilled Chicken Bibimbap"]
+    },
+    "expected_hierarchy_node_count": 26,
+    "must_have_flows": [
+      "Lunch",
+      "Dinner",
+      "NextDish - View by restaurant",
+      "NextDish - Diet ▾",
+      "NextDish - Search dishes…",
+      "Cart",
+      "NextDish restaurant page - NextDish restaurant menu"
+    ],
+    "expected_flow_count": 7,
+    "latency_threshold_ms": 480000
+  },
+
+  "admin": {
+    "role": "admin",
+    "expected_depth": 2,
+    "must_have_pages": [
+      "Admin Dashboard",
+      "Menu Item Management",
+      "Restaurant Management"
+    ],
+    "expected_page_count": 3,
+    "expected_hierarchy": {
+      "Admin Dashboard": ["Menu Item Management", "Restaurant Management"]
+    },
+    "expected_hierarchy_node_count": 2,
+    "must_have_flows": ["View list of menu items", "Edit menu item"],
+    "expected_flow_count": 2,
+    "latency_threshold_ms": 480000
+  }
+}

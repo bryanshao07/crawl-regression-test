@@ -1,0 +1,48 @@
+{
+  "url": "https://app.apob.ai/",
+  "generated_at": "2026-05-27",
+  "notes": "Generated from Manus crawl (78% coverage). Hierarchy score will be low as Doable crawler does not explore sub-pages of History/Publish/Profile/Create Portrait Model. This is a known crawl depth limitation. Must-have flows match exact crawl flow names.",
+
+  "customer": {
+    "role": "customer",
+    "expected_depth": 2,
+    "must_have_pages": [
+      "Home",
+      "History",
+      "Publish",
+      "Profile",
+      "Create Portrait Model"
+    ],
+    "expected_page_count": 5,
+    "expected_hierarchy": {
+      "Home (/)": [
+        "Create Portrait Model",
+        "Home",
+        "History",
+        "Publish",
+        "Profile",
+        "Community models",
+        "Community content"
+      ],
+      "History (/history)": ["My", "Liked", "Models", "Elements", "Contents"],
+      "Publish (/publish)": ["Channels", "New post", "Queue", "Drafts", "Sent"],
+      "Profile (/profile)": [
+        "Your Nano plan",
+        "Usage details",
+        "Buy more credits",
+        "External accounts"
+      ],
+      "Create Portrait Model (/model/create)": [
+        "Click to upload image",
+        "AI influencer generator",
+        "Model name",
+        "Description",
+        "Public"
+      ]
+    },
+    "expected_hierarchy_node_count": 26,
+    "must_have_flows": ["Home", "History", "Publish", "Profile"],
+    "expected_flow_count": 4,
+    "latency_threshold_ms": 480000
+  }
+}
