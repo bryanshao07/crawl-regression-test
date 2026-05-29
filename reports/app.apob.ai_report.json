@@ -18,10 +18,10 @@
     },
     "main_structure_coverage": {
       "status": "passed",
-      "score": 0.8333,
+      "score": 1.0,
       "threshold": 0.8,
       "found_count": 5,
-      "total": 6,
+      "total": 5,
       "found": [
         "Home",
         "History",
@@ -29,15 +29,13 @@
         "Profile",
         "Create Portrait Model"
       ],
-      "missing": [
-        "Log in"
-      ]
+      "missing": []
     },
     "site_hierarchy_correctness": {
       "status": "failed",
-      "score": 0.2963,
+      "score": 0.5185,
       "threshold": 0.6,
-      "found_count": 8,
+      "found_count": 14,
       "total": 27,
       "found": [
         "Home",
@@ -45,38 +43,38 @@
         "Publish",
         "Profile",
         "Create Portrait Model",
+        "Community models",
+        "Models",
+        "Elements",
         "Your Nano plan",
         "Click to upload image",
-        "AI influencer generator"
+        "AI influencer generator",
+        "Model name",
+        "Description",
+        "Public"
       ],
       "missing": [
         "Log in",
-        "Community models",
         "Community content",
         "Personal models",
         "Pricing",
         "My",
         "Liked",
-        "Models",
-        "Elements",
         "Contents",
         "New post",
         "Queue",
         "Drafts",
         "Sent",
         "Usage details",
-        "External accounts",
-        "Model name",
-        "Description",
-        "Public"
+        "External accounts"
       ]
     },
     "navigation_flow_coverage": {
       "status": "passed",
-      "score": 0.8333,
+      "score": 1.0,
       "threshold": 0.8,
       "found_count": 5,
-      "total": 6,
+      "total": 5,
       "found": [
         "Home",
         "History",
@@ -84,9 +82,7 @@
         "Profile",
         "Create Portrait Model"
       ],
-      "missing": [
-        "Log in"
-      ]
+      "missing": []
     },
     "latency": {
       "status": "failed",

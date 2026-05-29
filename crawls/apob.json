@@ -13,32 +13,50 @@
     {
       "flow_id": "pay_yearly",
       "name": "Upgrade - Pay yearly",
-      "steps": ["Home → Upgrade", "Upgrade → Pay yearly"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → Pay yearly"
+      ]
     },
     {
       "flow_id": "60_off",
       "name": "Upgrade - -60%off",
-      "steps": ["Home → Upgrade", "Upgrade → -60%off"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → -60%off"
+      ]
     },
     {
       "flow_id": "nano",
       "name": "Upgrade - Nano",
-      "steps": ["Home → Upgrade", "Upgrade → Nano"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → Nano"
+      ]
     },
     {
       "flow_id": "micro",
       "name": "Upgrade - Micro",
-      "steps": ["Home → Upgrade", "Upgrade → Micro"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → Micro"
+      ]
     },
     {
       "flow_id": "macro",
       "name": "Upgrade - Macro",
-      "steps": ["Home → Upgrade", "Upgrade → Macro"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → Macro"
+      ]
     },
     {
       "flow_id": "mega",
       "name": "Upgrade - Mega",
-      "steps": ["Home → Upgrade", "Upgrade → Mega"]
+      "steps": [
+        "Home → Upgrade",
+        "Upgrade → Mega"
+      ]
     },
     {
       "flow_id": "current_plan",
@@ -63,7 +81,10 @@
     {
       "flow_id": "create_portrait_model",
       "name": "Create Portrait Model",
-      "steps": ["Home → Create Portrait Model", "Click Create Portrait Model"]
+      "steps": [
+        "Home → Create Portrait Model",
+        "Click Create Portrait Model"
+      ]
     },
     {
       "flow_id": "click_to_upload_image",
@@ -94,27 +115,40 @@
     {
       "flow_id": "home",
       "name": "Home",
-      "steps": ["Home → Home"]
+      "steps": [
+        "Home → Home"
+      ]
     },
     {
       "flow_id": "history",
       "name": "History",
-      "steps": ["Home → History"]
+      "steps": [
+        "Home → History"
+      ]
     },
     {
       "flow_id": "publish",
       "name": "Publish",
-      "steps": ["Home → Publish"]
+      "steps": [
+        "Home → Publish"
+      ]
     },
     {
       "flow_id": "change_plan",
       "name": "Profile - Change plan",
-      "steps": ["Home → Profile", "Profile → Change plan", "Click Change plan"]
+      "steps": [
+        "Home → Profile",
+        "Profile → Change plan",
+        "Click Change plan"
+      ]
     },
     {
       "flow_id": "buy_more_credits",
       "name": "Profile - Buy more credits",
-      "steps": ["Home → Profile", "Profile → Buy more credits"]
+      "steps": [
+        "Home → Profile",
+        "Profile → Buy more credits"
+      ]
     },
     {
       "flow_id": "pay_monthly",
@@ -130,22 +164,34 @@
     {
       "flow_id": "pay_yearly_60_off",
       "name": "Profile - Pay Yearly -60%off",
-      "steps": ["Home → Profile", "Profile → Pay Yearly -60%off"]
+      "steps": [
+        "Home → Profile",
+        "Profile → Pay Yearly -60%off"
+      ]
     },
     {
       "flow_id": "all",
       "name": "All",
-      "steps": ["Home → All", "Click Next"]
+      "steps": [
+        "Home → All",
+        "Click Next"
+      ]
     },
     {
       "flow_id": "video",
       "name": "Video",
-      "steps": ["Home → Video", "Click Next"]
+      "steps": [
+        "Home → Video",
+        "Click Next"
+      ]
     },
     {
       "flow_id": "image",
       "name": "Image",
-      "steps": ["Home → Image", "Click Next"]
+      "steps": [
+        "Home → Image",
+        "Click Next"
+      ]
     },
     {
       "flow_id": "image_to_video",
@@ -232,12 +278,18 @@
     {
       "flow_id": "add_subtitles",
       "name": "APOB.AI - Add subtitles",
-      "steps": ["Home → APOB.AI", "APOB.AI → Add subtitles"]
+      "steps": [
+        "Home → APOB.AI",
+        "APOB.AI → Add subtitles"
+      ]
     },
     {
       "flow_id": "generate_image",
       "name": "APOB.AI - Generate image",
-      "steps": ["Home → APOB.AI", "APOB.AI → Generate image"]
+      "steps": [
+        "Home → APOB.AI",
+        "APOB.AI → Generate image"
+      ]
     }
   ],
   "site_structure": {
@@ -246,7 +298,10 @@
         {
           "children": [
             {
-              "actions": ["Upgrade now", "Cancel"],
+              "actions": [
+                "Upgrade now",
+                "Cancel"
+              ],
               "name": "One-time",
               "type": "feature"
             },
@@ -309,12 +364,16 @@
           "url": "/subscription"
         },
         {
-          "actions": ["Create Portrait Model"],
+          "actions": [
+            "Create Portrait Model"
+          ],
           "name": "Create Portrait Model",
           "type": "feature"
         },
         {
-          "actions": ["Create your image model now"],
+          "actions": [
+            "Create your image model now"
+          ],
           "children": [
             {
               "description": "Upload a reference image for the model.",
@@ -322,7 +381,10 @@
               "type": "feature"
             },
             {
-              "actions": ["Generate", "Reset"],
+              "actions": [
+                "Generate",
+                "Reset"
+              ],
               "description": "Generate a reference image using APOB's generator.",
               "name": "AI influencer generator",
               "type": "feature"
@@ -346,7 +408,10 @@
             }
           ],
           "name": "Create Portrait Model",
-          "sections": ["Create model: Portrait", "Community models"],
+          "sections": [
+            "Create model: Portrait",
+            "Community models"
+          ],
           "type": "page",
           "url": "/model/create?usage=*"
         },
@@ -363,7 +428,9 @@
         {
           "children": [
             {
-              "actions": ["Change plan"],
+              "actions": [
+                "Change plan"
+              ],
               "description": "Opens plan-change view.",
               "name": "Change plan",
               "type": "feature"
@@ -374,13 +441,19 @@
               "type": "feature"
             },
             {
-              "actions": ["Upgrade now", "Cancel"],
+              "actions": [
+                "Upgrade now",
+                "Cancel"
+              ],
               "description": "Billing mode selector.",
               "name": "One-time",
               "type": "feature"
             },
             {
-              "actions": ["Upgrade", "Upgrade plan"],
+              "actions": [
+                "Upgrade",
+                "Upgrade plan"
+              ],
               "description": "Billing mode selector.",
               "inputs": [
                 {
@@ -399,29 +472,39 @@
           ],
           "description": "Profile/account page showing current credits, plan usage, upgrade options, and linked external accounts.",
           "name": "Profile",
-          "sections": ["Your Nano plan"],
+          "sections": [
+            "Your Nano plan"
+          ],
           "type": "page",
           "url": "/profile"
         },
         {
-          "actions": ["Next"],
+          "actions": [
+            "Next"
+          ],
           "name": "All",
           "type": "feature"
         },
         {
-          "actions": ["Next"],
+          "actions": [
+            "Next"
+          ],
           "name": "Video",
           "type": "feature"
         },
         {
-          "actions": ["Next"],
+          "actions": [
+            "Next"
+          ],
           "name": "Image",
           "type": "feature"
         },
         {
           "children": [
             {
-              "actions": ["Generate"],
+              "actions": [
+                "Generate"
+              ],
               "inputs": [
                 {
                   "name": "Select content",
@@ -464,7 +547,9 @@
               "type": "feature"
             },
             {
-              "actions": ["Generate"],
+              "actions": [
+                "Generate"
+              ],
               "children": [
                 {
                   "name": "Edit character",
@@ -533,7 +618,9 @@
               "type": "feature_group"
             },
             {
-              "actions": ["Generate"],
+              "actions": [
+                "Generate"
+              ],
               "children": [
                 {
                   "name": "Talking Avatar",
@@ -570,7 +657,9 @@
               "type": "feature_group"
             },
             {
-              "actions": ["Generate"],
+              "actions": [
+                "Generate"
+              ],
               "inputs": [
                 {
                   "name": "Prompt",
@@ -613,7 +702,9 @@
               "type": "feature"
             },
             {
-              "actions": ["Generate"],
+              "actions": [
+                "Generate"
+              ],
               "inputs": [
                 {
                   "name": "Select content",

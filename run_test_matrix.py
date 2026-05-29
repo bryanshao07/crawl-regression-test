@@ -57,8 +57,14 @@ def collect_site_structure_names(site_structure: dict) -> set:
         name = node.get("name")
         if name:
             names.add(name)
-        for child in node.get("children", []) or []:
-            walk(child)
+        # Section labels are plain strings, not nested nodes.
+        for section in node.get("sections", []) or []:
+            if isinstance(section, str) and section:
+                names.add(section)
+        # Recurse into both child nodes and input field nodes.
+        for key in ("children", "inputs"):
+            for child in node.get(key, []) or []:
+                walk(child)
 
     walk(site_structure.get("root", {}))
     return names
