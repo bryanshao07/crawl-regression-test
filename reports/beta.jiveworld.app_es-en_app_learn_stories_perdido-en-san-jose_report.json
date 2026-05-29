@@ -34,16 +34,19 @@
     },
     "site_hierarchy_correctness": {
       "status": "failed",
-      "score": 0.2857,
+      "score": 0.3929,
       "threshold": 0.6,
-      "found_count": 8,
+      "found_count": 11,
       "total": 28,
       "found": [
         "Stories",
         "My stats",
         "Miedo",
+        "Soundbites",
         "Duration",
+        "Stories completed",
         "Unlock Jiveworld Espa\u00f1ol",
+        "Stories with Soundbites",
         "7 Soundbites",
         "Credits and resources",
         "Related stories"
@@ -59,13 +62,10 @@
         "Appearance",
         "Country",
         "Topic",
-        "Soundbites",
         "Search",
         "Current streak",
         "Total points",
-        "Stories completed",
         "Vocab learned",
-        "Stories with Soundbites",
         "Personal essays",
         "Manage my account",
         "Support and feedback"
@@ -73,15 +73,16 @@
     },
     "navigation_flow_coverage": {
       "status": "failed",
-      "score": 0.0,
+      "score": 0.4,
       "threshold": 0.8,
-      "found_count": 0,
+      "found_count": 2,
       "total": 5,
-      "found": [],
+      "found": [
+        "Stories",
+        "My stats"
+      ],
       "missing": [
         "Home",
-        "Stories",
-        "My stats",
         "Invitation code",
         "Sign in"
       ]

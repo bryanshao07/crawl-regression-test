@@ -69,13 +69,24 @@ def collect_navigation_flow_names(navigation_flows: list) -> set:
 
 
 def name_in_set(name: str, names: set) -> bool:
-    """Case-insensitive membership check."""
+    """Case-insensitive membership check with bidirectional substring matching.
+
+    Matches if (1) exact (case-insensitive) match, (2) the lookup name is a
+    substring of any name in the set, or (3) any name in the set is a substring
+    of the lookup name. E.g. 'Stories' matches 'Jiveworld - Stories'.
+    """
     if not name:
         return False
     if name in names:
         return True
-    lowered = {n.lower() for n in names}
-    return name.lower() in lowered
+    lowered_name = name.lower()
+    for n in names:
+        lowered_n = n.lower()
+        if lowered_name == lowered_n:
+            return True
+        if lowered_name in lowered_n or lowered_n in lowered_name:
+            return True
+    return False
 
 
 # ---------- The five checks ----------
