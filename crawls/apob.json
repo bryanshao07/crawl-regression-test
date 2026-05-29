@@ -1,0 +1,348 @@
+{
+  "coverage_summary": {
+    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
+    "breadth_coverage": "20 captured states and 25 completed interactions across app.apob.ai, Pricing, Nano, Micro, Macro, Mega, Current plan, Upgrade plan",
+    "depth_reached": "2 levels",
+    "explored": [
+      "app.apob.ai",
+      "Pricing",
+      "Nano",
+      "Micro",
+      "Macro",
+      "Mega",
+      "Current plan",
+      "Upgrade plan",
+      "View all Community content",
+      "All",
+      "Video",
+      "Image",
+      "Create Portrait Model",
+      "Home",
+      "History",
+      "Publish",
+      "Profile",
+      "Talking avatar",
+      "Lip sync",
+      "Video face swap",
+      "Edit clothing",
+      "Face swap"
+    ]
+  },
+  "metadata": {
+    "authenticated": true,
+    "coverage": "comprehensive breadth + depth",
+    "crawl_id": "bfcf196d-5947-48b3-b3aa-1b4ed93b9f5f",
+    "device_type": "laptop",
+    "entry_url": "https://app.apob.ai/",
+    "exploration_depth": "2 levels",
+    "exploration_mode": "browser_structure_explorer",
+    "exploration_time": "browser BFS run",
+    "graph_compaction": {
+      "id_hash": "sha1('<namespace>:<original_id>')[:8], extended only on collision",
+      "interaction_kind": "interaction kind stored as k=<code>",
+      "label": "interaction label stored as l=<index>",
+      "semantic_slot": "removed"
+    },
+    "llm_analyzed_pages": 5,
+    "llm_model": "gpt-5.4-mini",
+    "page_count": 20,
+    "page_patterns": 5,
+    "site": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+    "step_count": 27,
+    "user": "Pricing"
+  },
+  "navigation_flows": [
+    {
+      "flow_id": "nano",
+      "name": "Pricing - Nano",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Nano"
+      ]
+    },
+    {
+      "flow_id": "micro",
+      "name": "Pricing - Micro",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Micro"
+      ]
+    },
+    {
+      "flow_id": "macro",
+      "name": "Pricing - Macro",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Macro"
+      ]
+    },
+    {
+      "flow_id": "mega",
+      "name": "Pricing - Mega",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Mega"
+      ]
+    },
+    {
+      "flow_id": "current_plan",
+      "name": "Pricing - Current plan",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Current plan"
+      ]
+    },
+    {
+      "flow_id": "upgrade_plan",
+      "name": "Pricing - Upgrade plan",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → Upgrade plan"
+      ]
+    },
+    {
+      "flow_id": "view_all_community_content",
+      "name": "Pricing - View all Community content",
+      "steps": [
+        "Home → Pricing",
+        "Pricing → View all Community content"
+      ]
+    },
+    {
+      "flow_id": "create_portrait_model",
+      "name": "Create Portrait Model",
+      "steps": [
+        "Home → Create Portrait Model",
+        "Fill Enter your email",
+        "Click Create Portrait Model",
+        "Click Continue with Google",
+        "Click Continue with Discord",
+        "Click Continue"
+      ]
+    },
+    {
+      "flow_id": "home",
+      "name": "Home",
+      "steps": [
+        "Home → Home"
+      ]
+    },
+    {
+      "flow_id": "history",
+      "name": "History",
+      "steps": [
+        "Home → History"
+      ]
+    },
+    {
+      "flow_id": "publish",
+      "name": "Publish",
+      "steps": [
+        "Home → Publish"
+      ]
+    },
+    {
+      "flow_id": "profile",
+      "name": "Profile",
+      "steps": [
+        "Home → Profile"
+      ]
+    },
+    {
+      "flow_id": "all",
+      "name": "All",
+      "steps": [
+        "Home → All"
+      ]
+    },
+    {
+      "flow_id": "talking_avatar",
+      "name": "Video - Talking avatar",
+      "steps": [
+        "Home → Video",
+        "Video → Talking avatar",
+        "Click Add subtitles",
+        "Click Generate"
+      ]
+    },
+    {
+      "flow_id": "lip_sync",
+      "name": "Video - Lip sync",
+      "steps": [
+        "Home → Video",
+        "Video → Lip sync",
+        "Click Add subtitles",
+        "Click Generate"
+      ]
+    },
+    {
+      "flow_id": "video_face_swap",
+      "name": "Video - Video face swap",
+      "steps": [
+        "Home → Video",
+        "Video → Video face swap",
+        "Click Add subtitles",
+        "Click Generate"
+      ]
+    },
+    {
+      "flow_id": "edit_clothing",
+      "name": "Image - Edit clothing",
+      "steps": [
+        "Home → Image",
+        "Image → Edit clothing",
+        "Click Generate"
+      ]
+    },
+    {
+      "flow_id": "face_swap",
+      "name": "Image - Face swap",
+      "steps": [
+        "Home → Image",
+        "Image → Face swap",
+        "Click Generate"
+      ]
+    }
+  ],
+  "site_structure": {
+    "root": {
+      "children": [
+        {
+          "children": [
+            {
+              "name": "Nano",
+              "type": "feature"
+            },
+            {
+              "name": "Micro",
+              "type": "feature"
+            },
+            {
+              "name": "Macro",
+              "type": "feature"
+            },
+            {
+              "name": "Mega",
+              "type": "feature"
+            },
+            {
+              "name": "Current plan",
+              "type": "feature"
+            },
+            {
+              "name": "Upgrade plan",
+              "type": "feature"
+            },
+            {
+              "children": [
+                {
+                  "name": "All",
+                  "type": "feature"
+                },
+                {
+                  "name": "Video",
+                  "type": "feature"
+                },
+                {
+                  "name": "Image",
+                  "type": "feature"
+                }
+              ],
+              "description": "Visible section title and filter area for community content.",
+              "name": "View all Community content",
+              "type": "feature"
+            }
+          ],
+          "description": "APOB.AI pricing/subscription comparison page with plan cards, billing toggle, and plan upgrade controls.",
+          "name": "Pricing",
+          "type": "page",
+          "url": "/subscription"
+        },
+        {
+          "actions": [
+            "Create Portrait Model",
+            "Continue with Google",
+            "Continue with Discord",
+            "Continue"
+          ],
+          "inputs": [
+            {
+              "name": "Enter your email",
+              "type": "input"
+            }
+          ],
+          "name": "Create Portrait Model",
+          "type": "feature"
+        },
+        {
+          "name": "History",
+          "type": "page",
+          "url": "/history"
+        },
+        {
+          "name": "Publish",
+          "type": "page",
+          "url": "/publish"
+        },
+        {
+          "name": "Profile",
+          "type": "page",
+          "url": "/profile"
+        },
+        {
+          "actions": [
+            "Generate"
+          ],
+          "children": [
+            {
+              "name": "Talking avatar",
+              "type": "sub_feature"
+            },
+            {
+              "name": "Lip sync",
+              "type": "sub_feature"
+            },
+            {
+              "name": "Video face swap",
+              "type": "sub_feature"
+            }
+          ],
+          "inputs": [
+            {
+              "name": "Add subtitles",
+              "type": "button"
+            }
+          ],
+          "name": "Video",
+          "type": "feature_group"
+        },
+        {
+          "actions": [
+            "Generate"
+          ],
+          "children": [
+            {
+              "name": "Edit clothing",
+              "type": "sub_feature"
+            },
+            {
+              "name": "Face swap",
+              "type": "sub_feature"
+            }
+          ],
+          "name": "Image",
+          "type": "feature_group"
+        }
+      ],
+      "description": "Creator AI homepage with portrait-model creation entry points, community model gallery, and community content feed.",
+      "name": "app.apob.ai",
+      "sections": [
+        "Community models",
+        "Community content"
+      ],
+      "type": "hub",
+      "url": "/"
+    }
+  },
+  "version": "2026-04-24"
+}

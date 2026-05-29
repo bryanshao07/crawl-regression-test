@@ -1,0 +1,91 @@
+{
+  "url": "https://nextdish-clone.vercel.app/",
+  "status": "failed",
+  "summary": {
+    "browser_session_success": "passed",
+    "main_structure_coverage": "passed",
+    "site_hierarchy_correctness": "passed",
+    "navigation_flow_coverage": "passed",
+    "latency": "failed"
+  },
+  "checks": {
+    "browser_session_success": {
+      "status": "passed",
+      "site_opened": true,
+      "status_completed": true,
+      "all_pages_authenticated": true,
+      "reason": "ok"
+    },
+    "main_structure_coverage": {
+      "status": "passed",
+      "score": 1.0,
+      "threshold": 0.8,
+      "found_count": 5,
+      "total": 5,
+      "found": [
+        "Lunch",
+        "Dinner",
+        "NextDish - View by restaurant",
+        "NextDish - Diet \u25be",
+        "NextDish restaurant page - NextDish restaurant menu"
+      ],
+      "missing": []
+    },
+    "site_hierarchy_correctness": {
+      "status": "passed",
+      "score": 1.0,
+      "threshold": 0.8,
+      "found_count": 25,
+      "total": 25,
+      "found": [
+        "Menu",
+        "Lunch",
+        "Dinner",
+        "Today's Recommendation",
+        "Chinese",
+        "Japanese",
+        "Korean",
+        "SouthEast Asian",
+        "Italian",
+        "MiddleEastern",
+        "American",
+        "Salad",
+        "Order Now >",
+        "View by food",
+        "View by restaurant",
+        "Search dishes\u2026",
+        "NextDish - View by restaurant",
+        "NextDish - Diet \u25be",
+        "NextDish - Ingredients \u25be",
+        "NextDish restaurant page",
+        "THU 28",
+        "FRI 29",
+        "NextDish restaurant page - NextDish restaurant menu",
+        "Cart",
+        "Grilled Chicken Bibimbap"
+      ],
+      "missing": []
+    },
+    "navigation_flow_coverage": {
+      "status": "passed",
+      "score": 1.0,
+      "threshold": 0.8,
+      "found_count": 5,
+      "total": 5,
+      "found": [
+        "Lunch",
+        "Dinner",
+        "NextDish - View by restaurant",
+        "NextDish - Diet \u25be",
+        "NextDish restaurant page - NextDish restaurant menu"
+      ],
+      "missing": []
+    },
+    "latency": {
+      "status": "failed",
+      "score": 1.8236,
+      "latency_ms": 875322,
+      "threshold_ms": 480000
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "crawl_run": {
+    "id": "bfcf196d-5947-48b3-b3aa-1b4ed93b9f5f",
+    "organization_id": "866009eb-81b8-4582-a59e-feaa72fa1db6",
+    "user_id": "9086b09f-afec-4a93-989e-6deb2439a5a4",
+    "suite_id": null,
+    "requested_url": "https://app.apob.ai/",
+    "normalized_url": "https://app.apob.ai",
+    "status": "completed",
+    "intent": null,
+    "max_depth": 2,
+    "max_pages": 30,
+    "root_page_id": null,
+    "summary": "Site structure graph published.",
+    "error_message": null,
+    "site_structure_graph_document_id": "36f7ef27-9de7-4fa8-976f-c072f7ecb79b",
+    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v4/navigation-laptop.json",
+    "site_structure_llm_screenshot_urls": [
+      {
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "page_url": "https://app.apob.ai/",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible \"Logged out.\" status pill in the header indicates app session state.",
+          "App-internal sidebar navigation and personalized/community workspace content are visible.",
+          "The page shows creator controls like \"Create Portrait Model\" rather than a public login wall."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.88
+      },
+      {
+        "title": "APOB.AI - Gain More Benefits and Credits",
+        "page_url": "https://app.apob.ai/subscription",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Signed-in app workspace page with plan comparison and community content.",
+          "Visible product navigation items such as Home, History, Publish, and Profile in the UI chrome."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.91
+      }
+    ],
+    "site_structure_all_pages_authenticated": true,
+    "site_structure_auth_summary": {
+      "total": 2,
+      "failed_pages": [],
+      "unknown_count": 0,
+      "authenticated_count": 2,
+      "unauthenticated_count": 0,
+      "all_pages_authenticated": true
+    },
+    "page_count": 0,
+    "completed_page_count": 0,
+    "failed_page_count": 0,
+    "created_at": "2026-05-27T19:01:35.842920Z",
+    "updated_at": "2026-05-27T19:07:23.885272Z"
+  },
+  "latency": null,
+  "root_page": null,
+  "crawl_pages": [],
+  "journey_analysis": null
+}

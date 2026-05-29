@@ -13,14 +13,12 @@ baselines/*
 !baselines/baseline_apob.json
 !baselines/baseline_nextdish.json
 
-# Allow crawls and reports folders but keep them empty
+# Allow crawls and reports folders and all their contents
 !crawls/
-crawls/*
-!crawls/.gitkeep
+!crawls/**
 
 !reports/
-reports/*
-!reports/.gitkeep
+!reports/**
 
 # Explicitly ignore sensitive and generated files
 .env

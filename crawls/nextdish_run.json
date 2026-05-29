@@ -1,0 +1,164 @@
+{
+  "crawl_run": {
+    "id": "c3fe3015-9905-49a7-9232-913b78c5faca",
+    "organization_id": "866009eb-81b8-4582-a59e-feaa72fa1db6",
+    "user_id": "9086b09f-afec-4a93-989e-6deb2439a5a4",
+    "suite_id": null,
+    "requested_url": "https://nextdish-clone.vercel.app/",
+    "normalized_url": "https://nextdish-clone.vercel.app",
+    "status": "completed",
+    "intent": null,
+    "max_depth": 2,
+    "max_pages": 30,
+    "root_page_id": null,
+    "summary": "Site structure graph published.",
+    "error_message": null,
+    "site_structure_graph_document_id": "cd6edb23-62db-4976-bdcd-7c36b107ebb0",
+    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v3/navigation-laptop.json",
+    "site_structure_llm_screenshot_urls": [
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Top bar shows profile menu with \"Hi, Admin\"",
+          "Visible cart icon with item count",
+          "Workspace/menu page with location selector and account controls"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account menu shows \"Hi, Admin\".",
+          "Header includes profile and cart controls, indicating a signed-in app state."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows account control 'Hi, Admin'.",
+          "Workspace-style app navigation and cart are visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?view=restaurants",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Hi, Admin profile menu is visible",
+          "cart icon with item count is visible",
+          "address picker and account controls indicate signed-in app state"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?meal=lunch",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible user menu shows \"Hi, Admin\".",
+          "Account/profile and cart controls are present in the header."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?meal=lunch",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows account controls with \"Hi, Admin\".",
+          "Cart icon shows an item count of 1.",
+          "Location and profile menus are visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?date=2026-05-28",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Top bar shows user menu \"Hi, Admin\".",
+          "Profile and cart icons indicate a signed-in workspace session."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants&meal=lunch",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account menu shows \"Hi, Admin\".",
+          "Signed-in workspace controls such as address picker, cart, and profile menu are present."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?date=2026-05-28",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows user menu with \"Hi, Admin\".",
+          "App-internal controls like address picker and cart are visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.96
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants&date=2026-05-28",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows profile menu with \"Hi, Admin\".",
+          "Signed-in workspace controls include address picker, profile menu, and cart."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?meal=dinner&date=2026-05-28",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Profile control shows \"Hi, Admin\"",
+          "Cart icon shows an item count of 1",
+          "Workspace-style header and menu page are visible"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      }
+    ],
+    "site_structure_all_pages_authenticated": true,
+    "site_structure_auth_summary": {
+      "total": 11,
+      "failed_pages": [],
+      "unknown_count": 0,
+      "authenticated_count": 11,
+      "unauthenticated_count": 0,
+      "all_pages_authenticated": true
+    },
+    "page_count": 0,
+    "completed_page_count": 0,
+    "failed_page_count": 0,
+    "created_at": "2026-05-27T18:06:49.600343Z",
+    "updated_at": "2026-05-27T18:21:24.923197Z"
+  },
+  "latency": null,
+  "root_page": null,
+  "crawl_pages": [],
+  "journey_analysis": null
+}

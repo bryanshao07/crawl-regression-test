@@ -1,0 +1,98 @@
+{
+  "url": "https://app.apob.ai/",
+  "status": "failed",
+  "summary": {
+    "browser_session_success": "passed",
+    "main_structure_coverage": "passed",
+    "site_hierarchy_correctness": "failed",
+    "navigation_flow_coverage": "passed",
+    "latency": "passed"
+  },
+  "checks": {
+    "browser_session_success": {
+      "status": "passed",
+      "site_opened": true,
+      "status_completed": true,
+      "all_pages_authenticated": true,
+      "reason": "ok"
+    },
+    "main_structure_coverage": {
+      "status": "passed",
+      "score": 0.8333,
+      "threshold": 0.8,
+      "found_count": 5,
+      "total": 6,
+      "found": [
+        "Home",
+        "History",
+        "Publish",
+        "Profile",
+        "Create Portrait Model"
+      ],
+      "missing": [
+        "Log in"
+      ]
+    },
+    "site_hierarchy_correctness": {
+      "status": "failed",
+      "score": 0.2222,
+      "threshold": 0.6,
+      "found_count": 6,
+      "total": 27,
+      "found": [
+        "Home",
+        "History",
+        "Publish",
+        "Profile",
+        "Create Portrait Model",
+        "Pricing"
+      ],
+      "missing": [
+        "Log in",
+        "Community models",
+        "Community content",
+        "Personal models",
+        "My",
+        "Liked",
+        "Models",
+        "Elements",
+        "Contents",
+        "New post",
+        "Queue",
+        "Drafts",
+        "Sent",
+        "Your Nano plan",
+        "Usage details",
+        "External accounts",
+        "Click to upload image",
+        "AI influencer generator",
+        "Model name",
+        "Description",
+        "Public"
+      ]
+    },
+    "navigation_flow_coverage": {
+      "status": "passed",
+      "score": 0.8333,
+      "threshold": 0.8,
+      "found_count": 5,
+      "total": 6,
+      "found": [
+        "Home",
+        "History",
+        "Publish",
+        "Profile",
+        "Create Portrait Model"
+      ],
+      "missing": [
+        "Log in"
+      ]
+    },
+    "latency": {
+      "status": "passed",
+      "score": 0.7251,
+      "latency_ms": 348042,
+      "threshold_ms": 480000
+    }
+  }
+}
