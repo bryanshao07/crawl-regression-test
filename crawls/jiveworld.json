@@ -1,0 +1,440 @@
+{
+  "navigation_flows": [
+    {
+      "flow_id": "rase_una_vez_una_erre",
+      "name": "7 Soundbites - Érase una vez una erre",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Érase una vez una erre",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "por_ah_est_la_casa",
+      "name": "7 Soundbites - Por ahí está la casa",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Por ahí está la casa",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "teor_as_del_tiempo",
+      "name": "7 Soundbites - Teorías del tiempo",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Teorías del tiempo",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "el_esquema_de_la_ciudad",
+      "name": "7 Soundbites - El esquema de la ciudad",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → El esquema de la ciudad",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "congelando_el_tiempo",
+      "name": "7 Soundbites - Congelando el tiempo",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Congelando el tiempo",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "conversando_con_la_sobrina",
+      "name": "7 Soundbites - Conversando con la sobrina",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Conversando con la sobrina",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "como_en_los_libros",
+      "name": "7 Soundbites - Como en los libros",
+      "steps": [
+        "Jiveworld → 7 Soundbites",
+        "7 Soundbites → Como en los libros",
+        "Click 7 Soundbites",
+        "Click Close"
+      ]
+    },
+    {
+      "flow_id": "costa_rica",
+      "name": "Costa Rica",
+      "steps": [
+        "Jiveworld → Costa Rica"
+      ]
+    },
+    {
+      "flow_id": "urbanism",
+      "name": "Urbanism",
+      "steps": [
+        "Jiveworld → Urbanism"
+      ]
+    },
+    {
+      "flow_id": "politics",
+      "name": "Politics",
+      "steps": [
+        "Jiveworld → Politics"
+      ]
+    },
+    {
+      "flow_id": "uplifting",
+      "name": "Uplifting",
+      "steps": [
+        "Jiveworld → Uplifting"
+      ]
+    },
+    {
+      "flow_id": "credits_and_resources",
+      "name": "Credits and resources",
+      "steps": [
+        "Jiveworld → Credits and resources"
+      ]
+    },
+    {
+      "flow_id": "related_stories",
+      "name": "Related stories",
+      "steps": [
+        "Jiveworld → Related stories"
+      ]
+    },
+    {
+      "flow_id": "go_back",
+      "name": "Subscribers only - Go back",
+      "steps": [
+        "Jiveworld → Subscribers only",
+        "Subscribers only → Go back"
+      ]
+    },
+    {
+      "flow_id": "monthly",
+      "name": "Unlock Jiveworld Español - Monthly",
+      "steps": [
+        "Jiveworld → Unlock Jiveworld Español",
+        "Unlock Jiveworld Español → Monthly",
+        "Click Subscribe"
+      ]
+    },
+    {
+      "flow_id": "yearly",
+      "name": "Unlock Jiveworld Español - Yearly",
+      "steps": [
+        "Jiveworld → Unlock Jiveworld Español",
+        "Unlock Jiveworld Español → Yearly",
+        "Click Subscribe"
+      ]
+    },
+    {
+      "flow_id": "have_a_classroom_coupon_or_promo_code",
+      "name": "Unlock Jiveworld Español - Have a classroom, coupon or promo code?",
+      "steps": [
+        "Jiveworld → Unlock Jiveworld Español",
+        "Unlock Jiveworld Español → Have a classroom, coupon or promo code?",
+        "Click Have a classroom, coupon or promo code?",
+        "Click Subscribe"
+      ]
+    },
+    {
+      "flow_id": "learn_about_our_classroom_licenses",
+      "name": "Unlock Jiveworld Español - Learn about our classroom licenses",
+      "steps": [
+        "Jiveworld → Unlock Jiveworld Español",
+        "Unlock Jiveworld Español → Learn about our classroom licenses",
+        "Click Learn about our classroom licenses",
+        "Click Subscribe"
+      ]
+    },
+    {
+      "flow_id": "duration",
+      "name": "Jiveworld - Duration",
+      "steps": [
+        "Jiveworld → Jiveworld",
+        "Jiveworld → Duration"
+      ]
+    },
+    {
+      "flow_id": "jiveworld",
+      "name": "Jiveworld - Jiveworld",
+      "steps": [
+        "Jiveworld → Jiveworld",
+        "Jiveworld → Jiveworld"
+      ]
+    },
+    {
+      "flow_id": "my_stats",
+      "name": "Jiveworld - My stats",
+      "steps": [
+        "Jiveworld → Jiveworld",
+        "Jiveworld → My stats"
+      ]
+    },
+    {
+      "flow_id": "stories",
+      "name": "Jiveworld - Stories",
+      "steps": [
+        "Jiveworld → Jiveworld",
+        "Jiveworld → Stories"
+      ]
+    }
+  ],
+  "site_structure": {
+    "root": {
+      "children": [
+        {
+          "children": [
+            {
+              "actions": [
+                "7 Soundbites",
+                "Close"
+              ],
+              "children": [
+                {
+                  "name": "Érase una vez una erre",
+                  "sections": [
+                    "Speech & Accents"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "Por ahí está la casa",
+                  "sections": [
+                    "Vocabulary"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "Teorías del tiempo",
+                  "sections": [
+                    "Strategies"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "El esquema de la ciudad",
+                  "sections": [
+                    "Strategies"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "Congelando el tiempo",
+                  "sections": [
+                    "Grammar"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "Conversando con la sobrina",
+                  "sections": [
+                    "History & Culture"
+                  ],
+                  "type": "feature"
+                },
+                {
+                  "name": "Como en los libros",
+                  "sections": [
+                    "History & Culture"
+                  ],
+                  "type": "feature"
+                }
+              ],
+              "description": "Opens the story soundbites modal.",
+              "name": "7 Soundbites",
+              "type": "feature"
+            },
+            {
+              "name": "Costa Rica",
+              "type": "feature"
+            },
+            {
+              "name": "Urbanism",
+              "type": "feature"
+            },
+            {
+              "name": "Politics",
+              "type": "feature"
+            },
+            {
+              "name": "Uplifting",
+              "type": "feature"
+            },
+            {
+              "name": "Credits and resources",
+              "type": "feature"
+            },
+            {
+              "name": "Related stories",
+              "type": "feature"
+            },
+            {
+              "children": [
+                {
+                  "name": "Go back",
+                  "type": "feature"
+                }
+              ],
+              "description": "Subscription gate with access prompt.",
+              "name": "Subscribers only",
+              "type": "feature"
+            },
+            {
+              "actions": [
+                "Subscribe"
+              ],
+              "children": [
+                {
+                  "actions": [
+                    "Have a classroom, coupon or promo code?"
+                  ],
+                  "description": "Link for classroom, coupon, or promo code help.",
+                  "name": "Have a classroom, coupon or promo code?",
+                  "type": "feature"
+                },
+                {
+                  "actions": [
+                    "Learn about our classroom licenses"
+                  ],
+                  "description": "Link to classroom licenses information.",
+                  "name": "Learn about our classroom licenses",
+                  "type": "feature"
+                }
+              ],
+              "description": "Subscription paywall for Jiveworld Español with plan options and subscribe action.",
+              "name": "Unlock Jiveworld Español",
+              "sections": [
+                "Monthly",
+                "Yearly"
+              ],
+              "type": "page",
+              "url": "/es-en/app/profile/subscribe"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "actions": [
+                        "Begin free story"
+                      ],
+                      "description": "Featured story promo with a start button.",
+                      "name": "Miedo",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": [
+                        "Subscribe now",
+                        "Radio Ambulante"
+                      ],
+                      "description": "Subscription upsell area for the Spanish catalog.",
+                      "name": "Unlock Jiveworld Español",
+                      "type": "feature"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "240 aves",
+                          "type": "feature"
+                        },
+                        {
+                          "name": "La fe de Amalia",
+                          "type": "feature"
+                        },
+                        {
+                          "name": "La sentencia",
+                          "type": "feature"
+                        },
+                        {
+                          "name": "Las hijas de Maria Senhorinha",
+                          "type": "feature"
+                        }
+                      ],
+                      "description": "Story collection section with a view-all link and story cards.",
+                      "name": "Show all",
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "Spanish learning home dashboard with story promo, subscription upsell, featured story cards, and left sidebar navigation.",
+                  "name": "Jiveworld",
+                  "sections": [
+                    "Stories with Soundbites"
+                  ],
+                  "type": "page",
+                  "url": "/es-en/app/learn/home"
+                },
+                {
+                  "description": "Progress statistics dashboard with a left app sidebar and a grid of stats cards.",
+                  "name": "My stats",
+                  "sections": [
+                    "My stats"
+                  ],
+                  "type": "page",
+                  "url": "/es-en/app/learn/progress"
+                },
+                {
+                  "children": [
+                    {
+                      "name": "/es-en/app/learn/stories/miedo",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Duration",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Duration",
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "All stories browser with category filters and a vertical list of story cards.",
+                  "name": "Stories",
+                  "sections": [
+                    "All stories"
+                  ],
+                  "type": "page",
+                  "url": "/es-en/app/learn/stories"
+                }
+              ],
+              "description": "Stories library filtered to Costa Rica.",
+              "name": "Jiveworld",
+              "sections": [
+                "All stories"
+              ],
+              "type": "page",
+              "url": "/es-en/app/learn/stories?filter_type=*&filter_value=*"
+            }
+          ],
+          "description": "Story detail page for 'Perdido en San José' with story metadata, tag links, a credits/resources section, related stories section, subscriber gate, and chapter list.",
+          "name": "Jiveworld",
+          "sections": [
+            "Credits and resources",
+            "Related stories"
+          ],
+          "type": "page",
+          "url": "/es-en/app/learn/stories/*"
+        },
+        {
+          "name": "Perdido en San José",
+          "type": "feature"
+        }
+      ],
+      "name": "beta.jiveworld.app",
+      "type": "hub",
+      "url": "/"
+    }
+  },
+  "version": "2026-04-24"
+}

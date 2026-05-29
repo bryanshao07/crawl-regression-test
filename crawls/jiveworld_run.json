@@ -1,0 +1,273 @@
+{
+  "crawl_run": {
+    "id": "ce9bcda0-6a27-4d1e-9ea5-6fa7079d9ff4",
+    "organization_id": "fa986add-691d-450d-8f50-85eecab9ebec",
+    "user_id": "72dbafc9-756e-4313-a730-b3796905378f",
+    "suite_id": null,
+    "requested_url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+    "normalized_url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+    "status": "completed",
+    "intent": null,
+    "max_depth": 2,
+    "max_pages": 30,
+    "root_page_id": null,
+    "summary": "Site structure graph published.",
+    "error_message": null,
+    "site_structure_graph_document_id": "05c93901-c4ae-4b12-8f42-dd75cdd954b2",
+    "site_structure_graph_storage_path": "supabase://kb_documents/fa986add-691d-450d-8f50-85eecab9ebec/site_structure/laptop-json/v1/navigation-laptop.json",
+    "site_structure_llm_screenshot_urls": [
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Story page content is visible inside the app, including story header, tags, and chapter list.",
+          "The page shows subscriber-only gate content, indicating an in-app authenticated state rather than a login screen."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.9
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/profile/subscribe",
+        "auth_state": "unauthenticated",
+        "auth_evidence": [
+          "Subscription unlock page with no signed-in user/profile controls visible",
+          "Paywall copy: 'Unlock Jiveworld Español' and 'Subscribe now to save 20%'"
+        ],
+        "authenticated": false,
+        "auth_confidence": 0.86
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories?filter_type=countries&filter_value=Costa+Rica",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Left sidebar shows account name \"Alex\".",
+          "App-internal navigation and user profile control are visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/home",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Sidebar shows account name \"Alex\"",
+          "Personalized greeting \"Hola, Alex\"",
+          "Signed-in app navigation is visible"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/progress",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Signed-in user menu shows \"Alex\".",
+          "App sidebar with personal navigation and \"My stats\" dashboard."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Left sidebar shows account area with user name Alex",
+          "App-internal navigation and stories workspace are visible"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.96
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/ra-salones-baile",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Story page shows app-internal navigation and private content gate.",
+          "Visible 'Subscribers only' section with 'Go back' and 'Subscribe' buttons, indicating signed-in product context rather than a public login wall."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.78
+      },
+      {
+        "title": "jw-beta",
+        "page_url": "https://checkout.stripe.com/c/pay/cs_test_a1JJlvNmPBbZxMjVvHI2NlIF66H3znisSLecLBIQKLiHXBXpZElelrM2wi",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Checkout shows merchant/workspace label \"jw-beta Sandbox\".",
+          "Stripe payment form is already populated with a visible email address."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.64
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/ra-perro-raro",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Story content and chapter list are visible inside the app.",
+          "No login or sign-up screen is shown."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.9
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/ra-240-aves",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Story detail page within the app with story metadata and chapter navigation visible.",
+          "No login form or sign-in wall; content is shown in an internal authenticated app layout.",
+          "A subscribers-only gate is visible below, indicating gated content rather than an unauthenticated landing page."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.84
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/ra-fe-amalia",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Story page with Jiveworld app chrome and private subscriber gate",
+          "Visible subscription-only content and story detail UI"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.84
+      },
+      {
+        "title": "Jiveworld",
+        "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/sentencia",
+        "auth_state": "unauthenticated",
+        "auth_evidence": ["Subscribers only prompt", "Go back", "Subscribe"],
+        "authenticated": false,
+        "auth_confidence": 0.73
+      }
+    ],
+    "site_structure_all_pages_authenticated": false,
+    "site_structure_auth_summary": {
+      "total": 12,
+      "failed_pages": [
+        {
+          "title": "Jiveworld",
+          "page_url": "https://beta.jiveworld.app/es-en/app/profile/subscribe",
+          "auth_state": "unauthenticated",
+          "auth_evidence": [
+            "Subscription unlock page with no signed-in user/profile controls visible",
+            "Paywall copy: 'Unlock Jiveworld Español' and 'Subscribe now to save 20%'"
+          ],
+          "auth_confidence": 0.86
+        },
+        {
+          "title": "Jiveworld",
+          "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/sentencia",
+          "auth_state": "unauthenticated",
+          "auth_evidence": ["Subscribers only prompt", "Go back", "Subscribe"],
+          "auth_confidence": 0.73
+        }
+      ],
+      "unknown_count": 0,
+      "authenticated_count": 10,
+      "unauthenticated_count": 2,
+      "all_pages_authenticated": false
+    },
+    "page_count": 0,
+    "completed_page_count": 0,
+    "failed_page_count": 0,
+    "created_at": "2026-05-29T18:37:09.028547Z",
+    "updated_at": "2026-05-29T18:48:57.746285Z"
+  },
+  "metadata": {
+    "site": "Jiveworld",
+    "user": "Urbanism",
+    "coverage": "comprehensive breadth + depth",
+    "crawl_id": "ce9bcda0-6a27-4d1e-9ea5-6fa7079d9ff4",
+    "entry_url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+    "llm_model": "gpt-5.4-mini",
+    "page_count": 74,
+    "step_count": 47,
+    "device_type": "laptop",
+    "authenticated": true,
+    "page_patterns": 12,
+    "exploration_mode": "browser_structure_explorer",
+    "exploration_time": "browser BFS run",
+    "exploration_depth": "2 levels",
+    "llm_analyzed_pages": 12,
+    "latency": 708718,
+    "all_pages_authenticated": false,
+    "auth_summary": {
+      "total": 12,
+      "failed_pages": [
+        {
+          "title": "Jiveworld",
+          "page_url": "https://beta.jiveworld.app/es-en/app/profile/subscribe",
+          "auth_state": "unauthenticated",
+          "auth_evidence": [
+            "Subscription unlock page with no signed-in user/profile controls visible",
+            "Paywall copy: 'Unlock Jiveworld Español' and 'Subscribe now to save 20%'"
+          ],
+          "auth_confidence": 0.86
+        },
+        {
+          "title": "Jiveworld",
+          "page_url": "https://beta.jiveworld.app/es-en/app/learn/stories/sentencia",
+          "auth_state": "unauthenticated",
+          "auth_evidence": ["Subscribers only prompt", "Go back", "Subscribe"],
+          "auth_confidence": 0.73
+        }
+      ],
+      "unknown_count": 0,
+      "authenticated_count": 10,
+      "unauthenticated_count": 2,
+      "all_pages_authenticated": false
+    }
+  },
+  "coverage_summary": {
+    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
+    "explored": [
+      "beta.jiveworld.app",
+      "Jiveworld",
+      "7 Soundbites",
+      "Érase una vez una erre",
+      "Por ahí está la casa",
+      "Teorías del tiempo",
+      "El esquema de la ciudad",
+      "Congelando el tiempo",
+      "Conversando con la sobrina",
+      "Como en los libros",
+      "Costa Rica",
+      "Urbanism",
+      "Politics",
+      "Uplifting",
+      "Credits and resources",
+      "Related stories",
+      "Subscribers only",
+      "Go back",
+      "Unlock Jiveworld Español",
+      "Monthly",
+      "Yearly",
+      "Have a classroom, coupon or promo code?",
+      "Learn about our classroom licenses",
+      "Duration",
+      "Miedo",
+      "Show all",
+      "240 aves",
+      "La fe de Amalia",
+      "La sentencia",
+      "Las hijas de Maria Senhorinha",
+      "My stats",
+      "Stories",
+      "/es-en/app/learn/stories/miedo",
+      "Perdido en San José"
+    ],
+    "depth_reached": "2 levels",
+    "breadth_coverage": "74 captured states and 44 completed interactions across beta.jiveworld.app, Jiveworld, 7 Soundbites, Érase una vez una erre, Por ahí está la casa, Teorías del tiempo, El esquema de la ciudad, Congelando el tiempo"
+  },
+  "root_page": null,
+  "crawl_pages": [],
+  "journey_analysis": null
+}

@@ -1,0 +1,89 @@
+{
+  "url": "https://beta.jiveworld.app/es-en/app/learn/home",
+  "status": "failed",
+  "summary": {
+    "browser_session_success": "failed",
+    "main_structure_coverage": "failed",
+    "site_hierarchy_correctness": "failed",
+    "navigation_flow_coverage": "failed",
+    "latency": "failed"
+  },
+  "checks": {
+    "browser_session_success": {
+      "status": "failed",
+      "site_opened": false,
+      "status_completed": true,
+      "all_pages_authenticated": false,
+      "reason": "no pages captured; not all pages authenticated"
+    },
+    "main_structure_coverage": {
+      "status": "failed",
+      "score": 0.4,
+      "threshold": 0.8,
+      "found_count": 2,
+      "total": 5,
+      "found": [
+        "Stories",
+        "My stats"
+      ],
+      "missing": [
+        "Home",
+        "Sign in",
+        "Begin free story"
+      ]
+    },
+    "site_hierarchy_correctness": {
+      "status": "failed",
+      "score": 0.381,
+      "threshold": 0.6,
+      "found_count": 8,
+      "total": 21,
+      "found": [
+        "Stories",
+        "My stats",
+        "Duration",
+        "Miedo",
+        "Unlock Jiveworld Espa\u00f1ol",
+        "7 Soundbites",
+        "Credits and resources",
+        "Related stories"
+      ],
+      "missing": [
+        "Home",
+        "Sign in",
+        "Begin free story",
+        "Invitation code",
+        "Settings",
+        "General",
+        "Player",
+        "Appearance",
+        "Country",
+        "Topic",
+        "Search",
+        "Current streak",
+        "Stories with Soundbites"
+      ]
+    },
+    "navigation_flow_coverage": {
+      "status": "failed",
+      "score": 0.0,
+      "threshold": 0.8,
+      "found_count": 0,
+      "total": 5,
+      "found": [],
+      "missing": [
+        "Home",
+        "Stories",
+        "My stats",
+        "Sign in",
+        "Begin free story"
+      ]
+    },
+    "latency": {
+      "status": "failed",
+      "score": 1.4765,
+      "latency_ms": 708717,
+      "threshold_ms": 480000
+    }
+  }
+}
