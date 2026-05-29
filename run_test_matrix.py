@@ -86,17 +86,17 @@ def check_browser_session(crawl: dict, run: dict) -> dict:
 
     Signals:
       - run.crawl_run.status == "completed"
-      - run.crawl_run.site_structure_all_pages_authenticated truthy
-      - crawl.metadata.page_count > 0
+      - run.metadata.all_pages_authenticated truthy
+      - run.metadata.page_count > 0
     """
-    metadata = crawl.get("metadata", {}) or {}
+    metadata = (run or {}).get("metadata", {}) or {}
     page_count = metadata.get("page_count", 0) or 0
     site_opened = page_count > 0
 
     crawl_run = (run or {}).get("crawl_run", {}) or {}
     status_completed = crawl_run.get("status") == "completed"
-    auth_ok = crawl_run.get("site_structure_all_pages_authenticated")
-    # If the run doesn't tell us about auth, fall back to crawl metadata.
+    auth_ok = metadata.get("all_pages_authenticated")
+    # If the run doesn't tell us about per-page auth, fall back to the overall flag.
     if auth_ok is None:
         auth_ok = metadata.get("authenticated", True)
 

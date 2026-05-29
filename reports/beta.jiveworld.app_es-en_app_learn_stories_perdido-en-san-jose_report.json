@@ -1,5 +1,5 @@
 {
-  "url": "https://beta.jiveworld.app/es-en/app/learn/home",
+  "url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
   "status": "failed",
   "summary": {
     "browser_session_success": "failed",
@@ -11,10 +11,10 @@
   "checks": {
     "browser_session_success": {
       "status": "failed",
-      "site_opened": false,
+      "site_opened": true,
       "status_completed": true,
       "all_pages_authenticated": false,
-      "reason": "no pages captured; not all pages authenticated"
+      "reason": "not all pages authenticated"
     },
     "main_structure_coverage": {
       "status": "failed",
@@ -28,21 +28,21 @@
       ],
       "missing": [
         "Home",
-        "Sign in",
-        "Begin free story"
+        "Invitation code",
+        "Sign in"
       ]
     },
     "site_hierarchy_correctness": {
       "status": "failed",
-      "score": 0.381,
+      "score": 0.2857,
       "threshold": 0.6,
       "found_count": 8,
-      "total": 21,
+      "total": 28,
       "found": [
         "Stories",
         "My stats",
-        "Duration",
         "Miedo",
+        "Duration",
         "Unlock Jiveworld Espa\u00f1ol",
         "7 Soundbites",
         "Credits and resources",
@@ -50,18 +50,25 @@
       ],
       "missing": [
         "Home",
-        "Sign in",
-        "Begin free story",
         "Invitation code",
+        "Sign in",
+        "Listening warm-up",
         "Settings",
         "General",
         "Player",
         "Appearance",
         "Country",
         "Topic",
+        "Soundbites",
         "Search",
         "Current streak",
-        "Stories with Soundbites"
+        "Total points",
+        "Stories completed",
+        "Vocab learned",
+        "Stories with Soundbites",
+        "Personal essays",
+        "Manage my account",
+        "Support and feedback"
       ]
     },
     "navigation_flow_coverage": {
@@ -75,8 +82,8 @@
         "Home",
         "Stories",
         "My stats",
-        "Sign in",
-        "Begin free story"
+        "Invitation code",
+        "Sign in"
       ]
     },
     "latency": {
