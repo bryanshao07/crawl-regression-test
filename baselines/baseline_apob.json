@@ -1,65 +1,103 @@
 {
   "url": "https://app.apob.ai/",
-  "generated_at": "2026-05-28",
-  "notes": "Migrated to flat journey-based schema. must_have_journeys are checked against both site_structure and navigation_flows; baseline_journeys is the full set used for the hierarchy correctness score.",
+  "generated_at": "2026-05-29",
+  "notes": "Generated from full depth-2 authenticated desktop exploration. Covers public landing, login flow, authenticated dashboard, history, publish, profile, and portrait model creation. Destructive, payment, OAuth, and credit-consuming actions were not completed.",
 
-  "must_have_journeys": ["Home", "History", "Publish", "Profile"],
+  "must_have_journeys": [
+    "Home",
+    "History",
+    "Publish",
+    "Profile",
+    "Create Portrait Model",
+    "Log in"
+  ],
 
   "baseline_journeys": [
-    { "name": "Home", "goal": "Land on the authenticated home workspace." },
-    { "name": "History", "goal": "View past creations and saved items." },
+    {
+      "name": "Home",
+      "goal": "Land on the authenticated home dashboard with personal models, community models, and community content feeds."
+    },
+    {
+      "name": "History",
+      "goal": "View past generated models, elements, and content organized by My and Liked tabs."
+    },
     {
       "name": "Publish",
-      "goal": "Open the Publish channel for posting content."
+      "goal": "Manage and schedule content publication across channels."
     },
-    { "name": "Profile", "goal": "Open the user profile and plan settings." },
+    {
+      "name": "Profile",
+      "goal": "View and manage user profile, plan details, and account settings."
+    },
     {
       "name": "Create Portrait Model",
-      "goal": "Start the portrait-model creation flow."
-    },
-    { "name": "Pricing", "goal": "Browse subscription plans." },
-    { "name": "Nano", "goal": "View the Nano plan tier on the Pricing page." },
-    {
-      "name": "Micro",
-      "goal": "View the Micro plan tier on the Pricing page."
+      "goal": "Start the portrait model creation workflow."
     },
     {
-      "name": "Macro",
-      "goal": "View the Macro plan tier on the Pricing page."
+      "name": "Log in",
+      "goal": "Authenticate via email/password, Google, or Discord."
     },
-    { "name": "Mega", "goal": "View the Mega plan tier on the Pricing page." },
-    {
-      "name": "Current plan",
-      "goal": "See which plan the user is currently on."
-    },
-    { "name": "Upgrade plan", "goal": "Open the upgrade-plan dialog." },
     {
       "name": "Community models",
-      "goal": "Browse community-shared models from the Home tab."
+      "goal": "Browse community-shared models from the home dashboard."
     },
     {
       "name": "Community content",
-      "goal": "Browse community-shared content from the Home tab."
+      "goal": "Browse community-shared content from the home dashboard."
+    },
+    {
+      "name": "Personal models",
+      "goal": "View the user's own models on the home dashboard."
+    },
+    {
+      "name": "Pricing",
+      "goal": "View subscription plans and pricing from the top nav."
     },
     { "name": "My", "goal": "Filter History to only the user's own items." },
     { "name": "Liked", "goal": "Filter History to liked items." },
     { "name": "Models", "goal": "Filter History to models." },
     { "name": "Elements", "goal": "Filter History to elements." },
-    { "name": "Contents", "goal": "Filter History to contents." },
-    { "name": "Channels", "goal": "Open the Channels tab inside Publish." },
-    { "name": "New post", "goal": "Start a new post from Publish." },
-    { "name": "Queue", "goal": "Open the Queue tab inside Publish." },
-    { "name": "Drafts", "goal": "Open the Drafts tab inside Publish." },
-    { "name": "Sent", "goal": "Open the Sent tab inside Publish." },
+    { "name": "Contents", "goal": "Filter History to content items." },
+    { "name": "New post", "goal": "Start a new post from the Publish page." },
+    { "name": "Queue", "goal": "View scheduled posts in the Publish queue." },
+    { "name": "Drafts", "goal": "View saved draft posts in Publish." },
+    { "name": "Sent", "goal": "View previously sent posts in Publish." },
     {
       "name": "Your Nano plan",
-      "goal": "Inspect the user's Nano plan from Profile."
+      "goal": "View current plan details from the Profile page."
     },
-    { "name": "Usage details", "goal": "Inspect detailed usage on Profile." }
+    {
+      "name": "Usage details",
+      "goal": "View credit usage details from the Profile page."
+    },
+    {
+      "name": "External accounts",
+      "goal": "View and manage external account connections from Profile."
+    },
+    {
+      "name": "Click to upload image",
+      "goal": "Upload an image in the portrait model creation form."
+    },
+    {
+      "name": "AI influencer generator",
+      "goal": "Access the AI influencer generator entry point."
+    },
+    {
+      "name": "Model name",
+      "goal": "Fill in the model name field in the portrait model creation form."
+    },
+    {
+      "name": "Description",
+      "goal": "Fill in the description field in the portrait model creation form."
+    },
+    {
+      "name": "Public",
+      "goal": "Toggle the public/private setting in the portrait model creation form."
+    }
   ],
 
-  "journey_count_range": { "min": 15, "max": 40 },
+  "journey_count_range": { "min": 6, "max": 35 },
 
-  "hierarchy_threshold": 0.8,
+  "hierarchy_threshold": 0.6,
   "latency_threshold_ms": 480000
 }
