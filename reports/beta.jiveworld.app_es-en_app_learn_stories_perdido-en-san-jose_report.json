@@ -3,9 +3,9 @@
   "status": "failed",
   "summary": {
     "browser_session_success": "failed",
-    "main_structure_coverage": "failed",
+    "main_structure_coverage": "passed",
     "site_hierarchy_correctness": "failed",
-    "navigation_flow_coverage": "failed",
+    "navigation_flow_coverage": "passed",
     "latency": "failed"
   },
   "checks": {
@@ -17,20 +17,17 @@
       "reason": "not all pages authenticated"
     },
     "main_structure_coverage": {
-      "status": "failed",
-      "score": 0.4,
+      "status": "passed",
+      "score": 1.0,
       "threshold": 0.8,
-      "found_count": 2,
-      "total": 5,
+      "found_count": 3,
+      "total": 3,
       "found": [
+        "JiveWorld",
         "Stories",
         "My stats"
       ],
-      "missing": [
-        "Home",
-        "Invitation code",
-        "Sign in"
-      ]
+      "missing": []
     },
     "site_hierarchy_correctness": {
       "status": "failed",
@@ -72,20 +69,17 @@
       ]
     },
     "navigation_flow_coverage": {
-      "status": "failed",
-      "score": 0.4,
+      "status": "passed",
+      "score": 1.0,
       "threshold": 0.8,
-      "found_count": 2,
-      "total": 5,
+      "found_count": 3,
+      "total": 3,
       "found": [
+        "JiveWorld",
         "Stories",
         "My stats"
       ],
-      "missing": [
-        "Home",
-        "Invitation code",
-        "Sign in"
-      ]
+      "missing": []
     },
     "latency": {
       "status": "failed",

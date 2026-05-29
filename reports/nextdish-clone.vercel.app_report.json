@@ -2,7 +2,7 @@
   "url": "https://nextdish-clone.vercel.app/",
   "status": "failed",
   "summary": {
-    "browser_session_success": "passed",
+    "browser_session_success": "failed",
     "main_structure_coverage": "passed",
     "site_hierarchy_correctness": "passed",
     "navigation_flow_coverage": "passed",
@@ -10,11 +10,11 @@
   },
   "checks": {
     "browser_session_success": {
-      "status": "passed",
-      "site_opened": true,
+      "status": "failed",
+      "site_opened": false,
       "status_completed": true,
       "all_pages_authenticated": true,
-      "reason": "ok"
+      "reason": "no pages captured"
     },
     "main_structure_coverage": {
       "status": "passed",

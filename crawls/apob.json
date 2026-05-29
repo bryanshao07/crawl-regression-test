@@ -1,207 +1,243 @@
 {
-  "coverage_summary": {
-    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
-    "breadth_coverage": "20 captured states and 25 completed interactions across app.apob.ai, Pricing, Nano, Micro, Macro, Mega, Current plan, Upgrade plan",
-    "depth_reached": "2 levels",
-    "explored": [
-      "app.apob.ai",
-      "Pricing",
-      "Nano",
-      "Micro",
-      "Macro",
-      "Mega",
-      "Current plan",
-      "Upgrade plan",
-      "View all Community content",
-      "All",
-      "Video",
-      "Image",
-      "Create Portrait Model",
-      "Home",
-      "History",
-      "Publish",
-      "Profile",
-      "Talking avatar",
-      "Lip sync",
-      "Video face swap",
-      "Edit clothing",
-      "Face swap"
-    ]
-  },
-  "metadata": {
-    "authenticated": true,
-    "coverage": "comprehensive breadth + depth",
-    "crawl_id": "bfcf196d-5947-48b3-b3aa-1b4ed93b9f5f",
-    "device_type": "laptop",
-    "entry_url": "https://app.apob.ai/",
-    "exploration_depth": "2 levels",
-    "exploration_mode": "browser_structure_explorer",
-    "exploration_time": "browser BFS run",
-    "graph_compaction": {
-      "id_hash": "sha1('<namespace>:<original_id>')[:8], extended only on collision",
-      "interaction_kind": "interaction kind stored as k=<code>",
-      "label": "interaction label stored as l=<index>",
-      "semantic_slot": "removed"
-    },
-    "llm_analyzed_pages": 5,
-    "llm_model": "gpt-5.4-mini",
-    "page_count": 20,
-    "page_patterns": 5,
-    "site": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
-    "step_count": 27,
-    "user": "Pricing"
-  },
   "navigation_flows": [
     {
-      "flow_id": "nano",
-      "name": "Pricing - Nano",
+      "flow_id": "one_time",
+      "name": "Upgrade - One-time",
       "steps": [
-        "Home → Pricing",
-        "Pricing → Nano"
+        "Home → Upgrade",
+        "Upgrade → One-time",
+        "Click Upgrade now",
+        "Click Cancel"
       ]
+    },
+    {
+      "flow_id": "pay_yearly",
+      "name": "Upgrade - Pay yearly",
+      "steps": ["Home → Upgrade", "Upgrade → Pay yearly"]
+    },
+    {
+      "flow_id": "60_off",
+      "name": "Upgrade - -60%off",
+      "steps": ["Home → Upgrade", "Upgrade → -60%off"]
+    },
+    {
+      "flow_id": "nano",
+      "name": "Upgrade - Nano",
+      "steps": ["Home → Upgrade", "Upgrade → Nano"]
     },
     {
       "flow_id": "micro",
-      "name": "Pricing - Micro",
-      "steps": [
-        "Home → Pricing",
-        "Pricing → Micro"
-      ]
+      "name": "Upgrade - Micro",
+      "steps": ["Home → Upgrade", "Upgrade → Micro"]
     },
     {
       "flow_id": "macro",
-      "name": "Pricing - Macro",
-      "steps": [
-        "Home → Pricing",
-        "Pricing → Macro"
-      ]
+      "name": "Upgrade - Macro",
+      "steps": ["Home → Upgrade", "Upgrade → Macro"]
     },
     {
       "flow_id": "mega",
-      "name": "Pricing - Mega",
-      "steps": [
-        "Home → Pricing",
-        "Pricing → Mega"
-      ]
+      "name": "Upgrade - Mega",
+      "steps": ["Home → Upgrade", "Upgrade → Mega"]
     },
     {
       "flow_id": "current_plan",
-      "name": "Pricing - Current plan",
+      "name": "Upgrade - Current plan",
       "steps": [
-        "Home → Pricing",
-        "Pricing → Current plan"
+        "Home → Upgrade",
+        "Upgrade → Current plan",
+        "Toggle Pay yearly",
+        "Select Switch to monthly billing"
       ]
     },
     {
       "flow_id": "upgrade_plan",
-      "name": "Pricing - Upgrade plan",
+      "name": "Upgrade - Upgrade plan",
       "steps": [
-        "Home → Pricing",
-        "Pricing → Upgrade plan"
-      ]
-    },
-    {
-      "flow_id": "view_all_community_content",
-      "name": "Pricing - View all Community content",
-      "steps": [
-        "Home → Pricing",
-        "Pricing → View all Community content"
+        "Home → Upgrade",
+        "Upgrade → Upgrade plan",
+        "Toggle Pay yearly",
+        "Select Switch to monthly billing"
       ]
     },
     {
       "flow_id": "create_portrait_model",
       "name": "Create Portrait Model",
+      "steps": ["Home → Create Portrait Model", "Click Create Portrait Model"]
+    },
+    {
+      "flow_id": "click_to_upload_image",
+      "name": "Create Portrait Model - Click to upload image",
       "steps": [
         "Home → Create Portrait Model",
-        "Fill Enter your email",
-        "Click Create Portrait Model",
-        "Click Continue with Google",
-        "Click Continue with Discord",
-        "Click Continue"
+        "Create Portrait Model → Click to upload image",
+        "Fill Model name",
+        "Fill Description",
+        "Toggle Public",
+        "Click Create your image model now"
+      ]
+    },
+    {
+      "flow_id": "influencer_generator",
+      "name": "Create Portrait Model - influencer generator",
+      "steps": [
+        "Home → Create Portrait Model",
+        "Create Portrait Model → influencer generator",
+        "Fill Model name",
+        "Fill Description",
+        "Toggle Public",
+        "Click Generate",
+        "Click Reset",
+        "Click Create your image model now"
       ]
     },
     {
       "flow_id": "home",
       "name": "Home",
-      "steps": [
-        "Home → Home"
-      ]
+      "steps": ["Home → Home"]
     },
     {
       "flow_id": "history",
       "name": "History",
-      "steps": [
-        "Home → History"
-      ]
+      "steps": ["Home → History"]
     },
     {
       "flow_id": "publish",
       "name": "Publish",
+      "steps": ["Home → Publish"]
+    },
+    {
+      "flow_id": "change_plan",
+      "name": "Profile - Change plan",
+      "steps": ["Home → Profile", "Profile → Change plan", "Click Change plan"]
+    },
+    {
+      "flow_id": "buy_more_credits",
+      "name": "Profile - Buy more credits",
+      "steps": ["Home → Profile", "Profile → Buy more credits"]
+    },
+    {
+      "flow_id": "pay_monthly",
+      "name": "Profile - Pay Monthly",
       "steps": [
-        "Home → Publish"
+        "Home → Profile",
+        "Profile → Pay Monthly",
+        "Select Switch to annual billing",
+        "Click Upgrade",
+        "Click Upgrade plan"
       ]
     },
     {
-      "flow_id": "profile",
-      "name": "Profile",
-      "steps": [
-        "Home → Profile"
-      ]
+      "flow_id": "pay_yearly_60_off",
+      "name": "Profile - Pay Yearly -60%off",
+      "steps": ["Home → Profile", "Profile → Pay Yearly -60%off"]
     },
     {
       "flow_id": "all",
       "name": "All",
-      "steps": [
-        "Home → All"
-      ]
+      "steps": ["Home → All", "Click Next"]
     },
     {
-      "flow_id": "talking_avatar",
-      "name": "Video - Talking avatar",
+      "flow_id": "video",
+      "name": "Video",
+      "steps": ["Home → Video", "Click Next"]
+    },
+    {
+      "flow_id": "image",
+      "name": "Image",
+      "steps": ["Home → Image", "Click Next"]
+    },
+    {
+      "flow_id": "image_to_video",
+      "name": "APOB.AI - Image to video",
       "steps": [
-        "Home → Video",
-        "Video → Talking avatar",
-        "Click Add subtitles",
+        "Home → APOB.AI",
+        "APOB.AI → Image to video",
+        "Upload Select content",
+        "Upload Upload image",
+        "Click Add last frame",
+        "Select Element",
+        "Fill Camera",
+        "Click Add shot",
+        "Fill Duration",
+        "Select Resolution",
+        "Select Quality",
         "Click Generate"
       ]
     },
     {
-      "flow_id": "lip_sync",
-      "name": "Video - Lip sync",
+      "flow_id": "edit_video",
+      "name": "APOB.AI - Edit video",
       "steps": [
-        "Home → Video",
-        "Video → Lip sync",
-        "Click Add subtitles",
+        "Home → APOB.AI",
+        "APOB.AI → Edit video",
+        "Select Edit style",
+        "Upload Select content",
+        "Upload Upload video",
+        "Upload Upload image",
+        "Fill Duration",
+        "Select Resolution",
+        "Select Quality",
         "Click Generate"
       ]
     },
     {
-      "flow_id": "video_face_swap",
-      "name": "Video - Video face swap",
+      "flow_id": "talking_video",
+      "name": "APOB.AI - Talking video",
       "steps": [
-        "Home → Video",
-        "Video → Video face swap",
-        "Click Add subtitles",
+        "Home → APOB.AI",
+        "APOB.AI → Talking video",
+        "Upload Select content",
+        "Upload Upload image",
+        "Upload Click to upload audio",
+        "Fill Duration",
+        "Select Quality",
         "Click Generate"
       ]
     },
     {
-      "flow_id": "edit_clothing",
-      "name": "Image - Edit clothing",
+      "flow_id": "text_to_video",
+      "name": "APOB.AI - Text to video",
       "steps": [
-        "Home → Image",
-        "Image → Edit clothing",
+        "Home → APOB.AI",
+        "APOB.AI → Text to video",
+        "Fill Prompt",
+        "Select Art style",
+        "Fill Camera movement",
+        "Click Add element",
+        "Select Element",
+        "Select Aspect ratio",
+        "Fill Duration",
+        "Select Resolution",
+        "Select Quality",
         "Click Generate"
       ]
     },
     {
-      "flow_id": "face_swap",
-      "name": "Image - Face swap",
+      "flow_id": "extend_video",
+      "name": "APOB.AI - Extend video",
       "steps": [
-        "Home → Image",
-        "Image → Face swap",
+        "Home → APOB.AI",
+        "APOB.AI → Extend video",
+        "Upload Select content",
+        "Upload Upload video",
+        "Click Add last frame",
+        "Fill Description",
+        "Fill Extend duration",
+        "Select Resolution",
+        "Select Quality",
         "Click Generate"
       ]
+    },
+    {
+      "flow_id": "add_subtitles",
+      "name": "APOB.AI - Add subtitles",
+      "steps": ["Home → APOB.AI", "APOB.AI → Add subtitles"]
+    },
+    {
+      "flow_id": "generate_image",
+      "name": "APOB.AI - Generate image",
+      "steps": ["Home → APOB.AI", "APOB.AI → Generate image"]
     }
   ],
   "site_structure": {
@@ -209,6 +245,19 @@
       "children": [
         {
           "children": [
+            {
+              "actions": ["Upgrade now", "Cancel"],
+              "name": "One-time",
+              "type": "feature"
+            },
+            {
+              "name": "Pay yearly",
+              "type": "feature"
+            },
+            {
+              "name": "-60%off",
+              "type": "feature"
+            },
             {
               "name": "Nano",
               "type": "feature"
@@ -226,53 +275,80 @@
               "type": "feature"
             },
             {
+              "inputs": [
+                {
+                  "name": "Pay yearly",
+                  "type": "toggle"
+                },
+                {
+                  "name": "Switch to monthly billing",
+                  "type": "selector"
+                }
+              ],
               "name": "Current plan",
               "type": "feature"
             },
             {
-              "name": "Upgrade plan",
-              "type": "feature"
-            },
-            {
-              "children": [
+              "inputs": [
                 {
-                  "name": "All",
-                  "type": "feature"
+                  "name": "Pay yearly",
+                  "type": "toggle"
                 },
                 {
-                  "name": "Video",
-                  "type": "feature"
-                },
-                {
-                  "name": "Image",
-                  "type": "feature"
+                  "name": "Switch to monthly billing",
+                  "type": "selector"
                 }
               ],
-              "description": "Visible section title and filter area for community content.",
-              "name": "View all Community content",
+              "name": "Upgrade plan",
               "type": "feature"
             }
           ],
-          "description": "APOB.AI pricing/subscription comparison page with plan cards, billing toggle, and plan upgrade controls.",
-          "name": "Pricing",
+          "description": "Subscription and plan upgrade page showing current plan, upgrade options, billing toggle, and a feature comparison table.",
+          "name": "Upgrade",
           "type": "page",
           "url": "/subscription"
         },
         {
-          "actions": [
-            "Create Portrait Model",
-            "Continue with Google",
-            "Continue with Discord",
-            "Continue"
+          "actions": ["Create Portrait Model"],
+          "name": "Create Portrait Model",
+          "type": "feature"
+        },
+        {
+          "actions": ["Create your image model now"],
+          "children": [
+            {
+              "description": "Upload a reference image for the model.",
+              "name": "Click to upload image",
+              "type": "feature"
+            },
+            {
+              "actions": ["Generate", "Reset"],
+              "description": "Generate a reference image using APOB's generator.",
+              "name": "AI influencer generator",
+              "type": "feature"
+            }
           ],
+          "description": "APOB.AI model creation page for a portrait model.",
           "inputs": [
             {
-              "name": "Enter your email",
-              "type": "input"
+              "max": 32,
+              "name": "Model name",
+              "type": "text"
+            },
+            {
+              "max": 512,
+              "name": "Description",
+              "type": "textarea"
+            },
+            {
+              "name": "Public",
+              "type": "toggle"
             }
           ],
           "name": "Create Portrait Model",
-          "type": "feature"
+          "sections": ["Create model: Portrait", "Community models"],
+          "type": "page",
+          "url": "/model/create?usage=*"
         },
         {
           "name": "History",
@@ -285,61 +361,309 @@
           "url": "/publish"
         },
         {
+          "children": [
+            {
+              "actions": ["Change plan"],
+              "description": "Opens plan-change view.",
+              "name": "Change plan",
+              "type": "feature"
+            },
+            {
+              "description": "Credits purchase action in usage details.",
+              "name": "Buy more credits",
+              "type": "feature"
+            },
+            {
+              "actions": ["Upgrade now", "Cancel"],
+              "description": "Billing mode selector.",
+              "name": "One-time",
+              "type": "feature"
+            },
+            {
+              "actions": ["Upgrade", "Upgrade plan"],
+              "description": "Billing mode selector.",
+              "inputs": [
+                {
+                  "name": "Switch to annual billing",
+                  "type": "selector"
+                }
+              ],
+              "name": "Pay Monthly",
+              "type": "feature"
+            },
+            {
+              "description": "Billing mode selector with discount text.",
+              "name": "Pay Yearly -60%off",
+              "type": "feature"
+            }
+          ],
+          "description": "Profile/account page showing current credits, plan usage, upgrade options, and linked external accounts.",
           "name": "Profile",
+          "sections": ["Your Nano plan"],
           "type": "page",
           "url": "/profile"
         },
         {
-          "actions": [
-            "Generate"
-          ],
-          "children": [
-            {
-              "name": "Talking avatar",
-              "type": "sub_feature"
-            },
-            {
-              "name": "Lip sync",
-              "type": "sub_feature"
-            },
-            {
-              "name": "Video face swap",
-              "type": "sub_feature"
-            }
-          ],
-          "inputs": [
-            {
-              "name": "Add subtitles",
-              "type": "button"
-            }
-          ],
-          "name": "Video",
-          "type": "feature_group"
+          "actions": ["Next"],
+          "name": "All",
+          "type": "feature"
         },
         {
-          "actions": [
-            "Generate"
-          ],
+          "actions": ["Next"],
+          "name": "Video",
+          "type": "feature"
+        },
+        {
+          "actions": ["Next"],
+          "name": "Image",
+          "type": "feature"
+        },
+        {
           "children": [
             {
-              "name": "Edit clothing",
-              "type": "sub_feature"
+              "actions": ["Generate"],
+              "inputs": [
+                {
+                  "name": "Select content",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Upload image",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Add last frame",
+                  "type": "button"
+                },
+                {
+                  "name": "Element",
+                  "type": "selector"
+                },
+                {
+                  "name": "Camera",
+                  "type": "text_input"
+                },
+                {
+                  "name": "Add shot",
+                  "type": "button"
+                },
+                {
+                  "name": "Duration",
+                  "type": "input"
+                },
+                {
+                  "name": "Resolution",
+                  "type": "selector"
+                },
+                {
+                  "name": "Quality",
+                  "type": "selector"
+                }
+              ],
+              "name": "Image to video",
+              "type": "feature"
             },
             {
-              "name": "Face swap",
-              "type": "sub_feature"
+              "actions": ["Generate"],
+              "children": [
+                {
+                  "name": "Edit character",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Edit motion",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Edit everything",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Video face swap",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Edit shot",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Edit product",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Edit background",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Upscale",
+                  "type": "sub_feature"
+                }
+              ],
+              "inputs": [
+                {
+                  "name": "Edit style",
+                  "type": "selector"
+                },
+                {
+                  "name": "Select content",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Upload video",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Upload image",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Duration",
+                  "type": "input"
+                },
+                {
+                  "name": "Resolution",
+                  "type": "selector"
+                },
+                {
+                  "name": "Quality",
+                  "type": "selector"
+                }
+              ],
+              "name": "Edit video",
+              "type": "feature_group"
+            },
+            {
+              "actions": ["Generate"],
+              "children": [
+                {
+                  "name": "Talking Avatar",
+                  "type": "sub_feature"
+                },
+                {
+                  "name": "Lip sync",
+                  "type": "sub_feature"
+                }
+              ],
+              "inputs": [
+                {
+                  "name": "Select content",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Upload image",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Click to upload audio",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Duration",
+                  "type": "input"
+                },
+                {
+                  "name": "Quality",
+                  "type": "selector"
+                }
+              ],
+              "name": "Talking video",
+              "type": "feature_group"
+            },
+            {
+              "actions": ["Generate"],
+              "inputs": [
+                {
+                  "name": "Prompt",
+                  "type": "text_input"
+                },
+                {
+                  "name": "Art style",
+                  "type": "selector"
+                },
+                {
+                  "name": "Camera movement",
+                  "type": "text_input"
+                },
+                {
+                  "name": "Add element",
+                  "type": "button"
+                },
+                {
+                  "name": "Element",
+                  "type": "selector"
+                },
+                {
+                  "name": "Aspect ratio",
+                  "type": "selector"
+                },
+                {
+                  "name": "Duration",
+                  "type": "input"
+                },
+                {
+                  "name": "Resolution",
+                  "type": "selector"
+                },
+                {
+                  "name": "Quality",
+                  "type": "selector"
+                }
+              ],
+              "name": "Text to video",
+              "type": "feature"
+            },
+            {
+              "actions": ["Generate"],
+              "inputs": [
+                {
+                  "name": "Select content",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Upload video",
+                  "type": "upload/select"
+                },
+                {
+                  "name": "Add last frame",
+                  "type": "button"
+                },
+                {
+                  "name": "Description",
+                  "type": "text_area"
+                },
+                {
+                  "name": "Extend duration",
+                  "type": "input"
+                },
+                {
+                  "name": "Resolution",
+                  "type": "selector"
+                },
+                {
+                  "name": "Quality",
+                  "type": "selector"
+                }
+              ],
+              "name": "Extend video",
+              "type": "feature"
+            },
+            {
+              "name": "Add subtitles",
+              "type": "feature"
+            },
+            {
+              "name": "Generate image",
+              "type": "feature"
             }
           ],
-          "name": "Image",
-          "type": "feature_group"
+          "description": "Content creation page for personalized AI image and video generation.",
+          "name": "APOB.AI",
+          "type": "page",
+          "url": "/content/create?model=*"
         }
       ],
-      "description": "Creator AI homepage with portrait-model creation entry points, community model gallery, and community content feed.",
+      "description": "Creator AI home page with portrait model creation and community model gallery.",
       "name": "app.apob.ai",
-      "sections": [
-        "Community models",
-        "Community content"
-      ],
       "type": "hub",
       "url": "/"
     }

@@ -1,6 +1,6 @@
 {
   "crawl_run": {
-    "id": "bfcf196d-5947-48b3-b3aa-1b4ed93b9f5f",
+    "id": "be974050-dc79-4fe0-8931-bd345bd354d1",
     "organization_id": "866009eb-81b8-4582-a59e-feaa72fa1db6",
     "user_id": "9086b09f-afec-4a93-989e-6deb2439a5a4",
     "suite_id": null,
@@ -13,49 +13,196 @@
     "root_page_id": null,
     "summary": "Site structure graph published.",
     "error_message": null,
-    "site_structure_graph_document_id": "36f7ef27-9de7-4fa8-976f-c072f7ecb79b",
-    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v4/navigation-laptop.json",
+    "site_structure_graph_document_id": "57d66fee-417e-48a3-ad42-588395b30a7f",
+    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v7/navigation-laptop.json",
     "site_structure_llm_screenshot_urls": [
       {
         "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
         "page_url": "https://app.apob.ai/",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Visible \"Logged out.\" status pill in the header indicates app session state.",
-          "App-internal sidebar navigation and personalized/community workspace content are visible.",
-          "The page shows creator controls like \"Create Portrait Model\" rather than a public login wall."
+          "Visible credits balance (80 credits)",
+          "Upgrade and account/workspace name \"APOB_dYZ1\" in the top bar",
+          "Signed-in creator dashboard with private/community content"
         ],
         "authenticated": true,
-        "auth_confidence": 0.88
+        "auth_confidence": 0.97
+      },
+      {
+        "title": "APOB.AI - Generate Personalized AI Image & Video",
+        "page_url": "https://app.apob.ai/content/create?model=model-3b4e41c7-afa3-47e3-9552-cf1f80ae14d7",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Signed-in account name Sara is visible in the header.",
+          "Credits and workspace controls are shown (\"80 credits\", \"Upgrade\", workspace/avatar area)."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "APOB.AI - Create Personalized AI Model",
+        "page_url": "https://app.apob.ai/model/create?usage=portraitSim",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible credits and account name/avatar: 80 credits, APOB_dYZ1",
+          "Upgrade and referral/account controls in the top bar"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.96
       },
       {
         "title": "APOB.AI - Gain More Benefits and Credits",
         "page_url": "https://app.apob.ai/subscription",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Signed-in app workspace page with plan comparison and community content.",
-          "Visible product navigation items such as Home, History, Publish, and Profile in the UI chrome."
+          "Workspace/app page with plan cards and subscription comparison table.",
+          "Visible account/workspace signal: APOB_dYZ1 and app-internal upgrade controls."
         ],
         "authenticated": true,
-        "auth_confidence": 0.91
+        "auth_confidence": 0.92
+      },
+      {
+        "title": "APOB.AI - Profile & Account Management",
+        "page_url": "https://app.apob.ai/profile",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account name APOB_dYZ1",
+          "Credits shown in top bar",
+          "Profile/account management page with upgrade and linked account controls"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "APOB.AI - Personalized AI Image & Video",
+        "page_url": "https://app.apob.ai/content/18030365",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Top bar shows credits and account controls",
+          "Visible signed-in workspace/account label 'APOB_dYZ1'",
+          "Upgrade and referral controls are present in-app"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "APOB.AI - Previously Generated Personalized AI Image & Video",
+        "page_url": "https://app.apob.ai/history",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible credits and Upgrade in the top bar",
+          "Workspace/user label APOB_dYZ1",
+          "App-internal modal over authenticated workspace"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.89
+      },
+      {
+        "title": "APOB.AI - Publish Personalized AI Image & Video",
+        "page_url": "https://app.apob.ai/publish",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Top-right shows account name APOB_dYZ1",
+          "Visible credits: 80 credits",
+          "Workspace navigation and publish tools are shown"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.96
       }
     ],
     "site_structure_all_pages_authenticated": true,
     "site_structure_auth_summary": {
-      "total": 2,
+      "total": 8,
       "failed_pages": [],
       "unknown_count": 0,
-      "authenticated_count": 2,
+      "authenticated_count": 8,
       "unauthenticated_count": 0,
       "all_pages_authenticated": true
     },
     "page_count": 0,
     "completed_page_count": 0,
     "failed_page_count": 0,
-    "created_at": "2026-05-27T19:01:35.842920Z",
-    "updated_at": "2026-05-27T19:07:23.885272Z"
+    "created_at": "2026-05-29T21:19:31.650281Z",
+    "updated_at": "2026-05-29T21:43:46.237440Z"
   },
-  "latency": null,
+  "metadata": {
+    "site": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+    "user": "Upgrade",
+    "credits": 80,
+    "coverage": "comprehensive breadth + depth",
+    "crawl_id": "be974050-dc79-4fe0-8931-bd345bd354d1",
+    "entry_url": "https://app.apob.ai/",
+    "llm_model": "gpt-5.4-mini",
+    "page_count": 69,
+    "step_count": 86,
+    "device_type": "laptop",
+    "authenticated": true,
+    "page_patterns": 10,
+    "exploration_mode": "browser_structure_explorer",
+    "exploration_time": "browser BFS run",
+    "exploration_depth": "2 levels",
+    "llm_analyzed_pages": 10,
+    "latency": 1454587,
+    "all_pages_authenticated": true,
+    "auth_summary": {
+      "total": 8,
+      "failed_pages": [],
+      "unknown_count": 0,
+      "authenticated_count": 8,
+      "unauthenticated_count": 0,
+      "all_pages_authenticated": true
+    }
+  },
+  "coverage_summary": {
+    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
+    "explored": [
+      "app.apob.ai",
+      "Upgrade",
+      "One-time",
+      "Pay yearly",
+      "-60%off",
+      "Nano",
+      "Micro",
+      "Macro",
+      "Mega",
+      "Current plan",
+      "Upgrade plan",
+      "Create Portrait Model",
+      "Click to upload image",
+      "AI influencer generator",
+      "Home",
+      "History",
+      "Publish",
+      "Profile",
+      "Change plan",
+      "Buy more credits",
+      "Pay Monthly",
+      "Pay Yearly -60%off",
+      "All",
+      "Video",
+      "Image",
+      "APOB.AI",
+      "Image to video",
+      "Edit video",
+      "Edit character",
+      "Edit motion",
+      "Edit everything",
+      "Video face swap",
+      "Edit shot",
+      "Edit product",
+      "Edit background",
+      "Upscale",
+      "Talking video",
+      "Talking Avatar",
+      "Lip sync",
+      "Text to video",
+      "Extend video",
+      "Add subtitles",
+      "Generate image"
+    ],
+    "depth_reached": "2 levels",
+    "breadth_coverage": "69 captured states and 86 completed interactions across app.apob.ai, Upgrade, One-time, Pay yearly, -60%off, Nano, Micro, Macro"
+  },
   "root_page": null,
   "crawl_pages": [],
   "journey_analysis": null

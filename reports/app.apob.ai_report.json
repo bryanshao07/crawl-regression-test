@@ -6,7 +6,7 @@
     "main_structure_coverage": "passed",
     "site_hierarchy_correctness": "failed",
     "navigation_flow_coverage": "passed",
-    "latency": "passed"
+    "latency": "failed"
   },
   "checks": {
     "browser_session_success": {
@@ -35,9 +35,9 @@
     },
     "site_hierarchy_correctness": {
       "status": "failed",
-      "score": 0.2222,
+      "score": 0.2963,
       "threshold": 0.6,
-      "found_count": 6,
+      "found_count": 8,
       "total": 27,
       "found": [
         "Home",
@@ -45,13 +45,16 @@
         "Publish",
         "Profile",
         "Create Portrait Model",
-        "Pricing"
+        "Your Nano plan",
+        "Click to upload image",
+        "AI influencer generator"
       ],
       "missing": [
         "Log in",
         "Community models",
         "Community content",
         "Personal models",
+        "Pricing",
         "My",
         "Liked",
         "Models",
@@ -61,11 +64,8 @@
         "Queue",
         "Drafts",
         "Sent",
-        "Your Nano plan",
         "Usage details",
         "External accounts",
-        "Click to upload image",
-        "AI influencer generator",
         "Model name",
         "Description",
         "Public"
@@ -89,9 +89,9 @@
       ]
     },
     "latency": {
-      "status": "passed",
-      "score": 0.7251,
-      "latency_ms": 348042,
+      "status": "failed",
+      "score": 3.0304,
+      "latency_ms": 1454587,
       "threshold_ms": 480000
     }
   }
