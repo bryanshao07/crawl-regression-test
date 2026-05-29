@@ -2,7 +2,7 @@
   "url": "https://nextdish-clone.vercel.app/",
   "status": "failed",
   "summary": {
-    "browser_session_success": "failed",
+    "browser_session_success": "passed",
     "main_structure_coverage": "passed",
     "site_hierarchy_correctness": "passed",
     "navigation_flow_coverage": "passed",
@@ -10,11 +10,11 @@
   },
   "checks": {
     "browser_session_success": {
-      "status": "failed",
-      "site_opened": false,
+      "status": "passed",
+      "site_opened": true,
       "status_completed": true,
       "all_pages_authenticated": true,
-      "reason": "no pages captured"
+      "reason": "ok"
     },
     "main_structure_coverage": {
       "status": "passed",
@@ -33,12 +33,11 @@
     },
     "site_hierarchy_correctness": {
       "status": "passed",
-      "score": 1.0,
+      "score": 0.84,
       "threshold": 0.8,
-      "found_count": 25,
+      "found_count": 21,
       "total": 25,
       "found": [
-        "Menu",
         "Lunch",
         "Dinner",
         "Today's Recommendation",
@@ -58,33 +57,36 @@
         "NextDish - Diet \u25be",
         "NextDish - Ingredients \u25be",
         "NextDish restaurant page",
+        "NextDish restaurant page - NextDish restaurant menu",
+        "Cart"
+      ],
+      "missing": [
+        "Menu",
         "THU 28",
         "FRI 29",
-        "NextDish restaurant page - NextDish restaurant menu",
-        "Cart",
         "Grilled Chicken Bibimbap"
-      ],
-      "missing": []
+      ]
     },
     "navigation_flow_coverage": {
       "status": "passed",
-      "score": 1.0,
+      "score": 0.8,
       "threshold": 0.8,
-      "found_count": 5,
+      "found_count": 4,
       "total": 5,
       "found": [
         "Lunch",
         "Dinner",
         "NextDish - View by restaurant",
-        "NextDish - Diet \u25be",
-        "NextDish restaurant page - NextDish restaurant menu"
+        "NextDish - Diet \u25be"
       ],
-      "missing": []
+      "missing": [
+        "NextDish restaurant page - NextDish restaurant menu"
+      ]
     },
     "latency": {
       "status": "failed",
-      "score": 1.8236,
-      "latency_ms": 875322,
+      "score": 2.9425,
+      "latency_ms": 1412382,
       "threshold_ms": 480000
     }
   }

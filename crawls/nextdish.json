@@ -1,262 +1,189 @@
 {
-  "coverage_summary": {
-    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
-    "breadth_coverage": "113 captured states and 130 completed interactions across nextdish-clone.vercel.app, Menu, Today's Recommendation, Salad, NextDish restaurant page, NextDish, ‹ Back to Menu, Ingredients",
-    "depth_reached": "2 levels",
-    "explored": [
-      "nextdish-clone.vercel.app",
-      "Menu",
-      "Today's Recommendation",
-      "Salad",
-      "NextDish restaurant page",
-      "NextDish",
-      "‹ Back to Menu",
-      "Ingredients",
-      "Diet",
-      "Price",
-      "Spicy Level",
-      "Style",
-      "NextDish restaurant menu",
-      "Lunch",
-      "Dinner",
-      "THU 28",
-      "FRI 29",
-      "View by food",
-      "View by restaurant",
-      "Ingredients ▾",
-      "Diet ▾",
-      "Price ▾",
-      "Spicy Level ▾",
-      "Style ▾",
-      "Favorite Beef Chow Fun",
-      "Favorite Kung Pao Chicken",
-      "Favorite Modified Test Item 2026-05-21",
-      "Order Now >",
-      "NextDish Menu",
-      "🌶",
-      "spicy 1",
-      "Search dishes…",
-      "Chinese",
-      "Japanese",
-      "Korean",
-      "SouthEast Asian",
-      "Italian",
-      "MiddleEastern",
-      "American",
-      "📍 Set address ▾",
-      "Cart",
-      "Grilled Chicken Bibimbap"
-    ]
-  },
-  "metadata": {
-    "authenticated": true,
-    "coverage": "comprehensive breadth + depth",
-    "crawl_id": "c3fe3015-9905-49a7-9232-913b78c5faca",
-    "device_type": "laptop",
-    "entry_url": "https://nextdish-clone.vercel.app/",
-    "exploration_depth": "2 levels",
-    "exploration_mode": "browser_structure_explorer",
-    "exploration_time": "browser BFS run",
-    "graph_compaction": {
-      "id_hash": "sha1('<namespace>:<original_id>')[:8], extended only on collision",
-      "interaction_kind": "interaction kind stored as k=<code>",
-      "label": "interaction label stored as l=<index>",
-      "semantic_slot": "removed"
-    },
-    "llm_analyzed_pages": 14,
-    "llm_model": "gpt-5.4-mini",
-    "page_count": 113,
-    "page_patterns": 14,
-    "site": "NextDish",
-    "step_count": 131,
-    "user": "nextdish"
-  },
   "navigation_flows": [
     {
       "flow_id": "order_now",
       "name": "NextDish - Order Now >",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → Order Now >",
-        "Click Order Now >"
-      ]
-    },
-    {
-      "flow_id": "view_by_food",
-      "name": "NextDish - View by food",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → View by food",
-        "Click View by food"
-      ]
-    },
-    {
-      "flow_id": "view_by_restaurant",
-      "name": "NextDish - View by restaurant",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → View by restaurant",
-        "Click View by restaurant"
-      ]
+      "steps": ["NextDish → NextDish", "NextDish → Order Now >"]
     },
     {
       "flow_id": "ingredients",
-      "name": "NextDish - Ingredients ▾",
+      "name": "NextDish - Ingredients",
       "steps": [
-        "Menu → NextDish",
-        "NextDish → Ingredients ▾",
+        "NextDish → NextDish",
+        "NextDish → Ingredients",
         "Click Ingredients ▾"
       ]
     },
     {
-      "flow_id": "diet",
-      "name": "NextDish - Diet ▾",
+      "flow_id": "restaurant_page",
+      "name": "NextDish - Restaurant page",
       "steps": [
-        "Menu → NextDish",
-        "NextDish → Diet ▾",
-        "Click Diet ▾"
-      ]
-    },
-    {
-      "flow_id": "price",
-      "name": "NextDish - Price ▾",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → Price ▾",
-        "Click Price ▾"
-      ]
-    },
-    {
-      "flow_id": "spicy_level",
-      "name": "NextDish - Spicy Level ▾",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → Spicy Level ▾",
-        "Click Spicy Level ▾"
-      ]
-    },
-    {
-      "flow_id": "style",
-      "name": "NextDish - Style ▾",
-      "steps": [
-        "Menu → NextDish",
-        "NextDish → Style ▾",
-        "Click Style ▾"
+        "NextDish → NextDish",
+        "NextDish → Restaurant page",
+        "Use Search dishes…"
       ]
     },
     {
       "flow_id": "nextdish",
       "name": "NextDish - NextDish",
+      "steps": ["NextDish → NextDish", "NextDish → NextDish"]
+    },
+    {
+      "flow_id": "view_by_food_2",
+      "name": "NextDish - View by food",
+      "steps": ["NextDish → NextDish", "NextDish → View by food"]
+    },
+    {
+      "flow_id": "view_by_restaurant_2",
+      "name": "NextDish - View by restaurant",
+      "steps": ["NextDish → NextDish", "NextDish → View by restaurant"]
+    },
+    {
+      "flow_id": "ingredients_2",
+      "name": "NextDish - Ingredients ▾",
       "steps": [
-        "Menu → NextDish",
-        "NextDish → NextDish"
+        "NextDish → NextDish",
+        "NextDish → Ingredients ▾",
+        "Fill Observed Page",
+        "Select Style ▾",
+        "Fill Search dishes…",
+        "Click Done"
       ]
     },
     {
-      "flow_id": "lunch_2",
-      "name": "Lunch",
+      "flow_id": "diet_2",
+      "name": "NextDish - Diet ▾",
       "steps": [
-        "Menu → Lunch"
+        "NextDish → NextDish",
+        "NextDish → Diet ▾",
+        "Fill Observed Page",
+        "Select Style ▾",
+        "Fill Search dishes…",
+        "Click Done"
       ]
     },
     {
-      "flow_id": "dinner_2",
-      "name": "Dinner",
+      "flow_id": "price_2",
+      "name": "NextDish - Price ▾",
       "steps": [
-        "Menu → Dinner"
-      ]
-    },
-    {
-      "flow_id": "today_s_recommendation_2",
-      "name": "Today's Recommendation",
-      "steps": [
-        "Menu → Today's Recommendation"
-      ]
-    },
-    {
-      "flow_id": "chinese_2",
-      "name": "Chinese",
-      "steps": [
-        "Menu → Chinese"
-      ]
-    },
-    {
-      "flow_id": "japanese_2",
-      "name": "Japanese",
-      "steps": [
-        "Menu → Japanese"
-      ]
-    },
-    {
-      "flow_id": "korean_2",
-      "name": "Korean",
-      "steps": [
-        "Menu → Korean"
-      ]
-    },
-    {
-      "flow_id": "southeast_asian_2",
-      "name": "SouthEast Asian",
-      "steps": [
-        "Menu → SouthEast Asian"
-      ]
-    },
-    {
-      "flow_id": "italian_2",
-      "name": "Italian",
-      "steps": [
-        "Menu → Italian"
-      ]
-    },
-    {
-      "flow_id": "middleeastern_2",
-      "name": "MiddleEastern",
-      "steps": [
-        "Menu → MiddleEastern"
-      ]
-    },
-    {
-      "flow_id": "american_2",
-      "name": "American",
-      "steps": [
-        "Menu → American"
-      ]
-    },
-    {
-      "flow_id": "salad_2",
-      "name": "Salad",
-      "steps": [
-        "Menu → Salad"
-      ]
-    },
-    {
-      "flow_id": "thu_28_2",
-      "name": "THU 28",
-      "steps": [
-        "Menu → THU 28"
-      ]
-    },
-    {
-      "flow_id": "fri_29_2",
-      "name": "FRI 29",
-      "steps": [
-        "Menu → FRI 29"
-      ]
-    },
-    {
-      "flow_id": "nextdish_restaurant_menu",
-      "name": "NextDish restaurant page - NextDish restaurant menu",
-      "steps": [
-        "Menu → NextDish restaurant page",
-        "NextDish restaurant page → NextDish restaurant menu",
-        "Use Search dishes…",
-        "Click Ingredients",
-        "Click Diet",
-        "Click Price",
-        "Click Spicy Level",
-        "Click Style",
+        "NextDish → NextDish",
+        "NextDish → Price ▾",
+        "Select Style ▾",
         "Fill Search dishes…"
       ]
+    },
+    {
+      "flow_id": "spicy_level_2",
+      "name": "NextDish - Spicy Level ▾",
+      "steps": [
+        "NextDish → NextDish",
+        "NextDish → Spicy Level ▾",
+        "Fill Observed Page",
+        "Select Style ▾",
+        "Fill Search dishes…"
+      ]
+    },
+    {
+      "flow_id": "style_2",
+      "name": "NextDish - Style ▾",
+      "steps": [
+        "NextDish → NextDish",
+        "NextDish → Style ▾",
+        "Select Style ▾",
+        "Fill Observed Page",
+        "Fill Search dishes…",
+        "Click Done"
+      ]
+    },
+    {
+      "flow_id": "search_dishes_2",
+      "name": "NextDish - Search dishes…",
+      "steps": ["NextDish → NextDish", "NextDish → Search dishes…"]
+    },
+    {
+      "flow_id": "lunch_4",
+      "name": "Lunch",
+      "steps": ["NextDish → Lunch"]
+    },
+    {
+      "flow_id": "dinner_4",
+      "name": "Dinner",
+      "steps": ["NextDish → Dinner"]
+    },
+    {
+      "flow_id": "today_s_recommendation_3",
+      "name": "Today's Recommendation",
+      "steps": ["NextDish → Today's Recommendation"]
+    },
+    {
+      "flow_id": "chinese_4",
+      "name": "Chinese",
+      "steps": ["NextDish → Chinese"]
+    },
+    {
+      "flow_id": "japanese_4",
+      "name": "Japanese",
+      "steps": ["NextDish → Japanese"]
+    },
+    {
+      "flow_id": "korean_4",
+      "name": "Korean",
+      "steps": ["NextDish → Korean"]
+    },
+    {
+      "flow_id": "southeast_asian_4",
+      "name": "SouthEast Asian",
+      "steps": ["NextDish → SouthEast Asian"]
+    },
+    {
+      "flow_id": "italian_4",
+      "name": "Italian",
+      "steps": ["NextDish → Italian"]
+    },
+    {
+      "flow_id": "middleeastern_4",
+      "name": "MiddleEastern",
+      "steps": ["NextDish → MiddleEastern"]
+    },
+    {
+      "flow_id": "american_4",
+      "name": "American",
+      "steps": ["NextDish → American"]
+    },
+    {
+      "flow_id": "salad_3",
+      "name": "Salad",
+      "steps": ["NextDish → Salad"]
+    },
+    {
+      "flow_id": "diet_4",
+      "name": "Diet",
+      "steps": ["NextDish → Diet", "Click Diet ▾"]
+    },
+    {
+      "flow_id": "price_4",
+      "name": "Price",
+      "steps": ["NextDish → Price", "Click Price ▾"]
+    },
+    {
+      "flow_id": "spicy_level_4",
+      "name": "Spicy Level",
+      "steps": ["NextDish → Spicy Level", "Click Spicy Level ▾"]
+    },
+    {
+      "flow_id": "style_4",
+      "name": "Style",
+      "steps": ["NextDish → Style", "Click Style ▾"]
+    },
+    {
+      "flow_id": "sat_30_4",
+      "name": "SAT 30",
+      "steps": ["NextDish → SAT 30"]
+    },
+    {
+      "flow_id": "sun_31_4",
+      "name": "SUN 31",
+      "steps": ["NextDish → SUN 31"]
     }
   ],
   "site_structure": {
@@ -269,250 +196,384 @@
               "type": "feature"
             },
             {
-              "children": [
-                {
-                  "children": [
-                    {
-                      "description": "Return link to the broader menu page.",
-                      "name": "‹ Back to Menu",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Ingredients ▾"
-                      ],
-                      "name": "Ingredients",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Diet ▾"
-                      ],
-                      "name": "Diet",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Price ▾"
-                      ],
-                      "name": "Price",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Spicy Level ▾"
-                      ],
-                      "name": "Spicy Level",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Style ▾"
-                      ],
-                      "name": "Style",
-                      "type": "feature"
-                    }
-                  ],
-                  "description": "Restaurant menu page for Xiang Chuan Sichuan with local meal/date toggles, view mode, filters, and dish cards.",
-                  "inputs": [
-                    {
-                      "name": "Search dishes…",
-                      "type": "text"
-                    }
-                  ],
-                  "name": "NextDish",
-                  "type": "page",
-                  "url": "/restaurants/*?view=*"
-                },
-                {
-                  "name": "NextDish",
-                  "type": "page",
-                  "url": "/restaurants/*?item=*"
-                },
-                {
-                  "children": [
-                    {
-                      "description": "Return to restaurant menu overview.",
-                      "name": "‹ Back to Menu",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "Meal selector.",
-                      "name": "Lunch",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "Meal selector.",
-                      "name": "Dinner",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "Date selector.",
-                      "name": "THU 28",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "Date selector.",
-                      "name": "FRI 29",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "Selected view mode.",
-                      "name": "View by food",
-                      "type": "feature"
-                    },
-                    {
-                      "description": "View mode toggle.",
-                      "name": "View by restaurant",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Ingredients ▾"
-                      ],
-                      "description": "Filter dropdown.",
-                      "name": "Ingredients ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Diet ▾"
-                      ],
-                      "description": "Filter dropdown.",
-                      "name": "Diet ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Price ▾"
-                      ],
-                      "description": "Filter dropdown.",
-                      "name": "Price ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Spicy Level ▾"
-                      ],
-                      "description": "Filter dropdown.",
-                      "name": "Spicy Level ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Style ▾"
-                      ],
-                      "description": "Filter dropdown.",
-                      "name": "Style ▾",
-                      "type": "feature"
-                    }
-                  ],
-                  "description": "Restaurant detail/menu page with meal toggle, date selector, view mode toggle, filters, search, and food item cards.",
-                  "inputs": [
-                    {
-                      "name": "Search dishes…",
-                      "type": "text"
-                    }
-                  ],
-                  "name": "NextDish restaurant menu",
-                  "type": "page",
-                  "url": "/restaurants/*?meal=*"
-                },
-                {
-                  "children": [
-                    {
-                      "actions": [
-                        "Ingredients ▾"
-                      ],
-                      "name": "Ingredients",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Diet ▾"
-                      ],
-                      "name": "Diet",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Price ▾"
-                      ],
-                      "name": "Price",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Spicy Level ▾"
-                      ],
-                      "name": "Spicy Level",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Style ▾"
-                      ],
-                      "name": "Style",
-                      "type": "feature"
-                    }
-                  ],
-                  "description": "Restaurant menu page for Xiang Chuan Sichuan with meal/date controls, view and filter controls, search, and dish cards.",
-                  "inputs": [
-                    {
-                      "name": "Search dishes…",
-                      "type": "text"
-                    }
-                  ],
-                  "name": "NextDish",
-                  "type": "page",
-                  "url": "/restaurants/*?date=*"
-                }
-              ],
-              "description": "Restaurant detail page with meal/date toggles, view mode switch, filter controls, search, and a food item grid.",
-              "inputs": [
-                {
-                  "name": "Search dishes…",
-                  "type": "searchbox"
-                },
-                {
-                  "name": "Ingredients",
-                  "type": "button"
-                },
-                {
-                  "name": "Diet",
-                  "type": "button"
-                },
-                {
-                  "name": "Price",
-                  "type": "button"
-                },
-                {
-                  "name": "Spicy Level",
-                  "type": "button"
-                },
-                {
-                  "name": "Style",
-                  "type": "button"
-                }
-              ],
-              "name": "NextDish restaurant page",
-              "sections": [
-                "Lunch"
-              ],
-              "type": "page",
-              "url": "/restaurants/*"
+              "name": "Chinese",
+              "type": "feature"
+            },
+            {
+              "name": "Japanese",
+              "type": "feature"
+            },
+            {
+              "name": "Korean",
+              "type": "feature"
+            },
+            {
+              "name": "SouthEast Asian",
+              "type": "feature"
+            },
+            {
+              "name": "Italian",
+              "type": "feature"
+            },
+            {
+              "name": "MiddleEastern",
+              "type": "feature"
+            },
+            {
+              "name": "American",
+              "type": "feature"
+            },
+            {
+              "name": "Salad",
+              "type": "feature"
+            },
+            {
+              "actions": ["View by food"],
+              "name": "View by food",
+              "type": "feature"
+            },
+            {
+              "actions": ["View by restaurant"],
+              "name": "View by restaurant",
+              "type": "feature"
+            },
+            {
+              "actions": ["Ingredients ▾", "Done"],
+              "name": "Ingredients",
+              "type": "feature"
+            },
+            {
+              "actions": ["Diet ▾"],
+              "name": "Diet",
+              "type": "feature"
+            },
+            {
+              "actions": ["Price ▾"],
+              "name": "Price",
+              "type": "feature"
+            },
+            {
+              "actions": ["Spicy Level ▾"],
+              "name": "Spicy Level",
+              "type": "feature"
+            },
+            {
+              "actions": ["Style ▾"],
+              "name": "Style",
+              "type": "feature"
             },
             {
               "children": [
                 {
+                  "name": "Chinese",
+                  "type": "feature"
+                },
+                {
+                  "name": "Japanese",
+                  "type": "feature"
+                },
+                {
+                  "name": "Korean",
+                  "type": "feature"
+                },
+                {
+                  "name": "SouthEast Asian",
+                  "type": "feature"
+                },
+                {
+                  "name": "Italian",
+                  "type": "feature"
+                },
+                {
+                  "name": "MiddleEastern",
+                  "type": "feature"
+                },
+                {
+                  "name": "American",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["View by food"],
+                  "name": "View by food",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["View by restaurant"],
+                  "name": "View by restaurant",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Ingredients ▾"],
+                  "name": "Ingredients",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Diet ▾"],
+                  "name": "Diet",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Price ▾"],
+                  "name": "Price",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Spicy Level ▾"],
+                  "name": "Spicy Level",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Style ▾"],
+                  "name": "Style",
+                  "type": "feature"
+                },
+                {
                   "children": [
                     {
-                      "actions": [
-                        "Done"
-                      ],
+                      "actions": ["Ingredients ▾"],
+                      "name": "Ingredients",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Diet ▾"],
+                      "name": "Diet",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Price ▾"],
+                      "name": "Price",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Spicy Level ▾"],
+                      "name": "Spicy Level",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Style ▾"],
+                      "name": "Style",
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "Restaurant detail and menu browsing page for Seoul Stone.",
+                  "inputs": [
+                    {
+                      "name": "Search dishes…",
+                      "type": "searchbox"
+                    }
+                  ],
+                  "name": "Restaurant page",
+                  "type": "page",
+                  "url": "/restaurants/*"
+                },
+                {
+                  "children": [
+                    {
+                      "name": "Chinese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Japanese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Korean",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "SouthEast Asian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Italian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "MiddleEastern",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "American",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Order Now >"],
+                      "name": "Order Now >",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["View by food"],
+                      "name": "View by food",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["View by restaurant"],
+                      "name": "View by restaurant",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Ingredients ▾"],
                       "name": "Ingredients ▾",
                       "type": "feature"
                     },
+                    {
+                      "actions": ["Diet ▾"],
+                      "name": "Diet ▾",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Price ▾"],
+                      "name": "Price ▾",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Spicy Level ▾"],
+                      "name": "Spicy Level ▾",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Style ▾"],
+                      "name": "Style ▾",
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "Menu browse page showing dinner restaurants by cuisine, with meal/date toggles, local category navigation, filters, and restaurant cards.",
+                  "name": "NextDish",
+                  "sections": ["Chinese", "Japanese", "Korean"],
+                  "type": "page",
+                  "url": "/menu?meal=*&view=*"
+                },
+                {
+                  "children": [
+                    {
+                      "name": "Chinese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Japanese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Korean",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "SouthEast Asian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Italian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "MiddleEastern",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "American",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["Order Now >"],
+                      "name": "Order Now >",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": [
+                        "Ingredients ▾",
+                        "Diet ▾",
+                        "Price ▾",
+                        "Spicy Level ▾",
+                        "Style ▾"
+                      ],
+                      "children": [
+                        {
+                          "actions": ["Ingredients ▾"],
+                          "name": "Ingredients",
+                          "type": "feature"
+                        },
+                        {
+                          "actions": ["Diet ▾"],
+                          "name": "Diet",
+                          "type": "feature"
+                        },
+                        {
+                          "actions": ["Price ▾"],
+                          "name": "Price",
+                          "type": "feature"
+                        },
+                        {
+                          "actions": ["Spicy Level ▾"],
+                          "name": "Spicy Level",
+                          "type": "feature"
+                        },
+                        {
+                          "actions": ["Style ▾"],
+                          "name": "Style",
+                          "type": "feature"
+                        }
+                      ],
+                      "description": "Visible filter controls for the restaurant view.",
+                      "inputs": [
+                        {
+                          "name": "Ingredients ▾",
+                          "type": "selector"
+                        },
+                        {
+                          "name": "Diet ▾",
+                          "type": "selector"
+                        },
+                        {
+                          "name": "Price ▾",
+                          "type": "selector"
+                        },
+                        {
+                          "name": "Spicy Level ▾",
+                          "type": "selector"
+                        },
+                        {
+                          "name": "Style ▾",
+                          "type": "selector"
+                        },
+                        {
+                          "name": "Search dishes…",
+                          "type": "input"
+                        }
+                      ],
+                      "name": "Filters",
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "Restaurant menu browsing page with meal/date controls, cuisine rail, filters, and restaurant cards.",
+                  "name": "NextDish",
+                  "type": "page",
+                  "url": "/menu?date=*&view=*"
+                }
+              ],
+              "description": "Restaurant menu browsing page with meal/date/category navigation, filters, and restaurant cards.",
+              "name": "NextDish",
+              "sections": ["Chinese", "Japanese", "Korean"],
+              "type": "page",
+              "url": "/menu?view=*"
+            },
+            {
+              "children": [
+                {
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Lunch",
+                  "type": "feature"
+                },
+                {
+                  "children": [
                     {
                       "name": "Favorite Beef Chow Fun",
                       "type": "feature"
@@ -522,15 +583,29 @@
                       "type": "feature"
                     },
                     {
-                      "name": "Favorite Modified Test Item 2026-05-21",
+                      "name": "Favorite Mapo Tofu",
                       "type": "feature"
                     },
                     {
-                      "name": "Salad",
+                      "name": "Favorite Popcorn Chicken",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Favorite Sweet and Sour Pork",
                       "type": "feature"
                     }
                   ],
-                  "name": "Lunch",
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Dinner",
                   "type": "feature"
                 },
                 {
@@ -538,75 +613,134 @@
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "Order Now >"
-                  ],
-                  "name": "Order Now >",
+                  "name": "Chinese",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "View by food"
-                  ],
-                  "name": "View by food",
+                  "name": "Japanese",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "View by restaurant"
-                  ],
-                  "children": [
+                  "name": "Korean",
+                  "type": "feature"
+                },
+                {
+                  "name": "SouthEast Asian",
+                  "type": "feature"
+                },
+                {
+                  "name": "Italian",
+                  "type": "feature"
+                },
+                {
+                  "name": "MiddleEastern",
+                  "type": "feature"
+                },
+                {
+                  "name": "American",
+                  "type": "feature"
+                },
+                {
+                  "name": "Salad",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Done"],
+                  "inputs": [
                     {
-                      "actions": [
-                        "View by restaurant"
-                      ],
-                      "description": "Restaurant menu browsing page with meal/date selectors, cuisine category rail, featured promotion, filters, search, and restaurant result cards.",
-                      "name": "NextDish",
-                      "sections": [
-                        "Chinese",
-                        "Japanese",
-                        "Korean"
-                      ],
-                      "type": "page",
-                      "url": "/menu?meal=*&view=*"
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
                     }
-                  ],
-                  "name": "View by restaurant",
-                  "type": "feature"
-                },
-                {
-                  "actions": [
-                    "Ingredients ▾"
                   ],
                   "name": "Ingredients ▾",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "Diet ▾"
+                  "actions": ["Done"],
+                  "inputs": [
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
                   ],
                   "name": "Diet ▾",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "Price ▾"
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
                   ],
                   "name": "Price ▾",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "Spicy Level ▾"
+                  "inputs": [
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
                   ],
                   "name": "Spicy Level ▾",
                   "type": "feature"
                 },
                 {
-                  "actions": [
-                    "Style ▾"
+                  "actions": ["Done"],
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
                   ],
                   "name": "Style ▾",
+                  "type": "feature"
+                },
+                {
+                  "inputs": [
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Search dishes…",
                   "type": "feature"
                 },
                 {
@@ -616,66 +750,159 @@
                       "type": "feature"
                     },
                     {
+                      "name": "Chinese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Japanese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Korean",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "SouthEast Asian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Italian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "MiddleEastern",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "American",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Salad",
+                      "type": "feature"
+                    },
+                    {
                       "actions": [
-                        "View by food"
+                        "Add to cart",
+                        "Close item details",
+                        "Seoul Stone",
+                        "Add Beef Bulgogi Bento to cart"
                       ],
+                      "description": "Open item details modal for the selected dish.",
+                      "inputs": [
+                        {
+                          "name": "Quantity",
+                          "options": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                          ],
+                          "type": "select"
+                        }
+                      ],
+                      "name": "Beef Bulgogi Bento",
+                      "sections": ["Product Details", "Producer"],
+                      "type": "feature"
+                    }
+                  ],
+                  "description": "Menu page with an open item-details modal over the food listing.",
+                  "name": "NextDish",
+                  "sections": [
+                    "Today's Recommendation",
+                    "Product Details",
+                    "Producer"
+                  ],
+                  "type": "page",
+                  "url": "/menu?item=*&meal=*"
+                },
+                {
+                  "children": [
+                    {
+                      "name": "Today's Recommendation",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Chinese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Japanese",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Korean",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "SouthEast Asian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Italian",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "MiddleEastern",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "American",
+                      "type": "feature"
+                    },
+                    {
+                      "name": "Salad",
+                      "type": "feature"
+                    },
+                    {
+                      "actions": ["View by food"],
                       "name": "View by food",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "View by restaurant"
-                      ],
+                      "actions": ["View by restaurant"],
                       "name": "View by restaurant",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Ingredients ▾"
-                      ],
+                      "actions": ["Ingredients ▾"],
                       "name": "Ingredients ▾",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Diet ▾"
-                      ],
+                      "actions": ["Diet ▾"],
                       "name": "Diet ▾",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Price ▾"
-                      ],
+                      "actions": ["Price ▾"],
                       "name": "Price ▾",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Spicy Level ▾"
-                      ],
+                      "actions": ["Spicy Level ▾"],
                       "name": "Spicy Level ▾",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Style ▾"
-                      ],
+                      "actions": ["Style ▾"],
                       "name": "Style ▾",
                       "type": "feature"
                     }
                   ],
-                  "description": "Menu browsing page with meal/date selectors, category rail, filters, search, favorites grid, and recommendation section.",
+                  "description": "Dinner menu page showing category navigation, filters, search, and food recommendation cards.",
                   "name": "NextDish",
-                  "sections": [
-                    "Your Favorites",
-                    "Today's Recommendation"
-                  ],
                   "type": "page",
                   "url": "/menu?date=*&meal=*"
                 }
               ],
-              "description": "Menu browse page for lunch items with category navigation, filters, and product cards.",
+              "description": "Menu browsing page for lunch.",
               "name": "NextDish",
               "type": "page",
               "url": "/menu?meal=*"
@@ -685,46 +912,45 @@
                 {
                   "children": [
                     {
-                      "actions": [
-                        "Done"
-                      ],
-                      "name": "Diet ▾",
-                      "type": "feature"
-                    },
-                    {
                       "name": "🌶",
                       "type": "feature"
                     }
                   ],
-                  "name": "THU 28",
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "SAT 30",
                   "type": "feature"
                 },
                 {
                   "children": [
                     {
-                      "name": "Today's Recommendation",
+                      "name": "Favorite Beef Chow Fun",
                       "type": "feature"
                     },
                     {
-                      "actions": [
-                        "Done"
-                      ],
-                      "name": "Ingredients ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Done"
-                      ],
-                      "name": "Style ▾",
-                      "type": "feature"
-                    },
-                    {
-                      "name": "spicy 1",
+                      "name": "Favorite Kung Pao Chicken",
                       "type": "feature"
                     }
                   ],
-                  "name": "FRI 29",
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "SUN 31",
                   "type": "feature"
                 },
                 {
@@ -732,312 +958,174 @@
                   "type": "feature"
                 },
                 {
-                  "name": "NextDish",
-                  "type": "page",
-                  "url": "/menu?date=*&item=*"
+                  "name": "Chinese",
+                  "type": "feature"
                 },
                 {
-                  "children": [
+                  "name": "Japanese",
+                  "type": "feature"
+                },
+                {
+                  "name": "Korean",
+                  "type": "feature"
+                },
+                {
+                  "name": "SouthEast Asian",
+                  "type": "feature"
+                },
+                {
+                  "name": "Italian",
+                  "type": "feature"
+                },
+                {
+                  "name": "MiddleEastern",
+                  "type": "feature"
+                },
+                {
+                  "name": "American",
+                  "type": "feature"
+                },
+                {
+                  "name": "Salad",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["View by food"],
+                  "name": "View by food",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["View by restaurant"],
+                  "name": "View by restaurant",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Ingredients ▾", "Done"],
+                  "inputs": [
                     {
-                      "actions": [
-                        "Order Now >"
-                      ],
-                      "name": "Order Now >",
-                      "type": "feature"
+                      "name": "Observed Page",
+                      "type": "input"
                     },
                     {
-                      "actions": [
-                        "View by food"
-                      ],
-                      "name": "View by food",
-                      "type": "feature"
+                      "name": "Style ▾",
+                      "type": "selector"
                     },
                     {
-                      "actions": [
-                        "View by restaurant"
-                      ],
-                      "name": "View by restaurant",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Ingredients ▾"
-                      ],
-                      "inputs": [
-                        {
-                          "name": "Ingredients ▾",
-                          "type": "button"
-                        }
-                      ],
-                      "name": "Ingredients",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Diet ▾"
-                      ],
-                      "inputs": [
-                        {
-                          "name": "Diet ▾",
-                          "type": "button"
-                        }
-                      ],
-                      "name": "Diet",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Price ▾"
-                      ],
-                      "inputs": [
-                        {
-                          "name": "Price ▾",
-                          "type": "button"
-                        }
-                      ],
-                      "name": "Price",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Spicy Level ▾"
-                      ],
-                      "inputs": [
-                        {
-                          "name": "Spicy Level ▾",
-                          "type": "button"
-                        }
-                      ],
-                      "name": "Spicy Level",
-                      "type": "feature"
-                    },
-                    {
-                      "actions": [
-                        "Style ▾"
-                      ],
-                      "inputs": [
-                        {
-                          "name": "Style ▾",
-                          "type": "button"
-                        }
-                      ],
-                      "name": "Style",
-                      "type": "feature"
-                    },
-                    {
-                      "inputs": [
-                        {
-                          "name": "Search dishes…",
-                          "type": "input"
-                        }
-                      ],
                       "name": "Search dishes…",
-                      "type": "feature"
+                      "type": "input"
                     }
                   ],
-                  "description": "Restaurant menu browsing page with meal/date selectors, cuisine navigation, featured banner, view toggle, filters, search, and restaurant result sections.",
-                  "name": "NextDish",
-                  "sections": [
-                    "Chinese",
-                    "Japanese",
-                    "Korean"
-                  ],
-                  "type": "page",
-                  "url": "/menu?date=*&view=*"
-                }
-              ],
-              "description": "Menu browsing page with meal/date toggles, category rail, quick filters, and dish cards.",
-              "inputs": [
+                  "name": "Ingredients ▾",
+                  "type": "feature"
+                },
                 {
-                  "name": "Search dishes…",
-                  "type": "text"
+                  "actions": ["Diet ▾", "Done"],
+                  "inputs": [
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Diet ▾",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Price ▾"],
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Price ▾",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Spicy Level ▾"],
+                  "inputs": [
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Spicy Level ▾",
+                  "type": "feature"
+                },
+                {
+                  "actions": ["Style ▾", "Done"],
+                  "inputs": [
+                    {
+                      "name": "Style ▾",
+                      "type": "selector"
+                    },
+                    {
+                      "name": "Observed Page",
+                      "type": "input"
+                    },
+                    {
+                      "name": "Search dishes…",
+                      "type": "input"
+                    }
+                  ],
+                  "name": "Style ▾",
+                  "type": "feature"
                 }
               ],
-              "name": "NextDish Menu",
-              "sections": [
-                "Today's Recommendation",
-                "Chinese"
-              ],
+              "description": "Menu browsing page with meal/date selectors, category sidebar, featured banner, filters, search, and dish cards.",
+              "name": "NextDish",
               "type": "page",
               "url": "/menu?date=*"
             }
           ],
-          "name": "Menu",
-          "sections": [
-            "Your Favorites",
-            "Today's Recommendation"
-          ],
+          "description": "Menu page with meal/date selectors, category rail, recommendation banner, view and filter controls, search, and favorite food cards.",
+          "name": "NextDish",
           "type": "page",
           "url": "/menu"
         },
         {
           "children": [
             {
-              "description": "Meal toggle.",
-              "name": "Lunch",
-              "type": "feature"
-            },
-            {
-              "description": "Meal toggle.",
-              "name": "Dinner",
-              "type": "feature"
-            },
-            {
-              "description": "Date selector.",
-              "name": "THU 28",
-              "type": "feature"
-            },
-            {
-              "description": "Date selector.",
-              "name": "FRI 29",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "Chinese",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "Japanese",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "Korean",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "SouthEast Asian",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "Italian",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "MiddleEastern",
-              "type": "feature"
-            },
-            {
-              "description": "Cuisine category anchor.",
-              "name": "American",
-              "type": "feature"
-            },
-            {
-              "description": "Promotional call to action.",
-              "name": "Order Now >",
-              "type": "feature"
-            },
-            {
               "actions": [
-                "View by food"
-              ],
-              "description": "View mode switch.",
-              "name": "View by food",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "View by restaurant"
-              ],
-              "children": [
-                {
-                  "actions": [
-                    "Done"
-                  ],
-                  "name": "Ingredients ▾",
-                  "type": "feature"
-                },
-                {
-                  "actions": [
-                    "Close modal"
-                  ],
-                  "inputs": [
-                    {
-                      "name": "Enter delivery address",
-                      "type": "input"
-                    }
-                  ],
-                  "name": "📍 Set address ▾",
-                  "type": "feature"
-                }
-              ],
-              "description": "Selected view mode switch.",
-              "name": "View by restaurant",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "Ingredients ▾"
-              ],
-              "description": "Filter control.",
-              "name": "Ingredients ▾",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "Diet ▾"
-              ],
-              "description": "Filter control.",
-              "name": "Diet ▾",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "Price ▾"
-              ],
-              "description": "Filter control.",
-              "name": "Price ▾",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "Spicy Level ▾"
-              ],
-              "description": "Filter control.",
-              "name": "Spicy Level ▾",
-              "type": "feature"
-            },
-            {
-              "actions": [
-                "Style ▾"
-              ],
-              "description": "Filter control.",
-              "name": "Style ▾",
-              "type": "feature"
-            }
-          ],
-          "description": "Restaurant menu browsing page with meal/date switches, cuisine category rail, filters, and restaurant cards.",
-          "name": "‹ Back to Menu",
-          "type": "page",
-          "url": "/menu?view=*"
-        },
-        {
-          "children": [
-            {
-              "actions": [
-                "Remove Grilled Chicken Bibimbap",
                 "Proceed to Checkout",
                 "Decrease quantity",
-                "Increase quantity"
+                "Increase quantity",
+                "Remove Lamb Kebab Rice"
               ],
-              "description": "Cart item controls and removal.",
+              "description": "Cart contents and checkout controls.",
               "inputs": [
                 {
-                  "name": "Quantity",
-                  "type": "stepper"
+                  "name": "Decrease quantity",
+                  "options": ["1"],
+                  "type": "selector"
                 }
               ],
-              "name": "Grilled Chicken Bibimbap",
+              "name": "Your Cart",
               "type": "feature"
             }
           ],
-          "description": "Shopping cart page for NextDish with a single cart item and checkout action.",
+          "description": "Shopping cart page for NextDish.",
           "name": "Cart",
+          "sections": ["Your Cart"],
           "type": "page",
           "url": "/cart"
         }

@@ -1,6 +1,6 @@
 {
   "crawl_run": {
-    "id": "c3fe3015-9905-49a7-9232-913b78c5faca",
+    "id": "89d6cc90-ce38-4be9-9942-3cc1b9ec875a",
     "organization_id": "866009eb-81b8-4582-a59e-feaa72fa1db6",
     "user_id": "9086b09f-afec-4a93-989e-6deb2439a5a4",
     "suite_id": null,
@@ -13,28 +13,49 @@
     "root_page_id": null,
     "summary": "Site structure graph published.",
     "error_message": null,
-    "site_structure_graph_document_id": "cd6edb23-62db-4976-bdcd-7c36b107ebb0",
-    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v3/navigation-laptop.json",
+    "site_structure_graph_document_id": "15a9279c-fe70-43c3-a4ac-4f2fa910bdfb",
+    "site_structure_graph_storage_path": "supabase://kb_documents/866009eb-81b8-4582-a59e-feaa72fa1db6/site_structure/laptop-json/v8/navigation-laptop.json",
     "site_structure_llm_screenshot_urls": [
       {
         "title": "NextDish",
         "page_url": "https://nextdish-clone.vercel.app/menu",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Top bar shows profile menu with \"Hi, Admin\"",
-          "Visible cart icon with item count",
-          "Workspace/menu page with location selector and account controls"
+          "Profile menu shows 'Hi, Admin'",
+          "Address picker and cart count are visible in app chrome"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6432a5be-a2d7-4bc0-8c6e-6c73f0877f5d",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible user menu shows 'Hi, Admin'.",
+          "Header includes location and cart controls, indicating a signed-in app state."
         ],
         "authenticated": true,
         "auth_confidence": 0.98
       },
       {
         "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a",
+        "page_url": "https://nextdish-clone.vercel.app/menu?meal=lunch",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Visible account menu shows \"Hi, Admin\".",
-          "Header includes profile and cart controls, indicating a signed-in app state."
+          "Header shows user menu text \"Hi, Admin\".",
+          "Profile/account and cart controls are visible in the app chrome."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?date=2026-05-30",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible profile control says \"Hi, Admin\".",
+          "Account/menu controls and cart are present in the header."
         ],
         "authenticated": true,
         "auth_confidence": 0.98
@@ -44,99 +65,108 @@
         "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Header shows account control 'Hi, Admin'.",
-          "Workspace-style app navigation and cart are visible."
-        ],
-        "authenticated": true,
-        "auth_confidence": 0.97
-      },
-      {
-        "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?view=restaurants",
-        "auth_state": "authenticated",
-        "auth_evidence": [
-          "Hi, Admin profile menu is visible",
-          "cart icon with item count is visible",
-          "address picker and account controls indicate signed-in app state"
-        ],
-        "authenticated": true,
-        "auth_confidence": 0.99
-      },
-      {
-        "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/menu?meal=lunch",
-        "auth_state": "authenticated",
-        "auth_evidence": [
-          "Visible user menu shows \"Hi, Admin\".",
-          "Account/profile and cart controls are present in the header."
+          "Header shows account menu: 'Hi, Admin'",
+          "Private workspace-style navigation with cart and profile controls"
         ],
         "authenticated": true,
         "auth_confidence": 0.98
       },
       {
         "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?meal=lunch",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/20dc91a3-f36e-425b-be69-d9b0847ad535?view=restaurants",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Header shows account controls with \"Hi, Admin\".",
-          "Cart icon shows an item count of 1.",
-          "Location and profile menus are visible."
-        ],
-        "authenticated": true,
-        "auth_confidence": 0.98
-      },
-      {
-        "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/restaurants/6567a454-3787-4ec6-97d7-b6466c54231a?date=2026-05-28",
-        "auth_state": "authenticated",
-        "auth_evidence": [
-          "Top bar shows user menu \"Hi, Admin\".",
-          "Profile and cart icons indicate a signed-in workspace session."
-        ],
-        "authenticated": true,
-        "auth_confidence": 0.99
-      },
-      {
-        "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants&meal=lunch",
-        "auth_state": "authenticated",
-        "auth_evidence": [
-          "Visible account menu shows \"Hi, Admin\".",
-          "Signed-in workspace controls such as address picker, cart, and profile menu are present."
+          "Header shows profile control 'Hi, Admin'",
+          "Signed-in workspace signals with address picker and cart icon"
         ],
         "authenticated": true,
         "auth_confidence": 0.97
       },
       {
         "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/menu?date=2026-05-28",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6432a5be-a2d7-4bc0-8c6e-6c73f0877f5d?meal=lunch",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Header shows user menu with \"Hi, Admin\".",
-          "App-internal controls like address picker and cart are visible."
+          "Profile menu shows 'Hi, Admin'.",
+          "Cart icon shows item count 1.",
+          "Address selector and restaurant menu are visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/20dc91a3-f36e-425b-be69-d9b0847ad535?date=2026-05-30",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account menu says \"Hi, Admin\"",
+          "Header shows profile and cart controls"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.95
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/cart",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows signed-in profile control: \"Hi, Admin\".",
+          "Address picker and cart badge are visible in app chrome."
         ],
         "authenticated": true,
         "auth_confidence": 0.96
       },
       {
         "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants&date=2026-05-28",
+        "page_url": "https://nextdish-clone.vercel.app/menu?meal=dinner&view=restaurants",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Header shows profile menu with \"Hi, Admin\".",
-          "Signed-in workspace controls include address picker, profile menu, and cart."
+          "Top-right profile control shows 'Hi, Admin'.",
+          "Workspace-style menu page with cart and account controls visible."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/restaurants/6432a5be-a2d7-4bc0-8c6e-6c73f0877f5d?item=e4ebb718-5668-49b8-a05f-77f10fd94eee",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account menu shows \"Hi, Admin\".",
+          "App chrome includes address, account, and cart controls."
         ],
         "authenticated": true,
         "auth_confidence": 0.97
       },
       {
         "title": "NextDish",
-        "page_url": "https://nextdish-clone.vercel.app/menu?meal=dinner&date=2026-05-28",
+        "page_url": "https://nextdish-clone.vercel.app/menu?item=e4ebb718-5668-49b8-a05f-77f10fd94eee",
         "auth_state": "authenticated",
         "auth_evidence": [
-          "Profile control shows \"Hi, Admin\"",
-          "Cart icon shows an item count of 1",
-          "Workspace-style header and menu page are visible"
+          "Visible account menu shows 'Hi, Admin'.",
+          "App-internal header and cart are present."
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.98
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?view=restaurants&date=2026-05-30",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Visible account control shows \"Hi, Admin\"",
+          "Profile menu and cart are present in the header"
+        ],
+        "authenticated": true,
+        "auth_confidence": 0.99
+      },
+      {
+        "title": "NextDish",
+        "page_url": "https://nextdish-clone.vercel.app/menu?meal=dinner&date=2026-05-30",
+        "auth_state": "authenticated",
+        "auth_evidence": [
+          "Header shows signed-in profile button: \"Hi, Admin\".",
+          "Visible app workspace controls like Set address and Cart are present."
         ],
         "authenticated": true,
         "auth_confidence": 0.98
@@ -144,20 +174,93 @@
     ],
     "site_structure_all_pages_authenticated": true,
     "site_structure_auth_summary": {
-      "total": 11,
+      "total": 14,
       "failed_pages": [],
       "unknown_count": 0,
-      "authenticated_count": 11,
+      "authenticated_count": 14,
       "unauthenticated_count": 0,
       "all_pages_authenticated": true
     },
     "page_count": 0,
     "completed_page_count": 0,
     "failed_page_count": 0,
-    "created_at": "2026-05-27T18:06:49.600343Z",
-    "updated_at": "2026-05-27T18:21:24.923197Z"
+    "created_at": "2026-05-29T22:42:56.826886Z",
+    "updated_at": "2026-05-29T23:06:29.209345Z"
   },
-  "latency": null,
+  "metadata": {
+    "site": "NextDish",
+    "user": "nextdish",
+    "coverage": "comprehensive breadth + depth",
+    "crawl_id": "89d6cc90-ce38-4be9-9942-3cc1b9ec875a",
+    "entry_url": "https://nextdish-clone.vercel.app/",
+    "llm_model": "gpt-5.4-mini",
+    "page_count": 117,
+    "step_count": 175,
+    "device_type": "laptop",
+    "authenticated": true,
+    "page_patterns": 15,
+    "exploration_mode": "browser_structure_explorer",
+    "exploration_time": "browser BFS run",
+    "exploration_depth": "2 levels",
+    "llm_analyzed_pages": 15,
+    "latency": 1412382,
+    "all_pages_authenticated": true,
+    "auth_summary": {
+      "total": 14,
+      "failed_pages": [],
+      "unknown_count": 0,
+      "authenticated_count": 14,
+      "unauthenticated_count": 0,
+      "all_pages_authenticated": true
+    }
+  },
+  "coverage_summary": {
+    "accuracy": "LLM enriched from browser-observed screenshots, visible text, and interactions",
+    "explored": [
+      "nextdish-clone.vercel.app",
+      "NextDish",
+      "Today's Recommendation",
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "SouthEast Asian",
+      "Italian",
+      "MiddleEastern",
+      "American",
+      "Salad",
+      "View by food",
+      "View by restaurant",
+      "Ingredients",
+      "Diet",
+      "Price",
+      "Spicy Level",
+      "Style",
+      "Restaurant page",
+      "Order Now \u003E",
+      "Ingredients ▾",
+      "Diet ▾",
+      "Price ▾",
+      "Spicy Level ▾",
+      "Style ▾",
+      "Filters",
+      "Lunch",
+      "Dinner",
+      "Favorite Beef Chow Fun",
+      "Favorite Kung Pao Chicken",
+      "Favorite Mapo Tofu",
+      "Favorite Popcorn Chicken",
+      "Favorite Sweet and Sour Pork",
+      "Search dishes…",
+      "Beef Bulgogi Bento",
+      "SAT 30",
+      "🌶",
+      "SUN 31",
+      "Cart",
+      "Your Cart"
+    ],
+    "depth_reached": "2 levels",
+    "breadth_coverage": "117 captured states and 174 completed interactions across nextdish-clone.vercel.app, NextDish, Today's Recommendation, Chinese, Japanese, Korean, SouthEast Asian, Italian"
+  },
   "root_page": null,
   "crawl_pages": [],
   "journey_analysis": null
