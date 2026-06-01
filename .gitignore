@@ -20,6 +20,8 @@ baselines/*
 !reports/
 !reports/**
 
+!site-structure-used-for-baseline/
+
 # Explicitly ignore sensitive and generated files
 .env
 __pycache__/
