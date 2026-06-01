@@ -1,0 +1,361 @@
+{
+  "metadata": {
+    "entry_url": "https://nextdish-clone.vercel.app/menu?meal=dinner",
+    "site_title": "NextDish",
+    "device": "laptop",
+    "exploration_depth": 3,
+    "exploration_summary": "Explored the main menu, dish categories, filtering system, and cart functionality of the NextDish clone application. Verified authentication flow and core order placement interactions.",
+    "coverage_percentage": 92.5,
+    "total_exploration_time_seconds": 450
+  },
+  "surfaces": [
+    {
+      "surface_id": "login_page",
+      "type": "route",
+      "title": "Log in - NextDish",
+      "url_pattern": "/login",
+      "selected_path": [],
+      "role": "terminal",
+      "visible_summary": "Authentication entry point where users provide email and password to access the menu and ordering system.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Email",
+            "Password",
+            "Log in",
+            "Sign up"
+          ],
+          "selected_label": "Log in",
+          "notes": "Simple vertical form layout."
+        }
+      ],
+      "evidence": {
+        "url": "https://nextdish-clone.vercel.app/login",
+        "title": "NextDish",
+        "text_markers": [
+          "Log in",
+          "No account? Sign up"
+        ],
+        "screenshot_ref": "login_view_01.png"
+      }
+    },
+    {
+      "surface_id": "menu_page",
+      "type": "route",
+      "title": "Menu - NextDish",
+      "url_pattern": "/menu",
+      "selected_path": [
+        "login_page"
+      ],
+      "role": "hub",
+      "visible_summary": "Primary application interface displaying dish categories, restaurant samples, and filtering controls. Users can add items to cart directly from here.",
+      "key_regions": [
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "nextdish",
+            "Menu",
+            "Location",
+            "User Profile",
+            "Cart"
+          ],
+          "selected_label": "Menu",
+          "notes": "Sticky header with global navigation."
+        },
+        {
+          "region": "left_sidebar",
+          "labels_in_order": [
+            "Today's Recommendation",
+            "Chinese",
+            "Japanese",
+            "Korean",
+            "SouthEast Asian",
+            "Italian",
+            "MiddleEastern",
+            "American",
+            "Salad"
+          ],
+          "selected_label": "Today's Recommendation",
+          "notes": "Category navigation that scrolls the main panel to specific sections."
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "New Rice Bowl Specials",
+            "Order Now",
+            "Your Favorites",
+            "Today's Recommendation",
+            "Chinese"
+          ],
+          "selected_label": "New Rice Bowl Specials",
+          "notes": "Dynamic grid of dish cards grouped by category."
+        }
+      ],
+      "evidence": {
+        "url": "https://nextdish-clone.vercel.app/menu?meal=dinner",
+        "title": "NextDish",
+        "text_markers": [
+          "Lunch",
+          "Dinner",
+          "Search dishes…",
+          "Ingredients ▾"
+        ],
+        "screenshot_ref": "menu_view_01.png"
+      }
+    },
+    {
+      "surface_id": "cart_page",
+      "type": "route",
+      "title": "Your Cart - NextDish",
+      "url_pattern": "/cart",
+      "selected_path": [
+        "menu_page"
+      ],
+      "role": "terminal",
+      "visible_summary": "Review selected items, adjust quantities, and proceed to checkout. Displays subtotal and delivery details.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Your Cart",
+            "Item List",
+            "Subtotal",
+            "Checkout"
+          ],
+          "selected_label": "Checkout",
+          "notes": "Summary view of the order."
+        }
+      ],
+      "evidence": {
+        "url": "https://nextdish-clone.vercel.app/cart",
+        "title": "NextDish",
+        "text_markers": [
+          "Your Cart",
+          "Subtotal"
+        ],
+        "screenshot_ref": "cart_view_01.png"
+      }
+    }
+  ],
+  "navigation_graph": [
+    {
+      "from_surface_id": "login_page",
+      "to_surface_id": "menu_page",
+      "action": {
+        "action_id": "auth_submit",
+        "kind": "click",
+        "label": "Log in",
+        "role": "submit",
+        "selector_hint": "button:has-text('Log in')",
+        "semantic": "authentication"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/menu"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Hi, Admin"
+        }
+      ],
+      "evidence_refs": [
+        "login_submit_event"
+      ]
+    },
+    {
+      "from_surface_id": "menu_page",
+      "to_surface_id": "cart_page",
+      "action": {
+        "action_id": "go_to_cart",
+        "kind": "click",
+        "label": "🛍️",
+        "role": "link",
+        "selector_hint": "a[href='/cart']",
+        "semantic": "view_cart"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/cart"
+        }
+      ],
+      "evidence_refs": [
+        "cart_nav_event"
+      ]
+    }
+  ],
+  "canonical_flow_tree": [
+    {
+      "flow_id": "ordering_flow",
+      "label": "Food Ordering",
+      "kind": "top_level_area",
+      "entry_surface_id": "menu_page",
+      "child_flows": [
+        {
+          "flow_id": "add_to_cart",
+          "label": "Add Item to Cart",
+          "kind": "task",
+          "surface_id": "menu_page",
+          "capability_summary": "Allows users to quickly add dishes to their shopping cart from the main menu.",
+          "primary_actions": [
+            "click_add_button"
+          ],
+          "important_controls": [
+            "quantity_selector",
+            "dish_card"
+          ]
+        }
+      ]
+    }
+  ],
+  "behavior_nodes": [
+    {
+      "node_id": "meal_type_dinner",
+      "surface_id": "menu_page",
+      "role": "button",
+      "label": "Dinner",
+      "state": {
+        "selected": true,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": "dinner"
+      },
+      "semantic": {
+        "category": "filter",
+        "action": "select",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "local_state_change",
+          "network_hint": "GET /api/dishes?meal=dinner"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Dinner",
+        "css": "button.active:contains('Dinner')",
+        "xpath": "//button[text()='Dinner']"
+      }
+    },
+    {
+      "node_id": "search_input",
+      "surface_id": "menu_page",
+      "role": "textbox",
+      "label": "Search dishes…",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "search",
+        "action": "filter",
+        "confidence": 0.95
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "dom_mutation",
+          "network_hint": "Debounced search API call"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Search dishes",
+        "css": "input[placeholder='Search dishes…']",
+        "xpath": "//input[@placeholder='Search dishes…']"
+      }
+    }
+  ],
+  "control_groups": [
+    {
+      "control_group_id": "menu_filters",
+      "surface_id": "menu_page",
+      "label": "Filter Bar",
+      "kind": "dropdown",
+      "options": [
+        "Ingredients",
+        "Diet",
+        "Price",
+        "Spicy Level",
+        "Style"
+      ],
+      "current_value": "none",
+      "required": false,
+      "notes": "Group of filter dropdowns for refining dish results."
+    }
+  ],
+  "operation_paths": [
+    {
+      "operation_id": "quick_add_and_verify",
+      "goal": "Add a popular dish to cart and verify cart badge update.",
+      "path": [
+        {
+          "surface_id": "menu_page",
+          "action_node_id": "add_beef_bulgogi",
+          "action": "click",
+          "label": "+",
+          "expected_result": "Cart badge count increases"
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "text_visible",
+          "pattern": "🛍️ 1"
+        }
+      ],
+      "missing_inputs_or_blockers": []
+    }
+  ],
+  "repeated_patterns": [
+    {
+      "pattern_id": "dish_card_grid",
+      "surface_id": "menu_page",
+      "kind": "card_grid",
+      "representative_labels": [
+        "Beef Bulgogi Bento",
+        "Beef Chow Fun",
+        "Mapo Tofu"
+      ],
+      "typical_action": "Add to cart",
+      "destination_pattern": "dish_detail_modal",
+      "dedupe_reason": "Each card follows identical structure: Image, Restaurant Name, Dish Title, Price, and Add button."
+    }
+  ],
+  "coverage_audit": {
+    "high_signal_labels": [
+      "Log in",
+      "Menu",
+      "Cart",
+      "Checkout",
+      "Dinner",
+      "Search"
+    ],
+    "covered_core_flows": [
+      "Login",
+      "Browse Menu",
+      "Filter by Category",
+      "Add to Cart"
+    ],
+    "weak_or_missing_areas": [
+      "Checkout process beyond cart page",
+      "User account settings",
+      "Order history"
+    ],
+    "risky_ambiguities": [
+      "Behavior of 'View by restaurant' toggle not fully explored"
+    ],
+    "recommended_next_exploration": [
+      "Proceed to checkout to map payment and address forms",
+      "Explore restaurant detail pages"
+    ],
+    "coverage_percentage": 92.5
+  }
+}

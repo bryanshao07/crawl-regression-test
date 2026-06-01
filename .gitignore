@@ -21,6 +21,7 @@ baselines/*
 !reports/**
 
 !site-structure-used-for-baseline/
+!site-structure-used-for-baseline/**
 
 # Explicitly ignore sensitive and generated files
 .env

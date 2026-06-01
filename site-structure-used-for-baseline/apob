@@ -1,0 +1,1862 @@
+{
+  "metadata": {
+    "entry_url": "https://app.apob.ai/",
+    "site_title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+    "device": "desktop",
+    "exploration_depth": 2,
+    "requires_login": true,
+    "login_method_observed": "email_password",
+    "exploration_summary": "Authenticated desktop exploration of APOB.AI covered the public landing/home state, email login modal, authenticated home dashboard, history library, publish scheduler, profile/account management, and create portrait model workflow. Destructive, payment, OAuth, logout, and credit-consuming generation actions were not completed.",
+    "coverage_percentage": 0.78,
+    "total_exploration_time_seconds": 180
+  },
+  "surfaces": [
+    {
+      "surface_id": "public_home",
+      "type": "route",
+      "title": "Public Home / Landing",
+      "url_pattern": "https://app.apob.ai/",
+      "selected_path": [
+        "entry_url"
+      ],
+      "role": "hub",
+      "visible_summary": "Unauthenticated landing surface that promotes portrait model creation, exposes public community model/content previews, and provides login, pricing, legal, and social links.",
+      "key_regions": [
+        {
+          "region": "left_sidebar",
+          "labels_in_order": [
+            "Create Portrait Model",
+            "Home",
+            "History",
+            "Publish",
+            "Profile"
+          ],
+          "selected_label": "Home",
+          "notes": "Sidebar is visible even before authentication; protected destinations trigger or require login."
+        },
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "Pricing",
+            "Log in"
+          ],
+          "selected_label": "",
+          "notes": "Pricing likely opens plan/pricing flow; Log in opens authentication modal."
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Create your own Portrait Model for Image and Video Generation!",
+            "Create Portrait Model",
+            "Community models",
+            "Community content",
+            "All",
+            "Video",
+            "Image"
+          ],
+          "selected_label": "All",
+          "notes": "Community model and content areas use repeated card grids; keep representative samples only."
+        },
+        {
+          "region": "footer",
+          "labels_in_order": [
+            "Terms of Service",
+            "Privacy Policy",
+            "Discord",
+            "TikTok",
+            "Instagram",
+            "Twitter/X",
+            "2024 APOB.AI"
+          ],
+          "selected_label": "",
+          "notes": "Legal links go to public.apob.ai; social links are external handoffs."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/",
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "text_markers": [
+          "Pricing",
+          "Log in",
+          "Create Portrait Model",
+          "Community models",
+          "Community content",
+          "All",
+          "Video",
+          "Image"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-13-08_5113.webp"
+      }
+    },
+    {
+      "surface_id": "welcome_marketing_dialog",
+      "type": "modal",
+      "title": "Welcome to apob.ai",
+      "url_pattern": "https://app.apob.ai/",
+      "selected_path": [
+        "entry_url",
+        "initial_visit"
+      ],
+      "role": "intermediate",
+      "visible_summary": "Marketing welcome dialog introduces APOB as an AI influencer generator and offers a call to start creating now.",
+      "key_regions": [
+        {
+          "region": "modal",
+          "labels_in_order": [
+            "Welcome to apob.ai — Your ultimate AI influencer generator",
+            "Create AI influencers",
+            "Scale your impact",
+            "Monetize your influence",
+            "start CREATING now",
+            "Now powered by Seedance 2.0"
+          ],
+          "selected_label": "start CREATING now",
+          "notes": "Primary CTA leads into authentication or creation flow."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/",
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "text_markers": [
+          "Welcome to apob.ai",
+          "start CREATING now",
+          "Seedance 2.0"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-13-08_5113.webp"
+      }
+    },
+    {
+      "surface_id": "login_email_modal",
+      "type": "modal",
+      "title": "Sign up or log in",
+      "url_pattern": "https://app.apob.ai/",
+      "selected_path": [
+        "public_home",
+        "Log in or protected CTA"
+      ],
+      "role": "intermediate",
+      "visible_summary": "Authentication modal supports Google, Discord, and email login. Email path proceeds from email input to password entry and then login submission.",
+      "key_regions": [
+        {
+          "region": "modal",
+          "labels_in_order": [
+            "Sign up or log in",
+            "Continue with Google",
+            "Continue with Discord",
+            "Email",
+            "Enter your email",
+            "Continue",
+            "Terms of Service",
+            "Privacy Policy"
+          ],
+          "selected_label": "Email",
+          "notes": "Password state replaces the email form after Continue and includes Forgot your password? and Log in."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/",
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "text_markers": [
+          "Sign up or log in",
+          "Continue with Google",
+          "Continue with Discord",
+          "Enter your email",
+          "Enter your password",
+          "Log in"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-13-31_8929.webp"
+      }
+    },
+    {
+      "surface_id": "home_authenticated",
+      "type": "route",
+      "title": "Authenticated Home",
+      "url_pattern": "https://app.apob.ai/",
+      "selected_path": [
+        "public_home",
+        "login_email_modal",
+        "successful_login"
+      ],
+      "role": "hub",
+      "visible_summary": "Main authenticated dashboard for creating portrait models, reviewing personal/community models, browsing community content, managing credits, and entering account or publishing areas.",
+      "key_regions": [
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "80 credits",
+            "Upgrade",
+            "Open referral details",
+            "Lei"
+          ],
+          "selected_label": "",
+          "notes": "Credit count and upgrade controls are persistent; purchase-related actions should be treated as sensitive."
+        },
+        {
+          "region": "left_sidebar",
+          "labels_in_order": [
+            "Create Portrait Model",
+            "Home",
+            "History",
+            "Publish",
+            "Profile"
+          ],
+          "selected_label": "Home",
+          "notes": "Primary app navigation; Create Portrait Model opens /model/create?usage=portraitSim."
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Personal models",
+            "Create Portrait Model",
+            "Train a new model",
+            "Lei",
+            "Community models",
+            "Community content",
+            "All",
+            "Video",
+            "Image"
+          ],
+          "selected_label": "All",
+          "notes": "Personal model card and community cards are repeated patterns; content may lazy-load."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/",
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "text_markers": [
+          "80 credits",
+          "Upgrade",
+          "Lei",
+          "Personal models",
+          "Community models",
+          "Community content"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-14-19_4009.webp"
+      }
+    },
+    {
+      "surface_id": "history_library",
+      "type": "route",
+      "title": "History",
+      "url_pattern": "https://app.apob.ai/history",
+      "selected_path": [
+        "home_authenticated",
+        "History"
+      ],
+      "role": "hub",
+      "visible_summary": "Library area for the user's own and liked models, elements, and generated content, organized by My/Liked tabs and media-type filters.",
+      "key_regions": [
+        {
+          "region": "left_sidebar",
+          "labels_in_order": [
+            "Create Portrait Model",
+            "Home",
+            "History",
+            "Publish",
+            "Profile"
+          ],
+          "selected_label": "History",
+          "notes": "Selected navigation changes URL to /history."
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "My",
+            "Liked",
+            "Models",
+            "Create Portrait Model",
+            "Lei",
+            "Elements",
+            "Create Element",
+            "Contents",
+            "All",
+            "Video",
+            "Image"
+          ],
+          "selected_label": "My",
+          "notes": "My tab shows owned assets; Liked tab likely swaps to liked assets with similar grouped layout."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/history",
+        "title": "APOB.AI - Previously Generated Personalized AI Image & Video",
+        "text_markers": [
+          "My",
+          "Liked",
+          "Models",
+          "Elements",
+          "Contents",
+          "Create Element",
+          "All",
+          "Video",
+          "Image"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-14-48_1245.webp"
+      }
+    },
+    {
+      "surface_id": "publish_channels",
+      "type": "route",
+      "title": "Publish / Channels",
+      "url_pattern": "https://app.apob.ai/publish",
+      "selected_path": [
+        "home_authenticated",
+        "Publish"
+      ],
+      "role": "hub",
+      "visible_summary": "Publishing scheduler area for connecting social channels, creating posts, reviewing queue/drafts/sent posts, and filtering by tags.",
+      "key_regions": [
+        {
+          "region": "left_sidebar",
+          "labels_in_order": [
+            "Create Portrait Model",
+            "Home",
+            "History",
+            "Publish",
+            "Profile"
+          ],
+          "selected_label": "Publish",
+          "notes": "Selected navigation changes URL to /publish."
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Channels",
+            "All channels",
+            "Connect Instagram",
+            "All channels",
+            "New post",
+            "Queue 0",
+            "Drafts 0",
+            "Sent 0",
+            "Tags",
+            "Welcome to APOB",
+            "Connect channel"
+          ],
+          "selected_label": "Queue 0",
+          "notes": "Empty state indicates no connected channel; connect actions likely start external OAuth."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/publish",
+        "title": "APOB.AI - Creator AI | Personalized AI Portrait | AI Image & Video",
+        "text_markers": [
+          "Channels",
+          "Connect Instagram",
+          "New post",
+          "Queue",
+          "Drafts",
+          "Sent",
+          "Connect a channel to start scheduling posts"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-15-44_7863.webp"
+      }
+    },
+    {
+      "surface_id": "profile_account",
+      "type": "route",
+      "title": "Profile & Account Management",
+      "url_pattern": "https://app.apob.ai/profile",
+      "selected_path": [
+        "home_authenticated",
+        "Profile"
+      ],
+      "role": "hub",
+      "visible_summary": "Account management surface for editing profile information, reviewing plan and credits, buying/upgrading credits, linking external accounts, inviting friends, and account settings.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Lei",
+            "Edit",
+            "Your Nano plan",
+            "Usage details",
+            "Credits (standard queue)",
+            "Next refill",
+            "Custom portrait models",
+            "Custom voice models",
+            "Buy more credits",
+            "Change plan",
+            "Upgrade",
+            "External accounts",
+            "Discord",
+            "Invite a friend",
+            "Account settings"
+          ],
+          "selected_label": "",
+          "notes": "Payment and plan-change actions are present but were not executed."
+        },
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "80 credits",
+            "Upgrade",
+            "Open referral details",
+            "Lei"
+          ],
+          "selected_label": "Lei",
+          "notes": "Top account controls remain persistent."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/profile",
+        "title": "APOB.AI - Profile & Account Management",
+        "text_markers": [
+          "Your Nano plan",
+          "Usage details",
+          "Buy more credits",
+          "Change plan",
+          "External accounts",
+          "Discord",
+          "Account settings"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-15-00_6102.webp"
+      }
+    },
+    {
+      "surface_id": "create_portrait_model",
+      "type": "route",
+      "title": "Create model: Portrait",
+      "url_pattern": "https://app.apob.ai/model/create?usage=portraitSim",
+      "selected_path": [
+        "home_authenticated",
+        "Create Portrait Model"
+      ],
+      "role": "leaf",
+      "visible_summary": "Model creation form where users upload or generate a reference image, enter model metadata, choose public visibility, and submit a portrait model creation request.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Your model reference image will appear here once you upload your image or generate a portrait",
+            "Click to upload image",
+            "AI influencer generator",
+            "Model name",
+            "Description",
+            "Public",
+            "Create your image model now"
+          ],
+          "selected_label": "",
+          "notes": "Submit CTA is disabled or blocked until required reference/model information is supplied."
+        },
+        {
+          "region": "overlay",
+          "labels_in_order": [
+            "Create with reference",
+            "Upload a reference of yourself or any character to craft your custom model",
+            "Next"
+          ],
+          "selected_label": "Next",
+          "notes": "Onboarding overlay can obscure fields until dismissed or advanced."
+        }
+      ],
+      "evidence": {
+        "url": "https://app.apob.ai/model/create?usage=portraitSim",
+        "title": "APOB.AI - Create Personalized AI Model",
+        "text_markers": [
+          "Create model: Portrait",
+          "Click to upload image",
+          "AI influencer generator",
+          "Model name",
+          "Description",
+          "Public",
+          "Create your image model now"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/app_apob_ai_2026-05-26_22-16-05_1272.webp"
+      }
+    }
+  ],
+  "navigation_graph": [
+    {
+      "from_surface_id": "public_home",
+      "to_surface_id": "login_email_modal",
+      "action": {
+        "action_id": "open_login",
+        "kind": "click",
+        "label": "Log in",
+        "role": "button",
+        "selector_hint": "text=Log in",
+        "semantic": "open authentication modal"
+      },
+      "transition_type": "modal_open",
+      "assertion_hints": [
+        {
+          "kind": "text_visible",
+          "pattern": "Sign up or log in"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Continue with Google"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Enter your email"
+        }
+      ],
+      "evidence_refs": [
+        "login_email_modal"
+      ]
+    },
+    {
+      "from_surface_id": "login_email_modal",
+      "to_surface_id": "home_authenticated",
+      "action": {
+        "action_id": "submit_email_password_login",
+        "kind": "type",
+        "label": "Email/password login then Log in",
+        "role": "submit",
+        "selector_hint": "input[placeholder='Enter your email'], input[placeholder='Enter your password'], text=Log in",
+        "semantic": "authenticate user"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "text_visible",
+          "pattern": "80 credits"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Upgrade"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Personal models"
+        }
+      ],
+      "evidence_refs": [
+        "home_authenticated"
+      ]
+    },
+    {
+      "from_surface_id": "home_authenticated",
+      "to_surface_id": "history_library",
+      "action": {
+        "action_id": "nav_history",
+        "kind": "click",
+        "label": "History",
+        "role": "link",
+        "selector_hint": "aside >> text=History",
+        "semantic": "open generated asset history"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/history"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "My"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Liked"
+        }
+      ],
+      "evidence_refs": [
+        "history_library"
+      ]
+    },
+    {
+      "from_surface_id": "home_authenticated",
+      "to_surface_id": "publish_channels",
+      "action": {
+        "action_id": "nav_publish",
+        "kind": "click",
+        "label": "Publish",
+        "role": "link",
+        "selector_hint": "aside >> text=Publish",
+        "semantic": "open social publishing scheduler"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/publish"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Channels"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Queue"
+        }
+      ],
+      "evidence_refs": [
+        "publish_channels"
+      ]
+    },
+    {
+      "from_surface_id": "home_authenticated",
+      "to_surface_id": "profile_account",
+      "action": {
+        "action_id": "nav_profile",
+        "kind": "click",
+        "label": "Profile",
+        "role": "link",
+        "selector_hint": "aside >> text=Profile",
+        "semantic": "open account management"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/profile"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Your Nano plan"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Usage details"
+        }
+      ],
+      "evidence_refs": [
+        "profile_account"
+      ]
+    },
+    {
+      "from_surface_id": "home_authenticated",
+      "to_surface_id": "create_portrait_model",
+      "action": {
+        "action_id": "open_create_portrait_model",
+        "kind": "click",
+        "label": "Create Portrait Model",
+        "role": "button",
+        "selector_hint": "button:has-text('Create Portrait Model')",
+        "semantic": "open portrait model creation form"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/model/create?usage=portraitSim"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Create model: Portrait"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Model name"
+        }
+      ],
+      "evidence_refs": [
+        "create_portrait_model"
+      ]
+    },
+    {
+      "from_surface_id": "publish_channels",
+      "to_surface_id": "external_channel_oauth_unexplored",
+      "action": {
+        "action_id": "connect_instagram",
+        "kind": "click",
+        "label": "Connect Instagram",
+        "role": "button",
+        "selector_hint": "text=Connect Instagram",
+        "semantic": "start external social account connection"
+      },
+      "transition_type": "external_handoff",
+      "assertion_hints": [
+        {
+          "kind": "text_visible",
+          "pattern": "Connect Instagram"
+        },
+        {
+          "kind": "surface_marker",
+          "pattern": "OAuth or channel-connect flow may require user takeover"
+        }
+      ],
+      "evidence_refs": [
+        "publish_channels"
+      ]
+    }
+  ],
+  "canonical_flow_tree": [
+    {
+      "flow_id": "flow_auth",
+      "label": "Authentication",
+      "kind": "top_level_area",
+      "entry_surface_id": "public_home",
+      "child_flows": [
+        {
+          "flow_id": "flow_auth_email",
+          "label": "Email login",
+          "kind": "task",
+          "surface_id": "login_email_modal",
+          "capability_summary": "Authenticate with email and password to unlock account-specific app surfaces.",
+          "primary_actions": [
+            "Enter email",
+            "Continue",
+            "Enter password",
+            "Log in"
+          ],
+          "important_controls": [
+            "Email input",
+            "Password input",
+            "Forgot your password?",
+            "Log in"
+          ]
+        },
+        {
+          "flow_id": "flow_auth_social",
+          "label": "Social login",
+          "kind": "task",
+          "surface_id": "login_email_modal",
+          "capability_summary": "Authenticate using Google or Discord.",
+          "primary_actions": [
+            "Continue with Google",
+            "Continue with Discord"
+          ],
+          "important_controls": [
+            "Google button",
+            "Discord button"
+          ]
+        }
+      ]
+    },
+    {
+      "flow_id": "flow_creation",
+      "label": "AI model creation",
+      "kind": "top_level_area",
+      "entry_surface_id": "home_authenticated",
+      "child_flows": [
+        {
+          "flow_id": "flow_create_portrait_reference",
+          "label": "Create portrait model with reference image",
+          "kind": "task",
+          "surface_id": "create_portrait_model",
+          "capability_summary": "Upload a model reference image, name and describe the model, choose visibility, and submit creation.",
+          "primary_actions": [
+            "Click to upload image",
+            "Fill model name",
+            "Fill description",
+            "Toggle Public",
+            "Create your image model now"
+          ],
+          "important_controls": [
+            "Upload image",
+            "Model name",
+            "Description",
+            "Public switch",
+            "Create your image model now"
+          ]
+        },
+        {
+          "flow_id": "flow_create_portrait_ai_generator",
+          "label": "Generate reference with AI influencer generator",
+          "kind": "sub_mode",
+          "surface_id": "create_portrait_model",
+          "capability_summary": "Use APOB's AI influencer generator as an alternative source for the portrait model reference image.",
+          "primary_actions": [
+            "Select AI influencer generator"
+          ],
+          "important_controls": [
+            "AI influencer generator card"
+          ]
+        }
+      ]
+    },
+    {
+      "flow_id": "flow_library",
+      "label": "History and asset library",
+      "kind": "top_level_area",
+      "entry_surface_id": "history_library",
+      "child_flows": [
+        {
+          "flow_id": "flow_history_my",
+          "label": "My assets",
+          "kind": "tab",
+          "surface_id": "history_library",
+          "capability_summary": "Review owned models, elements, and generated content.",
+          "primary_actions": [
+            "Open Models",
+            "Create Element",
+            "Filter Contents by All/Video/Image"
+          ],
+          "important_controls": [
+            "My",
+            "Models",
+            "Elements",
+            "Contents",
+            "All",
+            "Video",
+            "Image"
+          ]
+        },
+        {
+          "flow_id": "flow_history_liked",
+          "label": "Liked assets",
+          "kind": "tab",
+          "surface_id": "history_library",
+          "capability_summary": "Switch to liked models or content.",
+          "primary_actions": [
+            "Click Liked"
+          ],
+          "important_controls": [
+            "Liked"
+          ]
+        }
+      ]
+    },
+    {
+      "flow_id": "flow_publish",
+      "label": "Social publishing",
+      "kind": "top_level_area",
+      "entry_surface_id": "publish_channels",
+      "child_flows": [
+        {
+          "flow_id": "flow_publish_connect_channel",
+          "label": "Connect publishing channel",
+          "kind": "task",
+          "surface_id": "publish_channels",
+          "capability_summary": "Connect Instagram or another channel before scheduling posts.",
+          "primary_actions": [
+            "Connect Instagram",
+            "Connect channel"
+          ],
+          "important_controls": [
+            "All channels",
+            "Connect Instagram",
+            "Connect channel"
+          ]
+        },
+        {
+          "flow_id": "flow_publish_manage_posts",
+          "label": "Queue, drafts, and sent posts",
+          "kind": "tab",
+          "surface_id": "publish_channels",
+          "capability_summary": "Review scheduled, draft, and sent publishing items and create a new post once channels exist.",
+          "primary_actions": [
+            "New post",
+            "Queue",
+            "Drafts",
+            "Sent",
+            "Tags"
+          ],
+          "important_controls": [
+            "New post",
+            "Queue 0",
+            "Drafts 0",
+            "Sent 0",
+            "Tags"
+          ]
+        }
+      ]
+    },
+    {
+      "flow_id": "flow_profile",
+      "label": "Account, plan, and integrations",
+      "kind": "top_level_area",
+      "entry_surface_id": "profile_account",
+      "child_flows": [
+        {
+          "flow_id": "flow_profile_plan",
+          "label": "Plan and credits",
+          "kind": "feature_group",
+          "surface_id": "profile_account",
+          "capability_summary": "Review current plan, daily credits, refill timing, model quotas, and upgrade/buy-credit options.",
+          "primary_actions": [
+            "Change plan",
+            "Buy more credits",
+            "Upgrade"
+          ],
+          "important_controls": [
+            "Your Nano plan",
+            "Usage details",
+            "Buy more credits",
+            "Change plan",
+            "Upgrade"
+          ]
+        },
+        {
+          "flow_id": "flow_profile_external_accounts",
+          "label": "External accounts and referral",
+          "kind": "feature_group",
+          "surface_id": "profile_account",
+          "capability_summary": "Link external accounts such as Discord and share referral links.",
+          "primary_actions": [
+            "Discord",
+            "Copy share link",
+            "Details"
+          ],
+          "important_controls": [
+            "External accounts",
+            "Discord",
+            "Invite a friend"
+          ]
+        }
+      ]
+    }
+  ],
+  "behavior_nodes": [
+    {
+      "node_id": "node_login_open",
+      "surface_id": "public_home",
+      "role": "button",
+      "label": "Log in",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "open",
+        "confidence": 0.95
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "modal_open",
+          "network_hint": "authentication modal mounted client-side"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Log in",
+        "css": "button, h4:contains('Log in')",
+        "xpath": "//*[normalize-space()='Log in']"
+      }
+    },
+    {
+      "node_id": "node_login_email_input",
+      "surface_id": "login_email_modal",
+      "role": "textbox",
+      "label": "Enter your email",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "login",
+        "confidence": 0.97
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "dom_mutation",
+          "network_hint": "none until Continue"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Enter your email",
+        "css": "input[placeholder='Enter your email']",
+        "xpath": "//input[@placeholder='Enter your email']"
+      }
+    },
+    {
+      "node_id": "node_login_password_input",
+      "surface_id": "login_email_modal",
+      "role": "textbox",
+      "label": "Enter your password",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "login",
+        "confidence": 0.97
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "dom_mutation",
+          "network_hint": "none until Log in"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Enter your password",
+        "css": "input[type='password'][placeholder='Enter your password']",
+        "xpath": "//input[@type='password' and @placeholder='Enter your password']"
+      }
+    },
+    {
+      "node_id": "node_sidebar_create_model",
+      "surface_id": "home_authenticated",
+      "role": "button",
+      "label": "Create Portrait Model",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "generation",
+        "action": "open",
+        "confidence": 0.94
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": "route /model/create?usage=portraitSim"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Create Portrait Model",
+        "css": "button:has-text('Create Portrait Model')",
+        "xpath": "//*[self::button or self::div][normalize-space()='Create Portrait Model']"
+      }
+    },
+    {
+      "node_id": "node_nav_history",
+      "surface_id": "home_authenticated",
+      "role": "link",
+      "label": "History",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "navigation",
+        "action": "open",
+        "confidence": 0.98
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": "route /history"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "History",
+        "css": "aside [role='link']:has-text('History'), div:has-text('History')",
+        "xpath": "//*[normalize-space()='History']"
+      }
+    },
+    {
+      "node_id": "node_nav_publish",
+      "surface_id": "home_authenticated",
+      "role": "link",
+      "label": "Publish",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "navigation",
+        "action": "open",
+        "confidence": 0.98
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": "route /publish"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Publish",
+        "css": "aside [role='link']:has-text('Publish'), div:has-text('Publish')",
+        "xpath": "//*[normalize-space()='Publish']"
+      }
+    },
+    {
+      "node_id": "node_nav_profile",
+      "surface_id": "home_authenticated",
+      "role": "link",
+      "label": "Profile",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "navigation",
+        "action": "open",
+        "confidence": 0.98
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": "route /profile"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Profile",
+        "css": "aside [role='link']:has-text('Profile'), div:has-text('Profile')",
+        "xpath": "//*[normalize-space()='Profile']"
+      }
+    },
+    {
+      "node_id": "node_home_filter_video",
+      "surface_id": "home_authenticated",
+      "role": "tab",
+      "label": "Video",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "filter",
+        "action": "filter",
+        "confidence": 0.86
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "dom_mutation",
+          "network_hint": "likely media/content list refresh"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Video",
+        "css": "text=Video",
+        "xpath": "//*[normalize-space()='Video']"
+      }
+    },
+    {
+      "node_id": "node_history_tab_liked",
+      "surface_id": "history_library",
+      "role": "tab",
+      "label": "Liked",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "content",
+        "action": "select",
+        "confidence": 0.9
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "local_state_change",
+          "network_hint": "liked asset list refresh"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Liked",
+        "css": "button:has-text('Liked'), h3:has-text('Liked')",
+        "xpath": "//*[normalize-space()='Liked']"
+      }
+    },
+    {
+      "node_id": "node_publish_new_post",
+      "surface_id": "publish_channels",
+      "role": "button",
+      "label": "New post",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "content",
+        "action": "open",
+        "confidence": 0.88
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "unknown",
+          "network_hint": "may open composer; likely requires connected channel"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "New post",
+        "css": "button:has-text('New post')",
+        "xpath": "//button[normalize-space()='New post']"
+      }
+    },
+    {
+      "node_id": "node_publish_connect_instagram",
+      "surface_id": "publish_channels",
+      "role": "button",
+      "label": "Connect Instagram",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "settings",
+        "action": "open",
+        "confidence": 0.92
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "external_handoff",
+          "network_hint": "likely OAuth/connect-channel endpoint"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Connect Instagram",
+        "css": "text=Connect Instagram",
+        "xpath": "//*[normalize-space()='Connect Instagram']"
+      }
+    },
+    {
+      "node_id": "node_create_model_upload",
+      "surface_id": "create_portrait_model",
+      "role": "upload",
+      "label": "Click to upload image",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "form",
+        "action": "upload",
+        "confidence": 0.95
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "unknown",
+          "network_hint": "opens file picker; upload occurs after file selection"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Click to upload image",
+        "css": "text=Click to upload image",
+        "xpath": "//*[contains(normalize-space(), 'Click to upload image')]"
+      }
+    },
+    {
+      "node_id": "node_create_model_name",
+      "surface_id": "create_portrait_model",
+      "role": "textbox",
+      "label": "Model name",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "form",
+        "action": "input",
+        "confidence": 0.96
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "dom_mutation",
+          "network_hint": "character counter updates 0/32"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Model name",
+        "css": "input[type='text']",
+        "xpath": "//input[@type='text']"
+      }
+    },
+    {
+      "node_id": "node_create_model_description",
+      "surface_id": "create_portrait_model",
+      "role": "textbox",
+      "label": "Description",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "form",
+        "action": "input",
+        "confidence": 0.96
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "dom_mutation",
+          "network_hint": "character counter updates 0/512"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Description",
+        "css": "textarea",
+        "xpath": "//textarea"
+      }
+    },
+    {
+      "node_id": "node_create_model_public_toggle",
+      "surface_id": "create_portrait_model",
+      "role": "switch",
+      "label": "Public",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": true,
+        "value": "on"
+      },
+      "semantic": {
+        "category": "settings",
+        "action": "select",
+        "confidence": 0.9
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "dom_mutation",
+          "network_hint": "visibility flag updates locally"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Public",
+        "css": "[role='switch'], .ant-switch",
+        "xpath": "//*[contains(normalize-space(), 'Public')]/following::*[contains(@class, 'switch')][1]"
+      }
+    },
+    {
+      "node_id": "node_profile_upgrade",
+      "surface_id": "profile_account",
+      "role": "button",
+      "label": "Upgrade",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "settings",
+        "action": "open",
+        "confidence": 0.9
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "unknown",
+          "network_hint": "pricing/checkout flow possible; sensitive"
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Upgrade",
+        "css": "button:has-text('Upgrade'), div:has-text('Upgrade')",
+        "xpath": "//*[normalize-space()='Upgrade']"
+      }
+    }
+  ],
+  "control_groups": [
+    {
+      "control_group_id": "cg_login_email",
+      "surface_id": "login_email_modal",
+      "label": "Email login controls",
+      "kind": "textarea",
+      "options": [
+        "Email",
+        "Password",
+        "Forgot your password?",
+        "Log in"
+      ],
+      "current_value": "empty",
+      "required": true,
+      "notes": "Email appears before password; password appears after clicking Continue."
+    },
+    {
+      "control_group_id": "cg_home_community_filters",
+      "surface_id": "home_authenticated",
+      "label": "Community content media filters",
+      "kind": "segmented_control",
+      "options": [
+        "All",
+        "Video",
+        "Image"
+      ],
+      "current_value": "All",
+      "required": false,
+      "notes": "Observed both in community model/content regions; may update card grids without route change."
+    },
+    {
+      "control_group_id": "cg_history_tabs",
+      "surface_id": "history_library",
+      "label": "History ownership tabs",
+      "kind": "segmented_control",
+      "options": [
+        "My",
+        "Liked"
+      ],
+      "current_value": "My",
+      "required": false,
+      "notes": "Switches library between user-owned and liked assets."
+    },
+    {
+      "control_group_id": "cg_history_content_filters",
+      "surface_id": "history_library",
+      "label": "History content filters",
+      "kind": "segmented_control",
+      "options": [
+        "All",
+        "Video",
+        "Image"
+      ],
+      "current_value": "All",
+      "required": false,
+      "notes": "Applies to Contents section."
+    },
+    {
+      "control_group_id": "cg_publish_post_status_tabs",
+      "surface_id": "publish_channels",
+      "label": "Publishing status tabs",
+      "kind": "segmented_control",
+      "options": [
+        "Queue 0",
+        "Drafts 0",
+        "Sent 0"
+      ],
+      "current_value": "Queue 0",
+      "required": false,
+      "notes": "Counts currently zero because no connected channel/post data observed."
+    },
+    {
+      "control_group_id": "cg_publish_tags",
+      "surface_id": "publish_channels",
+      "label": "Tags filter",
+      "kind": "dropdown",
+      "options": [
+        "Tags"
+      ],
+      "current_value": "Tags",
+      "required": false,
+      "notes": "Dropdown options were not expanded."
+    },
+    {
+      "control_group_id": "cg_create_model_reference_choice",
+      "surface_id": "create_portrait_model",
+      "label": "Reference image source",
+      "kind": "radio_group",
+      "options": [
+        "Click to upload image",
+        "AI influencer generator"
+      ],
+      "current_value": "none selected",
+      "required": true,
+      "notes": "A reference image is required before model creation can proceed."
+    },
+    {
+      "control_group_id": "cg_create_model_form",
+      "surface_id": "create_portrait_model",
+      "label": "Portrait model form fields",
+      "kind": "textarea",
+      "options": [
+        "Model name",
+        "Description",
+        "Public",
+        "Create your image model now"
+      ],
+      "current_value": "Model name empty; Description empty; Public on; Submit disabled/guarded",
+      "required": true,
+      "notes": "Model name allows 32 characters; description allows 512 characters."
+    },
+    {
+      "control_group_id": "cg_profile_plan_actions",
+      "surface_id": "profile_account",
+      "label": "Plan and credit actions",
+      "kind": "segmented_control",
+      "options": [
+        "Buy more credits",
+        "Change plan",
+        "Upgrade"
+      ],
+      "current_value": "Nano plan, 80/80 credits",
+      "required": false,
+      "notes": "Potential purchase/checkout actions; require explicit user confirmation before automation."
+    }
+  ],
+  "operation_paths": [
+    {
+      "operation_id": "op_login_email",
+      "goal": "Authenticate with email and password to access app surfaces.",
+      "path": [
+        {
+          "surface_id": "public_home",
+          "action_node_id": "node_login_open",
+          "action": "click",
+          "label": "Log in",
+          "expected_result": "Sign up or log in modal appears."
+        },
+        {
+          "surface_id": "login_email_modal",
+          "action_node_id": "node_login_email_input",
+          "action": "type",
+          "label": "Enter your email",
+          "expected_result": "Email field contains address and Continue is enabled."
+        },
+        {
+          "surface_id": "login_email_modal",
+          "action_node_id": "node_login_password_input",
+          "action": "type",
+          "label": "Enter your password",
+          "expected_result": "Password field contains masked password and Log in is enabled."
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "text_visible",
+          "pattern": "80 credits"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Personal models"
+        },
+        {
+          "kind": "surface_marker",
+          "pattern": "Authenticated user name Lei visible"
+        }
+      ],
+      "missing_inputs_or_blockers": []
+    },
+    {
+      "operation_id": "op_create_portrait_model_reference_upload",
+      "goal": "Begin creating a portrait model from an uploaded reference image.",
+      "path": [
+        {
+          "surface_id": "home_authenticated",
+          "action_node_id": "node_sidebar_create_model",
+          "action": "click",
+          "label": "Create Portrait Model",
+          "expected_result": "Route changes to /model/create?usage=portraitSim."
+        },
+        {
+          "surface_id": "create_portrait_model",
+          "action_node_id": "node_create_model_upload",
+          "action": "upload",
+          "label": "Click to upload image",
+          "expected_result": "Reference preview is populated after file selection."
+        },
+        {
+          "surface_id": "create_portrait_model",
+          "action_node_id": "node_create_model_name",
+          "action": "type",
+          "label": "Model name",
+          "expected_result": "0/32 counter increments."
+        },
+        {
+          "surface_id": "create_portrait_model",
+          "action_node_id": "node_create_model_description",
+          "action": "type",
+          "label": "Description",
+          "expected_result": "0/512 counter increments."
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/model/create?usage=portraitSim"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Create model: Portrait"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Create your image model now"
+        }
+      ],
+      "missing_inputs_or_blockers": [
+        "Reference image file required",
+        "Actual submit may consume credits or create public content; do not submit without confirmation"
+      ]
+    },
+    {
+      "operation_id": "op_review_history_assets",
+      "goal": "Review owned models, elements, and generated content history.",
+      "path": [
+        {
+          "surface_id": "home_authenticated",
+          "action_node_id": "node_nav_history",
+          "action": "click",
+          "label": "History",
+          "expected_result": "History page opens."
+        },
+        {
+          "surface_id": "history_library",
+          "action_node_id": "node_history_tab_liked",
+          "action": "click",
+          "label": "Liked",
+          "expected_result": "Liked assets tab becomes selected."
+        },
+        {
+          "surface_id": "history_library",
+          "action_node_id": "node_home_filter_video",
+          "action": "click",
+          "label": "Video",
+          "expected_result": "Contents list filters to video items."
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/history"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Models"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Elements"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Contents"
+        }
+      ],
+      "missing_inputs_or_blockers": [
+        "Liked tab content not fully explored",
+        "Lazy-loaded items may require additional waits or scrolls"
+      ]
+    },
+    {
+      "operation_id": "op_connect_publish_channel",
+      "goal": "Start social channel connection for publishing.",
+      "path": [
+        {
+          "surface_id": "home_authenticated",
+          "action_node_id": "node_nav_publish",
+          "action": "click",
+          "label": "Publish",
+          "expected_result": "Publish page opens."
+        },
+        {
+          "surface_id": "publish_channels",
+          "action_node_id": "node_publish_connect_instagram",
+          "action": "click",
+          "label": "Connect Instagram",
+          "expected_result": "Instagram/channel connection flow begins."
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/publish"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Connect Instagram"
+        },
+        {
+          "kind": "surface_marker",
+          "pattern": "OAuth or external handoff expected"
+        }
+      ],
+      "missing_inputs_or_blockers": [
+        "External Instagram login/OAuth likely requires user takeover",
+        "Do not connect accounts without explicit confirmation"
+      ]
+    },
+    {
+      "operation_id": "op_profile_credit_review",
+      "goal": "Review account plan, quotas, and external account settings without purchasing.",
+      "path": [
+        {
+          "surface_id": "home_authenticated",
+          "action_node_id": "node_nav_profile",
+          "action": "click",
+          "label": "Profile",
+          "expected_result": "Profile page opens."
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/profile"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Your Nano plan"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "80 / 80 credits"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "External accounts"
+        }
+      ],
+      "missing_inputs_or_blockers": [
+        "Plan changes, credit purchases, and upgrades require explicit user confirmation"
+      ]
+    }
+  ],
+  "repeated_patterns": [
+    {
+      "pattern_id": "rp_community_model_cards",
+      "surface_id": "home_authenticated",
+      "kind": "card_grid",
+      "representative_labels": [
+        "Aitana",
+        "ENRIQUE",
+        "Charlie",
+        "Megamanbase",
+        "APOB_VZuS"
+      ],
+      "typical_action": "Open a community model card or use it as a model reference/source.",
+      "destination_pattern": "model detail or generator page; exact URL not explored",
+      "dedupe_reason": "Community model cards share image, display name, age/timestamp, and popularity/view count pattern; expanding all cards would be redundant."
+    },
+    {
+      "pattern_id": "rp_personal_model_cards",
+      "surface_id": "home_authenticated",
+      "kind": "card_grid",
+      "representative_labels": [
+        "Create Portrait Model",
+        "Lei"
+      ],
+      "typical_action": "Create a new portrait model or open an existing personal model.",
+      "destination_pattern": "/model/create?usage=portraitSim or model detail route",
+      "dedupe_reason": "Personal model card layout repeats for each trained model; one existing model card is sufficient as a representative sample."
+    },
+    {
+      "pattern_id": "rp_history_asset_sections",
+      "surface_id": "history_library",
+      "kind": "card_grid",
+      "representative_labels": [
+        "Models",
+        "Elements",
+        "Contents",
+        "Create Element",
+        "All",
+        "Video",
+        "Image"
+      ],
+      "typical_action": "Open existing asset, create a new asset, or filter generated content by media type.",
+      "destination_pattern": "asset detail or creation route; exact item detail routes not explored",
+      "dedupe_reason": "History sections reuse card-grid/list placeholders and media filters."
+    },
+    {
+      "pattern_id": "rp_publish_status_tabs",
+      "surface_id": "publish_channels",
+      "kind": "menu_items",
+      "representative_labels": [
+        "Queue 0",
+        "Drafts 0",
+        "Sent 0"
+      ],
+      "typical_action": "Switch publishing list status filter.",
+      "destination_pattern": "same route local state change",
+      "dedupe_reason": "All status tabs share the same local filtering pattern and currently have zero counts."
+    },
+    {
+      "pattern_id": "rp_legal_social_footer_links",
+      "surface_id": "public_home",
+      "kind": "menu_items",
+      "representative_labels": [
+        "Terms of Service",
+        "Privacy Policy",
+        "Discord",
+        "TikTok",
+        "Instagram",
+        "Twitter/X"
+      ],
+      "typical_action": "Open external legal or social pages.",
+      "destination_pattern": "public.apob.ai or external social domain",
+      "dedupe_reason": "Footer links are repeated across public and authenticated surfaces."
+    }
+  ],
+  "coverage_audit": {
+    "high_signal_labels": [
+      "Create Portrait Model",
+      "Home",
+      "History",
+      "Publish",
+      "Profile",
+      "80 credits",
+      "Upgrade",
+      "Personal models",
+      "Community models",
+      "Community content",
+      "My",
+      "Liked",
+      "Models",
+      "Elements",
+      "Contents",
+      "All channels",
+      "Connect Instagram",
+      "New post",
+      "Queue 0",
+      "Drafts 0",
+      "Sent 0",
+      "Your Nano plan",
+      "Usage details",
+      "External accounts",
+      "Click to upload image",
+      "AI influencer generator",
+      "Model name",
+      "Description",
+      "Public"
+    ],
+    "covered_core_flows": [
+      "Public landing and login discovery",
+      "Email/password login",
+      "Authenticated home dashboard",
+      "History library shell with My/Liked and media filters",
+      "Publish scheduler empty state",
+      "Profile plan/credits/external accounts",
+      "Portrait model creation form shell"
+    ],
+    "weak_or_missing_areas": [
+      "Detailed model card destination pages were not expanded",
+      "AI influencer generator sub-mode was observed as an entry but not opened",
+      "Create Element workflow was observed but not entered",
+      "Publish New post composer was not opened because no channel was connected",
+      "Connect Instagram/OAuth was not completed",
+      "Upgrade, pricing, checkout, and buy-credit flows were not completed",
+      "Account settings lower-page fields may require scrolling",
+      "Liked tab results and lazy-loaded content may require additional waits/scrolls"
+    ],
+    "risky_ambiguities": [
+      "Some DOM elements are generic div/button components with sparse accessibility names; selector hints should prefer visible text and URL assertions",
+      "Create/generate/submit operations may consume credits or publish public content",
+      "Connect channel and social login flows may leave the site or require account credentials",
+      "Upgrade and buy-credit controls may lead to payment confirmation screens"
+    ],
+    "recommended_next_exploration": [
+      "Open one representative personal model card and one community model card to map model detail pages",
+      "Open Create Element from History and record its required inputs",
+      "Expand Tags dropdown on Publish page",
+      "Click New post only after confirming whether a connected channel is required",
+      "Scroll Profile to finish account settings and safety/logout controls",
+      "Dismiss or complete onboarding overlays to ensure stable selector paths",
+      "Capture network calls with browser devtools or scripted instrumentation for login, asset list, and creation endpoints"
+    ],
+    "coverage_percentage": 0.78
+  }
+}

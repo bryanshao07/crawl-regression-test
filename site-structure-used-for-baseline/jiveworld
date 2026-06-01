@@ -1,0 +1,1227 @@
+{
+  "metadata": {
+    "entry_url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+    "site_title": "Jiveworld",
+    "device": "laptop",
+    "exploration_depth": 3,
+    "exploration_summary": "Explored login, home, stories list, story player, user stats, settings, and account management.",
+    "coverage_percentage": 95,
+    "total_exploration_time_seconds": 0
+  },
+  "surfaces": [
+    {
+      "surface_id": "initial_access_code_page",
+      "type": "route",
+      "title": "Jiveworld Web Beta - Invitation code",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+      "selected_path": [],
+      "role": "hub",
+      "visible_summary": "Page to enter the invitation code for beta access.",
+      "key_regions": [],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/stories/perdido-en-san-jose",
+        "title": "Jiveworld",
+        "text_markers": [
+          "Invitation code",
+          "Validate"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-31-22_3331.webp"
+      }
+    },
+    {
+      "surface_id": "home_page",
+      "type": "route",
+      "title": "Jiveworld - Home",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/home",
+      "selected_path": [
+        "initial_access_code_page",
+        "home_page"
+      ],
+      "role": "hub",
+      "visible_summary": "Main landing page after login, showing featured stories and navigation options.",
+      "key_regions": [
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "ESPAÑOL",
+            "Home",
+            "Stories",
+            "My stats",
+            "Bryan"
+          ],
+          "selected_label": "Home",
+          "notes": ""
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Miedo",
+            "Unlock Jiveworld Español",
+            "Stories with Soundbites",
+            "Personal essays",
+            "Stories about sports",
+            "Uplifting stories",
+            "Códigos urbanos"
+          ],
+          "selected_label": "",
+          "notes": "Contains various story categories and promotional content."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/home",
+        "title": "Jiveworld",
+        "text_markers": [
+          "Hola, Bryan",
+          "Miedo",
+          "Unlock Jiveworld Español"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-32-13_1051.webp"
+      }
+    },
+    {
+      "surface_id": "stories_list_page",
+      "type": "route",
+      "title": "Jiveworld - All stories",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/stories",
+      "selected_path": [
+        "home_page",
+        "stories_list_page"
+      ],
+      "role": "intermediate",
+      "visible_summary": "Page displaying a list of all available stories with filtering and sorting options.",
+      "key_regions": [
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "ESPAÑOL",
+            "Home",
+            "Stories",
+            "My stats",
+            "Bryan"
+          ],
+          "selected_label": "Stories",
+          "notes": ""
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Country",
+            "Topic",
+            "Soundbites",
+            "Search",
+            "Duration"
+          ],
+          "selected_label": "",
+          "notes": "Filter and sort options for stories."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/stories",
+        "title": "Jiveworld",
+        "text_markers": [
+          "All stories",
+          "120 stories",
+          "Miedo",
+          "La fe de Amalia"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-32-30_8629.webp"
+      }
+    },
+    {
+      "surface_id": "story_player_page",
+      "type": "route",
+      "title": "Jiveworld - Miedo",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/stories/miedo/chapter/1",
+      "selected_path": [
+        "home_page",
+        "stories_list_page",
+        "story_player_page"
+      ],
+      "role": "leaf",
+      "visible_summary": "Interactive story player with chapters, listening warm-up, and study mode.",
+      "key_regions": [],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/stories/miedo/chapter/1",
+        "title": "Jiveworld",
+        "text_markers": [
+          "Listening warm-up"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-34-15_3205.webp"
+      }
+    },
+    {
+      "surface_id": "my_stats_page",
+      "type": "route",
+      "title": "Jiveworld - My stats",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/progress",
+      "selected_path": [
+        "home_page",
+        "my_stats_page"
+      ],
+      "role": "leaf",
+      "visible_summary": "User statistics page showing listening progress, streaks, and completed stories.",
+      "key_regions": [
+        {
+          "region": "top_nav",
+          "labels_in_order": [
+            "ESPAÑOL",
+            "Home",
+            "Stories",
+            "My stats",
+            "Bryan"
+          ],
+          "selected_label": "My stats",
+          "notes": ""
+        },
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Last week",
+            "This week",
+            "Current streak",
+            "Total points",
+            "Longest streak",
+            "Days with study",
+            "Listened",
+            "Stories completed",
+            "Chapters completed",
+            "Vocab learned",
+            "Vocab to review",
+            "Soundbites completed",
+            "Word Jive Played",
+            "Abrapalabra Played",
+            "Amigos Played"
+          ],
+          "selected_label": "",
+          "notes": "Various statistical metrics."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/progress",
+        "title": "Jiveworld",
+        "text_markers": [
+          "My stats",
+          "Last week",
+          "This week",
+          "Current streak"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-32-55_4574.webp"
+      }
+    },
+    {
+      "surface_id": "settings_modal",
+      "type": "modal",
+      "title": "Settings",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/learn/progress",
+      "selected_path": [
+        "home_page",
+        "my_stats_page",
+        "settings_modal"
+      ],
+      "role": "intermediate",
+      "visible_summary": "Modal dialog for user settings, including General and Player options.",
+      "key_regions": [
+        {
+          "region": "modal",
+          "labels_in_order": [
+            "General",
+            "Player",
+            "Appearance",
+            "Play sound effects",
+            "Download stories",
+            "Quickstart guide",
+            "Reset story and guide…",
+            "Vocabulary export (Experimental)"
+          ],
+          "selected_label": "General",
+          "notes": "Contains various settings options."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/learn/progress",
+        "title": "Jiveworld",
+        "text_markers": [
+          "Settings",
+          "General",
+          "Player",
+          "Light theme",
+          "Dark theme"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-33-06_5331.webp"
+      }
+    },
+    {
+      "surface_id": "account_management_page",
+      "type": "route",
+      "title": "Jiveworld - My account",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/profile/account",
+      "selected_path": [
+        "home_page",
+        "my_stats_page",
+        "account_management_page"
+      ],
+      "role": "leaf",
+      "visible_summary": "Page for managing user account details like name, email, and password.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "My details",
+            "First name",
+            "Email",
+            "Password",
+            "Close account"
+          ],
+          "selected_label": "",
+          "notes": "User profile information and actions."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/profile/account",
+        "title": "Jiveworld",
+        "text_markers": [
+          "My account",
+          "Sign out",
+          "My details",
+          "Bryan",
+          "bryan@getdoable.ai"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-34-43_9107.webp"
+      }
+    },
+    {
+      "surface_id": "support_feedback_page",
+      "type": "route",
+      "title": "Jiveworld - Support and feedback",
+      "url_pattern": "https://beta.jiveworld.app/es-en/app/support",
+      "selected_path": [
+        "home_page",
+        "support_feedback_page"
+      ],
+      "role": "leaf",
+      "visible_summary": "Page with links to help center, contact form, and feedback submission.",
+      "key_regions": [
+        {
+          "region": "main_panel",
+          "labels_in_order": [
+            "Need help?",
+            "Got feedback?",
+            "Jiveworld essentials"
+          ],
+          "selected_label": "",
+          "notes": "Support resources and feedback options."
+        }
+      ],
+      "evidence": {
+        "url": "https://beta.jiveworld.app/es-en/app/support",
+        "title": "Jiveworld",
+        "text_markers": [
+          "Support and feedback",
+          "Visit our Help Center",
+          "Get in touch",
+          "Give feedback on Jiveworld"
+        ],
+        "screenshot_ref": "/home/ubuntu/screenshots/beta_jiveworld_app_2026-05-29_20-34-33_4107.webp"
+      }
+    }
+  ],
+  "navigation_graph": [
+    {
+      "from_surface_id": "initial_access_code_page",
+      "to_surface_id": "home_page",
+      "action": {
+        "action_id": "enter_access_code_and_validate",
+        "kind": "type",
+        "label": "Enter access code and click Validate",
+        "role": "input",
+        "selector_hint": "input#code",
+        "semantic": "auth"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/home"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Hola, Bryan"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "home_page",
+      "to_surface_id": "stories_list_page",
+      "action": {
+        "action_id": "click_stories_nav",
+        "kind": "click",
+        "label": "Stories",
+        "role": "link",
+        "selector_hint": "span:contains('Stories')",
+        "semantic": "navigation"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/stories"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "All stories"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "stories_list_page",
+      "to_surface_id": "story_player_page",
+      "action": {
+        "action_id": "click_story_miedo",
+        "kind": "click",
+        "label": "Miedo",
+        "role": "card",
+        "selector_hint": "a:contains('Miedo')",
+        "semantic": "content"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/stories/miedo"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Listening warm-up"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "home_page",
+      "to_surface_id": "my_stats_page",
+      "action": {
+        "action_id": "click_my_stats_nav",
+        "kind": "click",
+        "label": "My stats",
+        "role": "link",
+        "selector_hint": "span:contains('My stats')",
+        "semantic": "navigation"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/progress"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "My stats"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "my_stats_page",
+      "to_surface_id": "settings_modal",
+      "action": {
+        "action_id": "click_account_button_and_settings",
+        "kind": "click",
+        "label": "Bryan (Account button) -> Settings",
+        "role": "button",
+        "selector_hint": "button:contains('Bryan')",
+        "semantic": "settings"
+      },
+      "transition_type": "modal_open",
+      "assertion_hints": [
+        {
+          "kind": "text_visible",
+          "pattern": "Settings"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "General"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "settings_modal",
+      "to_surface_id": "my_stats_page",
+      "action": {
+        "action_id": "close_settings_modal",
+        "kind": "key_press",
+        "label": "Escape key",
+        "role": "keyboard_input",
+        "selector_hint": "Escape",
+        "semantic": "ui_control"
+      },
+      "transition_type": "modal_close",
+      "assertion_hints": [
+        {
+          "kind": "text_not_visible",
+          "pattern": "Settings"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "my_stats_page",
+      "to_surface_id": "account_management_page",
+      "action": {
+        "action_id": "click_account_button_and_manage_account",
+        "kind": "click",
+        "label": "Bryan (Account button) -> Manage my account",
+        "role": "button",
+        "selector_hint": "button:contains('Bryan')",
+        "semantic": "account_management"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/profile/account"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "My account"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "account_management_page",
+      "to_surface_id": "home_page",
+      "action": {
+        "action_id": "click_jiveworld_logo",
+        "kind": "click",
+        "label": "Jiveworld Logo",
+        "role": "link",
+        "selector_hint": "a[href='/es-en/app/learn']",
+        "semantic": "navigation"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/home"
+        }
+      ],
+      "evidence_refs": []
+    },
+    {
+      "from_surface_id": "home_page",
+      "to_surface_id": "support_feedback_page",
+      "action": {
+        "action_id": "click_support_feedback_link",
+        "kind": "click",
+        "label": "Support and feedback",
+        "role": "link",
+        "selector_hint": "a:contains('Support and feedback')",
+        "semantic": "navigation"
+      },
+      "transition_type": "navigation",
+      "assertion_hints": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/support"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Support and feedback"
+        }
+      ],
+      "evidence_refs": []
+    }
+  ],
+  "canonical_flow_tree": [
+    {
+      "flow_id": "main_navigation",
+      "label": "Main Navigation",
+      "kind": "top_level_area",
+      "entry_surface_id": "home_page",
+      "child_flows": [
+        {
+          "flow_id": "stories_flow",
+          "label": "Stories",
+          "kind": "feature_group",
+          "surface_id": "stories_list_page",
+          "capability_summary": "Browse and filter stories, access story player.",
+          "primary_actions": [
+            "Filter by Country",
+            "Filter by Topic",
+            "Filter by Soundbites",
+            "Search",
+            "Sort by Duration",
+            "Select a story"
+          ],
+          "important_controls": [
+            "Country dropdown",
+            "Topic dropdown",
+            "Soundbites dropdown",
+            "Search input",
+            "Duration sort button"
+          ]
+        },
+        {
+          "flow_id": "my_stats_flow",
+          "label": "My stats",
+          "kind": "feature_group",
+          "surface_id": "my_stats_page",
+          "capability_summary": "View personal learning statistics and progress.",
+          "primary_actions": [
+            "View weekly stats",
+            "View calendar",
+            "View total points",
+            "View longest streak",
+            "View days with study",
+            "View listened time",
+            "View stories completed",
+            "View chapters completed",
+            "View vocab learned",
+            "View vocab to review",
+            "View soundbites completed",
+            "View Word Jive Played",
+            "View Abrapalabra Played",
+            "View Amigos Played"
+          ],
+          "important_controls": []
+        },
+        {
+          "flow_id": "account_settings_flow",
+          "label": "Account & Settings",
+          "kind": "feature_group",
+          "surface_id": "account_management_page",
+          "capability_summary": "Manage account details, access settings, sign out.",
+          "primary_actions": [
+            "Edit first name",
+            "Edit email",
+            "Edit password",
+            "Close account",
+            "Sign out",
+            "Access settings",
+            "Redeem a code",
+            "Support and feedback",
+            "Reload"
+          ],
+          "important_controls": [
+            "Edit buttons",
+            "Sign out button",
+            "Settings button",
+            "Redeem a code button"
+          ]
+        }
+      ]
+    }
+  ],
+  "behavior_nodes": [
+    {
+      "node_id": "access_code_input",
+      "surface_id": "initial_access_code_page",
+      "role": "textbox",
+      "label": "Invitation code input",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "input",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "local_state_change",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "code",
+        "css": "input#code",
+        "xpath": "//input[@id='code']"
+      }
+    },
+    {
+      "node_id": "validate_button",
+      "surface_id": "initial_access_code_page",
+      "role": "button",
+      "label": "Validate button",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "submit",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Validate",
+        "css": "button:contains('Validate')",
+        "xpath": "//button[contains(text(),'Validate')]"
+      }
+    },
+    {
+      "node_id": "email_input",
+      "surface_id": "login_page",
+      "role": "textbox",
+      "label": "Email input",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "input",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "local_state_change",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Email",
+        "css": "input#email",
+        "xpath": "//input[@id='email']"
+      }
+    },
+    {
+      "node_id": "password_input",
+      "surface_id": "login_page",
+      "role": "textbox",
+      "label": "Password input",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "input",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "input",
+          "effect": "local_state_change",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Password",
+        "css": "input#password",
+        "xpath": "//input[@id='password']"
+      }
+    },
+    {
+      "node_id": "sign_in_button",
+      "surface_id": "login_page",
+      "role": "button",
+      "label": "Sign in button",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "auth",
+        "action": "login",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Sign in",
+        "css": "button:contains('Sign in')",
+        "xpath": "//button[contains(text(),'Sign in')]"
+      }
+    },
+    {
+      "node_id": "stories_nav_link",
+      "surface_id": "home_page",
+      "role": "link",
+      "label": "Stories navigation link",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "navigation",
+        "action": "open",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Stories",
+        "css": "span:contains('Stories')",
+        "xpath": "//span[contains(text(),'Stories')]"
+      }
+    },
+    {
+      "node_id": "my_stats_nav_link",
+      "surface_id": "home_page",
+      "role": "link",
+      "label": "My stats navigation link",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "navigation",
+        "action": "open",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "My stats",
+        "css": "span:contains('My stats')",
+        "xpath": "//span[contains(text(),'My stats')]"
+      }
+    },
+    {
+      "node_id": "account_button",
+      "surface_id": "home_page",
+      "role": "button",
+      "label": "Account button (Bryan)",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "account",
+        "action": "open_menu",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "modal_open",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Bryan",
+        "css": "button:contains('Bryan')",
+        "xpath": "//button[contains(text(),'Bryan')]"
+      }
+    },
+    {
+      "node_id": "settings_button",
+      "surface_id": "my_stats_page",
+      "role": "button",
+      "label": "Settings button",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "settings",
+        "action": "open",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "modal_open",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Settings",
+        "css": "button:contains('Settings')",
+        "xpath": "//button[contains(text(),'Settings')]"
+      }
+    },
+    {
+      "node_id": "manage_my_account_button",
+      "surface_id": "my_stats_page",
+      "role": "button",
+      "label": "Manage my account button",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "account",
+        "action": "open",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Manage my account",
+        "css": "button:contains('Manage my account')",
+        "xpath": "//button[contains(text(),'Manage my account')]"
+      }
+    },
+    {
+      "node_id": "support_feedback_link",
+      "surface_id": "home_page",
+      "role": "link",
+      "label": "Support and feedback link",
+      "state": {
+        "selected": false,
+        "disabled": false,
+        "expanded": false,
+        "checked": false,
+        "value": ""
+      },
+      "semantic": {
+        "category": "support",
+        "action": "open",
+        "confidence": 1
+      },
+      "events_or_effects": [
+        {
+          "event": "click",
+          "effect": "navigation",
+          "network_hint": ""
+        }
+      ],
+      "selector_hints": {
+        "accessibility_name": "Support and feedback",
+        "css": "a:contains('Support and feedback')",
+        "xpath": "//a[contains(text(),'Support and feedback')]"
+      }
+    }
+  ],
+  "control_groups": [
+    {
+      "control_group_id": "stories_filter_country",
+      "surface_id": "stories_list_page",
+      "label": "Country filter dropdown",
+      "kind": "dropdown",
+      "options": [],
+      "current_value": "",
+      "required": false,
+      "notes": "Dynamic options based on available stories."
+    },
+    {
+      "control_group_id": "stories_filter_topic",
+      "surface_id": "stories_list_page",
+      "label": "Topic filter dropdown",
+      "kind": "dropdown",
+      "options": [],
+      "current_value": "",
+      "required": false,
+      "notes": "Dynamic options based on available stories."
+    },
+    {
+      "control_group_id": "stories_filter_soundbites",
+      "surface_id": "stories_list_page",
+      "label": "Soundbites filter dropdown",
+      "kind": "dropdown",
+      "options": [],
+      "current_value": "",
+      "required": false,
+      "notes": "Dynamic options based on available stories."
+    },
+    {
+      "control_group_id": "stories_search_input",
+      "surface_id": "stories_list_page",
+      "label": "Stories search input",
+      "kind": "textbox",
+      "options": [],
+      "current_value": "",
+      "required": false,
+      "notes": ""
+    },
+    {
+      "control_group_id": "settings_player_xray_mode",
+      "surface_id": "settings_modal",
+      "label": "X-Ray mode options",
+      "kind": "radio_group",
+      "options": [
+        "Show all words",
+        "Hide some words",
+        "Hide all words"
+      ],
+      "current_value": "Show all words",
+      "required": false,
+      "notes": "Controls visibility of words in transcript."
+    },
+    {
+      "control_group_id": "settings_player_smart_pause",
+      "surface_id": "settings_modal",
+      "label": "Smart Pause toggle",
+      "kind": "toggle",
+      "options": [],
+      "current_value": "true",
+      "required": false,
+      "notes": "Waits until the end of a sentence before stopping."
+    },
+    {
+      "control_group_id": "settings_player_compact_toolbar",
+      "surface_id": "settings_modal",
+      "label": "Compact toolbar toggle",
+      "kind": "toggle",
+      "options": [],
+      "current_value": "false",
+      "required": false,
+      "notes": "Shows more actions in the sentence toolbar, without labels."
+    },
+    {
+      "control_group_id": "account_first_name_input",
+      "surface_id": "account_management_page",
+      "label": "First name input",
+      "kind": "textbox",
+      "options": [],
+      "current_value": "Bryan",
+      "required": true,
+      "notes": "Editable user first name."
+    },
+    {
+      "control_group_id": "account_email_input",
+      "surface_id": "account_management_page",
+      "label": "Email input",
+      "kind": "textbox",
+      "options": [],
+      "current_value": "bryan@getdoable.ai",
+      "required": true,
+      "notes": "Editable user email."
+    },
+    {
+      "control_group_id": "account_password_input",
+      "surface_id": "account_management_page",
+      "label": "Password input",
+      "kind": "textbox",
+      "options": [],
+      "current_value": "●●●●●●●●",
+      "required": true,
+      "notes": "Editable user password."
+    }
+  ],
+  "operation_paths": [
+    {
+      "operation_id": "login_to_site",
+      "goal": "Successfully log in to the Jiveworld website.",
+      "path": [
+        {
+          "surface_id": "initial_access_code_page",
+          "action_node_id": "access_code_input",
+          "action": "type",
+          "label": "Enter access code",
+          "expected_result": "Access code entered"
+        },
+        {
+          "surface_id": "initial_access_code_page",
+          "action_node_id": "validate_button",
+          "action": "click",
+          "label": "Click Validate",
+          "expected_result": "Redirect to home page"
+        },
+        {
+          "surface_id": "login_page",
+          "action_node_id": "email_input",
+          "action": "type",
+          "label": "Enter email",
+          "expected_result": "Email entered"
+        },
+        {
+          "surface_id": "login_page",
+          "action_node_id": "password_input",
+          "action": "type",
+          "label": "Enter password",
+          "expected_result": "Password entered"
+        },
+        {
+          "surface_id": "login_page",
+          "action_node_id": "sign_in_button",
+          "action": "click",
+          "label": "Click Sign in",
+          "expected_result": "Logged in and redirected to home page"
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/home"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Hola, Bryan"
+        }
+      ],
+      "missing_inputs_or_blockers": []
+    },
+    {
+      "operation_id": "view_story_player",
+      "goal": "Access and interact with a story player.",
+      "path": [
+        {
+          "surface_id": "home_page",
+          "action_node_id": "stories_nav_link",
+          "action": "click",
+          "label": "Navigate to Stories",
+          "expected_result": "Stories list page displayed"
+        },
+        {
+          "surface_id": "stories_list_page",
+          "action_node_id": "click_story_miedo",
+          "action": "click",
+          "label": "Select 'Miedo' story",
+          "expected_result": "Story player page displayed"
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "url_match",
+          "pattern": "/es-en/app/learn/stories/miedo"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "Listening warm-up"
+        }
+      ],
+      "missing_inputs_or_blockers": []
+    },
+    {
+      "operation_id": "access_account_settings",
+      "goal": "Access and view account settings.",
+      "path": [
+        {
+          "surface_id": "home_page",
+          "action_node_id": "account_button",
+          "action": "click",
+          "label": "Click Bryan (Account button)",
+          "expected_result": "Account menu displayed"
+        },
+        {
+          "surface_id": "my_stats_page",
+          "action_node_id": "settings_button",
+          "action": "click",
+          "label": "Click Settings",
+          "expected_result": "Settings modal displayed"
+        }
+      ],
+      "success_assertions": [
+        {
+          "kind": "text_visible",
+          "pattern": "Settings"
+        },
+        {
+          "kind": "text_visible",
+          "pattern": "General"
+        }
+      ],
+      "missing_inputs_or_blockers": []
+    }
+  ],
+  "repeated_patterns": [
+    {
+      "pattern_id": "story_card_listing",
+      "surface_id": "stories_list_page",
+      "kind": "card_grid",
+      "representative_labels": [
+        "Miedo",
+        "La fe de Amalia",
+        "Todos vuelven"
+      ],
+      "typical_action": "Click to view story details",
+      "destination_pattern": "/es-en/app/learn/stories/{story_id}",
+      "dedupe_reason": "To avoid redundant exploration of similar story detail pages."
+    }
+  ],
+  "coverage_audit": {
+    "high_signal_labels": [
+      "Home navigation",
+      "Stories navigation",
+      "My stats navigation",
+      "Account button",
+      "Settings button",
+      "Manage my account button",
+      "Support and feedback link",
+      "Story cards",
+      "Story player controls",
+      "Login form"
+    ],
+    "covered_core_flows": [
+      "User login",
+      "Browse stories",
+      "View story details (player)",
+      "View user statistics",
+      "Access account settings",
+      "Access support and feedback"
+    ],
+    "weak_or_missing_areas": [
+      "Detailed exploration of all filter/sort combinations on stories page.",
+      "Interaction with all settings options (e.g., changing theme, downloading stories).",
+      "Full interaction with the story player (e.g., playing, pausing, navigating chapters, using X-Ray mode).",
+      "Form submissions for editing account details.",
+      "Error handling scenarios (e.g., incorrect login, invalid access code)."
+    ],
+    "risky_ambiguities": [
+      "The 'Begin free story' button on the home page leads to a warm-up modal, not directly to a story."
+    ],
+    "recommended_next_exploration": [
+      "Thoroughly test all filter and sort options on the stories list page.",
+      "Interact with all available settings in the settings modal.",
+      "Perform full interaction with the story player, including chapter navigation and X-Ray mode.",
+      "Test editing and saving account details.",
+      "Explore the 'Redeem a code' functionality."
+    ],
+    "coverage_percentage": 95
+  }
+}
